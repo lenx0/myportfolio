@@ -20,7 +20,7 @@ const About = () => {
         alignItems: "center",
       }}
     >
-      <Stack alignItems="center" spacing={5} mt={20}>
+      <Stack alignItems="center" spacing={5} gap={5} mt={20}>
         <Box>
           <HexagonContainer>
             <img src="/assets/images/profile.jpg" alt="Hexagon content" />

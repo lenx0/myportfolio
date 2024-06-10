@@ -1,14 +1,21 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Button, Popover, Stack, Typography } from "@mui/material";
 import SkillRating from "./rating";
 import HexagonContainer from "./exagon";
-import { useState } from "react";
 
 const About = () => {
-  const [isPortuguese, setIsPortuguese] = useState(true);
 
-  const handleClick = () => {
-    setIsPortuguese(!isPortuguese);
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
   };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
 
   return (
     <Box
@@ -43,59 +50,55 @@ const About = () => {
             fontSize={22}
             color="#445964"
           >
-            {isPortuguese ? (
-              <>
-                Olá, sou Desenvolvedor Front-end focado no framework mais
-                utilizado do mundo, o React!
-                <br />
-                <br />
-                Sou capaz de desenvolver aplicações do início ao fim incluindo o
-                deploy na nuvem. Sou um profissional insistente, analítico e
-                cuidadoso, gosto de pensar fora da caixa, trabalhar em equipe e
-                poder contribuir com novas ideias.
-                <br />
-                <br />
-                Estou constantemente estudando diferentes tecnologias para não
-                ficar para trás nessa esteira infinita que percorremos quando
-                estamos no meio do desenvolvimento de software. Sou apaixonado
-                por tecnologia e gosto de compartilhar minhas experiências e
-                conhecimentos.
-                <br />
-                Possuo capacidade de atuar tanto no front-end como no back-end.
-              </>
-            ) : (
-              <>
-                Hello, I'm a Front-end Developer focused on the most used
-                framework in the world, React!
-                <br />
-                <br />
-                I'm capable of developing applications from start to finish
-                including cloud deployment. I'm a persistent, analytical, and
-                careful professional; I like to think outside the box, work in
-                teams, and contribute with new ideas.
-                <br />
-                <br />
-                I'm constantly studying different technologies so as not to fall
-                behind on this infinite treadmill we're on when we're in the
-                midst of software development. I'm passionate about technology
-                and enjoy sharing my experiences and knowledge.
-                <br />I have the ability to work on both the front-end and
-                back-end.
-              </>
-            )}
+            Olá, sou Desenvolvedor Front-end focado no framework mais utilizado
+            do mundo, o React!
+            <br />
+            <br />
+            Sou capaz de desenvolver aplicações do início ao fim incluindo o
+            deploy na nuvem. Sou um profissional insistente, analítico e
+            cuidadoso, gosto de pensar fora da caixa, trabalhar em equipe e
+            poder contribuir com novas ideias.
+            <br />
+            <br />
+            Estou constantemente estudando diferentes tecnologias para não ficar
+            para trás nessa esteira infinita que percorremos quando estamos no
+            meio do desenvolvimento de software. Sou apaixonado por tecnologia e
+            gosto de compartilhar minhas experiências e conhecimentos.
+            <br />
+            Possuo capacidade de atuar tanto no front-end como no back-end.
           </Typography>
         </Stack>
-        <Button
-          onClick={handleClick}
-          variant="contained"
-          color="primary"
-          sx={{
-            backgroundColor: "#263138",
-            borderRadius: 20,
+        <Button onClick={handleClick} variant="contained" color="primary">
+          Ver em Inglês
+        </Button>
+        <Popover
+          id={id}
+          open={open}
+          anchorEl={anchorEl}
+          onClose={handleClose}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'center',
           }}
         >
-          {isPortuguese ? "English" : "Português"}
-        </Button>
+          <Box p={2}>
+            <Typography variant="body2">
+              Hello, I'm a Front-end Developer focused on the most used framework in the world, React!
+              <br />
+              <br />
+              I'm capable of developing applications from start to finish including cloud deployment. I'm a persistent, analytical, and careful professional; I like to think outside the box, work in teams, and contribute with new ideas.
+              <br />
+              <br />
+              I'm constantly studying different technologies so as not to fall behind on this infinite treadmill we're on when we're in the midst of software development. I'm passionate about technology and enjoy sharing my experiences and knowledge.
+              <br />
+              I have the ability to work on both the front-end and back-end.
+            </Typography>
+          </Box>
+        </Popover>
         <Typography variant="h4" fontSize={64} fontWeight={700} color="#445964">
           Hard Skills
         </Typography>

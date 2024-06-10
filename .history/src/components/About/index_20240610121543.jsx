@@ -85,16 +85,8 @@ const About = () => {
             )}
           </Typography>
         </Stack>
-        <Button
-          onClick={handleClick}
-          variant="contained"
-          color="primary"
-          sx={{
-            backgroundColor: "#263138",
-            borderRadius: 20,
-          }}
-        >
-          {isPortuguese ? "English" : "Português"}
+        <Button onClick={handleClick} variant="contained" color="primary" backgroundColor="#263138">
+          {isPortuguese ? 'English' : 'Português'}
         </Button>
         <Typography variant="h4" fontSize={64} fontWeight={700} color="#445964">
           Hard Skills
