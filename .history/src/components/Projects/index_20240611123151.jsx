@@ -1,0 +1,92 @@
+import React from "react";
+import { Box, Grid, Typography } from "@mui/material";
+import CustomCard from "./card";
+import DeliveryImage1 from "/assets/images/delivery1.png";
+import DeliveryImage2 from "/assets/images/delivery2.png";
+import DeliveryImage3 from "/assets/images/delivery3.png";
+import PokeImage1 from "/assets/images/poke1.png"
+
+const Projects = () => {
+  return (
+    <>
+      <Box alignContent="center" textAlign="center" mt={20}>
+        <Typography variant="h4" fontSize={64} fontWeight={700} color="#445964">
+          Projetos
+        </Typography>
+        <Typography variant="h4" fontSize={24} fontWeight={700} color="#445964">
+          Estes são alguns dos trabalhos e projetos que já realizei
+        </Typography>
+      </Box>
+
+      <Grid container justifyContent="center" mt={2}>
+        <Grid
+          item
+          xs={6}
+          alignItems="center"
+          alignContent="center"
+          justifyContent="center"
+          justifyItems="center"
+        >
+          <CustomCard
+            images={[DeliveryImage1, DeliveryImage2, DeliveryImage3]}
+            title={
+              <Typography
+                variant="h4"
+                fontSize={24}
+                fontWeight={700}
+                color="#445964"
+              >
+                Lenx Delivery
+              </Typography>
+            }
+            description={
+              <Typography>
+                Projeto demonstrativo onde você consegue visualizar um cardápio,
+                escolher o local de entrega e realizar o pedido.
+              </Typography>
+            }
+            technologies={
+              <Typography>
+                Tecnologias: React, Javascript, HTML, CSS, Material-UI, Node,
+                MongoDB, MapBox
+              </Typography>
+            }
+          />
+          <CustomCard
+            images={[
+              PokeImage1,
+              PokeImage2,
+              PokeImage3,
+              PokeImage4,
+              PokeImage5,
+            ]}
+            title={
+              <Typography
+                variant="h4"
+                fontSize={24}
+                fontWeight={700}
+                color="#445964"
+              >
+                Lenx Delivery
+              </Typography>
+            }
+            description={
+              <Typography>
+                Projeto demonstrativo onde você consegue visualizar um cardápio,
+                escolher o local de entrega e realizar o pedido.
+              </Typography>
+            }
+            technologies={
+              <Typography>
+                Tecnologias: React, Javascript, HTML, CSS, Material-UI, Node,
+                MongoDB, MapBox
+              </Typography>
+            }
+          />
+        </Grid>
+      </Grid>
+    </>
+  );
+};
+
+export default Projects;
