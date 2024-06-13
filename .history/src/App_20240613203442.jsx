@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import "./global.css";
 import Abilities from "./components/Abilities";
 import Experience from "./components/Experiences";
+import Technologies from "./components/Technologies";
 
 function App() {
   const mainContainerStyle = {
@@ -36,6 +37,7 @@ function App() {
       <Box sx={mainContainerStyle}>
         <Projects />
         <Experience />
+        <Technologies />
       </Box>
     </React.Fragment>
   );

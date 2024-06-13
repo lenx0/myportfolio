@@ -45,13 +45,13 @@ const About = () => {
           >
             {isPortuguese ? (
               <>
-                Olá, como vai? 
+                Olá, sou Desenvolvedor Front-end 
                 <br />
                 <br />
-                Sou um desenvolvedor de software capaz de desenvolver aplicações do início ao fim incluindo o
-                deploy na nuvem. Sou um profissional dedicado, analítico e
-                cuidadoso, gosto de pensar fora da caixa, criar coisas diferentes, explorar novos universos e participar de boas equipes para
-                poder contribuir com novas ideias e é claro aprender.
+                Sou capaz de desenvolver aplicações do início ao fim incluindo o
+                deploy na nuvem. Sou um profissional insistente, analítico e
+                cuidadoso, gosto de pensar fora da caixa, trabalhar em equipe e
+                poder contribuir com novas ideias.
                 <br />
                 <br />
                 Estou constantemente estudando diferentes tecnologias para não

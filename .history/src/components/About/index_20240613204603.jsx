@@ -50,7 +50,7 @@ const About = () => {
                 <br />
                 Sou um desenvolvedor de software capaz de desenvolver aplicações do início ao fim incluindo o
                 deploy na nuvem. Sou um profissional dedicado, analítico e
-                cuidadoso, gosto de pensar fora da caixa, criar coisas diferentes, explorar novos universos e participar de boas equipes para
+                cuidadoso, gosto de pensar fora da caixa, criar coisas diferentes e participar de boas equipes para
                 poder contribuir com novas ideias e é claro aprender.
                 <br />
                 <br />
