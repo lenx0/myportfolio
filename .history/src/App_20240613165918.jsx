@@ -9,7 +9,7 @@ import "./global.css";
 function App() {
   const mainContainerStyle = {
     margin: "0 auto",
-    padding: "0 10%",
+    padding: "0 5%",
     maxWidth: "1600px",
   };
 

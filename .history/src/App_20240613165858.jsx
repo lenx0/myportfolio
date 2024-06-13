@@ -10,7 +10,7 @@ function App() {
   const mainContainerStyle = {
     margin: "0 auto",
     padding: "0 10%",
-    maxWidth: "1600px",
+    maxWidth: "1200px",
   };
 
   const aboutContainerStyle = {

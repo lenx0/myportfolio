@@ -5,14 +5,7 @@ import GithubIcon from "/assets/icons/Github.svg";
 import LinkedinIcon from "/assets/icons/Linkedin.svg";
 
 const Header = () => {
-  const menuItems = [
-    "Home",
-    "Sobre",
-    "Projetos",
-    "Serviços",
-    "Resumo",
-    "Contato",
-  ];
+  const menuItems = ["Home", "Sobre", "Projetos", "Serviços", "Resumo", "Contato"];
 
   const headerStyles = {
     display: "flex",
@@ -47,20 +40,8 @@ const Header = () => {
   return (
     <Box component="header" sx={headerStyles}>
       <Box sx={logoContainerStyles}>
-        <Box
-          component="img"
-          src={Logo}
-          alt="Logo"
-          sx={{ width: { xs: "40px", md: "auto" } }}
-        />
-        <Typography
-          sx={{
-            fontSize: { xs: 24, md: 36 },
-            color: "#445964",
-            fontWeight: 700,
-            ml: 2,
-          }}
-        >
+        <Box component="img" src={Logo} alt="Logo" sx={{ width: { xs: "40px", md: "auto" } }} />
+        <Typography sx={{ fontSize: { xs: 24, md: 36 }, color: "#445964", fontWeight: 700, ml: 2 }}>
           Thiago Beraldo
         </Typography>
       </Box>
@@ -76,11 +57,7 @@ const Header = () => {
       </Box>
       <Box sx={iconContainerStyles}>
         <Link href="https://github.com/lenx0">
-          <img
-            src={GithubIcon}
-            alt="Github Icon"
-            style={{ marginTop: "0.3rem" }}
-          />
+          <img src={GithubIcon} alt="Github Icon" style={{ marginTop: "0.3rem" }} />
         </Link>
         <Link href="https://www.linkedin.com/in/thiagoberaldo06">
           <img src={LinkedinIcon} alt="LinkedIn Icon" />
