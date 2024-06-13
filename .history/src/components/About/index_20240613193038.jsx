@@ -96,6 +96,7 @@ const About = () => {
         >
           {isPortuguese ? "Inglês" : "Português"}
         </Button>
+        
       </Stack>
     </Box>
   );

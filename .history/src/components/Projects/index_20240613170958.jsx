@@ -49,11 +49,12 @@ function generateImageArray(prefix, count) {
 
 const Projects = () => {
   return (
-    <Grid id="projects-section" container gap={2} m="10px 5px 20px 5px" justifyContent="center">
+    <Grid container gap={2} m="10px 5px 20px 5px" justifyContent="center">
       <Grid container justifyContent="center">
         <Grid item>
           <Typography
             variant="h4"
+            mt={15}
             mb={5}
             fontSize={64}
             fontWeight={700}

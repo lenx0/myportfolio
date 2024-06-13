@@ -6,12 +6,12 @@ import LinkedinIcon from "/assets/icons/Linkedin.svg";
 
 const Header = () => {
   const menuItems = [
-    { label: "Home", id: "home-section" },
-    { label: "Sobre", id: "about-section" },
-    { label: "Projetos", id: "projects-section" },
-    { label: "Serviços", id: "services-section" },
-    { label: "Resumo", id: "summary-section" },
-    { label: "Contato", id: "contact-section" },
+    "Home",
+    "Sobre",
+    "Projetos",
+    "Serviços",
+    "Resumo",
+    "Contato",
   ];
 
   const headerStyles = {
@@ -44,13 +44,6 @@ const Header = () => {
     justifyContent: "flex-end",
   };
 
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <Box component="header" sx={headerStyles}>
       <Box sx={logoContainerStyles}>
@@ -74,11 +67,11 @@ const Header = () => {
       <Box sx={menuContainerStyles}>
         {menuItems.map((item) => (
           <Typography
-            key={item.label}
+            key={item}
             sx={{ cursor: "pointer", fontWeight: 700, px: 2 }}
             onClick={() => scrollToSection(item.id)}
           >
-            {item.label}
+            {item}
           </Typography>
         ))}
       </Box>

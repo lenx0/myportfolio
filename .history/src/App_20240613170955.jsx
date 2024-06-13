@@ -5,7 +5,6 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import "./global.css";
-import Abilities from "./components/Abilities";
 
 function App() {
   const mainContainerStyle = {
@@ -30,7 +29,6 @@ function App() {
       </Box>
       <Box sx={aboutContainerStyle}>
         <About />
-        <Abilities />
       </Box>
       <Box sx={mainContainerStyle}>
         <Projects />

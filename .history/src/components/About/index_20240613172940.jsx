@@ -13,7 +13,6 @@ const About = () => {
     <Box
       sx={{
         mt: 10,
-        mb: 20,
         display: "flex",
         width: 900,
         flexDirection: "column",
@@ -96,6 +95,7 @@ const About = () => {
         >
           {isPortuguese ? "Inglês" : "Português"}
         </Button>
+        
       </Stack>
     </Box>
   );

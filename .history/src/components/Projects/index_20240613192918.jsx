@@ -54,6 +54,7 @@ const Projects = () => {
         <Grid item>
           <Typography
             variant="h4"
+            mt={15}
             mb={5}
             fontSize={64}
             fontWeight={700}

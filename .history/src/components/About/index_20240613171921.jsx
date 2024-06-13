@@ -47,7 +47,9 @@ const Header = () => {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -180;
+      const y = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 

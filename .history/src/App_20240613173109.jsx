@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import "./global.css";
-import Abilities from "./components/Abilities";
+import Abilities from "./components/Abilities/abilities";
 
 function App() {
   const mainContainerStyle = {
