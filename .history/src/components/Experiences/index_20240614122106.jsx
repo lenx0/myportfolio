@@ -9,7 +9,7 @@ const Experience = () => {
       date: "01.2022 - 07-2022",
       resume:
         `Na Alto Giro atuei desenvolvendo microsserviços para facilitar alguns processos dentro da empresa como RH e almoxarifado
-        Pude desenvolver interfaces web utilizando tecnologias de ponta como React e Javascript. Também desenvolvi API's utilizando Node, express e mongoDB`,
+        Pude desenvolver interfaces web utilizando tecnologias de ponta como React e Javascript. Também desenvolvi API's utilizando Node, express e mongoDB,`,
     },
     {
       title: "Desenvolvedor Front-end júnior",
