@@ -8,16 +8,16 @@ const projectsData = [
     images: generateImageArray("delivery", 3),
     access: "https://front-lenxdelivery.vercel.app",
     description:
-      "Site de restaurante, com cardápio, pedidos e localização ao vivo.",
+      "Projeto demonstrativo onde você consegue visualizar um cardápio, escolher o local de entrega e realizar o pedido.",
     technologies:
       "Tecnologias: React, Javascript, HTML, CSS, Material-UI, Node, MongoDB, MapBox",
   },
   {
     title: "Curious Places",
-    images: generateImageArray("curious", 1),
+    images: generateImageArray("pokedex", 1),
     access: "https://curious-places.vercel.app/",
-    description: "Site sobre alguns dos locais mais curiosos do mundo.",
-    technologies: "Tecnologias: React, Javascript, HTML, CSS",
+    description: "Pokedex com sprites animadas",
+    technologies: "Tecnologias: Javascript, HTML, CSS",
   },
   {
     title: "Pokemon Knowledge",
