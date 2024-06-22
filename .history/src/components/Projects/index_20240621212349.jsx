@@ -15,14 +15,14 @@ const projectsData = [
   {
     title: "Curious Places",
     images: generateImageArray("curious", 1),
-    access: "https://curious-places.vercel.app",
+    access: "https://curious-places.vercel.app/",
     description: "Site sobre alguns dos locais mais curiosos do mundo.",
     technologies: "Tecnologias: React, Javascript, HTML, CSS",
   },
   {
     title: "QRCode generator",
     images: generateImageArray("qrcode", 1),
-    access: "https://qr-code-generator-phi-six.vercel.app",
+    access: "https://qr-code-generator-phi-six.vercel.app/",
     description:
       "Este é um gerador de QRCode simples e prático, adicionei também um histórico que salva automaticamente conforme você vai gerando seus códigos.",
     technologies:

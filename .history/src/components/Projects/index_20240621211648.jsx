@@ -15,18 +15,18 @@ const projectsData = [
   {
     title: "Curious Places",
     images: generateImageArray("curious", 1),
-    access: "https://curious-places.vercel.app",
+    access: "https://curious-places.vercel.app/",
     description: "Site sobre alguns dos locais mais curiosos do mundo.",
     technologies: "Tecnologias: React, Javascript, HTML, CSS",
   },
   {
     title: "QRCode generator",
-    images: generateImageArray("qrcode", 1),
-    access: "https://qr-code-generator-phi-six.vercel.app",
+    images: generateImageArray("poke", 5),
+    access: "https://poke-wiki-front.vercel.app",
     description:
-      "Este é um gerador de QRCode simples e prático, adicionei também um histórico que salva automaticamente conforme você vai gerando seus códigos.",
+      "Neste site podemos visualizar todos os detalhes dos pokémon existentes consumindo a PokeAPI.",
     technologies:
-      "Tecnologias: React, Javascript, HTML, CSS",
+      "Tecnologias: Next, React, Javascript, HTML, CSS, Material-UI",
   },
   {
     title: "Pokemon Knowledge",
