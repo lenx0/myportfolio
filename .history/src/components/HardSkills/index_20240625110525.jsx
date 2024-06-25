@@ -1,0 +1,87 @@
+import { Stack, Typography, useMediaQuery } from "@mui/material";
+import SkillRating from "./rating";
+import { useTheme } from "@emotion/react";
+
+const HardSkills = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+  return (
+    <Stack
+      id="hardskills-section"
+      direction="row"
+      mt={isMobile ? 10 : 20}
+      mb={isMobile ? 10 : 20}
+      gap={isMobile ? 3 : 6}
+      textAlign="center"
+      flexWrap="wrap"
+      justifyContent="center"
+    >
+      <Typography fontSize={isMobile ? 24 : 40} fontWeight={700} color="#445964" mb={isMobile ? 2 : 4}>
+        Hard Skills
+      </Typography>
+      <Stack
+        direction="row"
+        spacing={isMobile ? 2 : 4}
+        flexWrap="wrap"
+        p={isMobile ? "0 20px" : "0 50px"}
+        justifyContent="center"
+      >
+        <SkillRating skill="React" rating={5} />
+        <SkillRating skill="Javascript" rating={5} />
+        <SkillRating skill="HTML" rating={5} />
+        <SkillRating skill="CSS" rating={5} />
+        <SkillRating skill="Material-UI" rating={5} />
+        <SkillRating skill="Next" rating={4} />
+        <SkillRating skill="Redux" rating={3} />
+        <SkillRating skill="Node" rating={4} />
+        <SkillRating skill="Styled Components" rating={3} />
+        <SkillRating skill="Java" rating={3} />
+        <SkillRating skill="Python" rating={3} />
+        <SkillRating skill="Docker" rating={3} />
+        <SkillRating skill="MongoDB" rating={3} />
+        <SkillRating skill="MySQL" rating={3} />
+        <SkillRating skill="PostGreSQL" rating={3} />
+        <SkillRating skill="Oracle Database" rating={2} />
+        <SkillRating skill="SQLite" rating={2} />
+      </Stack>
+      <Typography fontSize={isMobile ? 24 : 40} fontWeight={700} color="#445964" mt={isMobile ? 2 : 4}>
+        Ferramentas - Serviços
+      </Typography>
+      <Stack
+        direction="row"
+        spacing={isMobile ? 2 : 4}
+        flexWrap="wrap"
+        p={isMobile ? "0 20px" : "0 50px"}
+        justifyContent="center"
+      >
+        <SkillRating skill="Git" rating={5} />
+        <SkillRating skill="Github" rating={5} />
+        <SkillRating skill="Asana" rating={5} />
+        <SkillRating skill="Vercel" rating={5} />
+        <SkillRating skill="AWS Amplify" rating={4} />
+        <SkillRating skill="AWS EC2" rating={4} />
+        <SkillRating skill="AWS S3" rating={4} />
+        <SkillRating skill="MongoDB Atlas" rating={4} />
+      </Stack>
+      <Typography width={isMobile ? "100%" : null} fontSize={isMobile ? 24 : 42} fontWeight={700} color="#445964" mt={isMobile ? 2 : 4}>
+        Soft Skills
+      </Typography>
+      <Stack
+        direction={isMobile ? "column" : "row"}
+        spacing={isMobile ? 2 : 4}
+        flexWrap="wrap"
+        p={isMobile ? "0 20px" : "0 50px"}
+        justifyContent="center"
+      >
+        <SkillRating skill="Comunicação" rating={5} />
+        <SkillRating skill="Trabalho em equipe" rating={5} />
+        <SkillRating skill="Resolução de problemas" rating={5} />
+        <SkillRating skill="Empatia" rating={5} />
+        <SkillRating skill="Criatividade" rating={5} />
+      </Stack>
+    </Stack>
+  );
+};
+
+export default HardSkills;
