@@ -15,7 +15,7 @@ const HeaderMenu = ({ menuItems, scrollToSection }) => {
   return (
     <>
       <IconButton onClick={toggleDrawer}>
-        <MenuIcon sx={{ fontSize: "50px" }} />
+        <MenuIcon sx={{ fontSize: "50px" }}/>
       </IconButton>
       <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer}>
         <Box sx={{ width: 250 }}>
@@ -25,9 +25,9 @@ const HeaderMenu = ({ menuItems, scrollToSection }) => {
           <List>
             {menuItems.map((item, index) => (
               <ListItem button key={index} onClick={toggleDrawer}>
-                <ListItemText
-                  primary={item.label}
-                  onClick={() => scrollToSection(item.id)}
+                <ListItemText 
+                primary={item.label}
+                onClick={() => scrollToSection(item.id)}
                 />
               </ListItem>
             ))}
