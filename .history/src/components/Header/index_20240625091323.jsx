@@ -53,52 +53,19 @@ const Header = () => {
   return (
     <>
       {isMobile ? (
-        <Box sx={{
-          display: "flex",
-          alignItems: "center",
-          gap: 2
-        }}>
+        <Box sx={iconContainerStyles}>
           <HeaderMenu menuItems={menuItems} />
-          <Box sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-          }}>
-            <Box
-              component="img"
-              src={Logo}
-              alt="Logo"
-              sx={{ width: { xs: "40px", md: "auto" } }}
+          <Link href="https://github.com/lenx0">
+            <img
+              src={GithubIcon}
+              alt="Github Icon"
+              style={{ marginTop: "0.3rem" }}
             />
-            <Typography
-              sx={{
-                fontSize: { xs: 24, md: 36 },
-                color: "#445964",
-                fontWeight: 700,
-                ml: 2,
-              }}
-            >
-              Thiago Beraldo
-            </Typography>
-          </Box>
-          <Box sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "end",
-            gap: 2
-          }}>
-            <Link href="https://github.com/lenx0">
-              <img
-                src={GithubIcon}
-                alt="Github Icon"
-                style={{ marginTop: "0.3rem" }}
-              />
-            </Link>
-            <Link href="https://www.linkedin.com/in/thiagoberaldo06">
-              <img src={LinkedinIcon} alt="LinkedIn Icon" />
-            </Link>
-          </Box>
+          </Link>
+          <Link href="https://www.linkedin.com/in/thiagoberaldo06">
+            <img src={LinkedinIcon} alt="LinkedIn Icon" />
+          </Link>
+
         </Box>
       ) : (
         <Box component="header" sx={headerStyles}>

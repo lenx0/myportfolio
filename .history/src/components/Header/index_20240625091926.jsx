@@ -85,8 +85,7 @@ const Header = () => {
           <Box sx={{
             width: "100%",
             display: "flex",
-            justifyContent: "end",
-            gap: 2
+            justifyContent: "end"
           }}>
             <Link href="https://github.com/lenx0">
               <img

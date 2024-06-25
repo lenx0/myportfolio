@@ -56,15 +56,10 @@ const Header = () => {
         <Box sx={{
           display: "flex",
           alignItems: "center",
-          gap: 2
+          gap: 10
         }}>
           <HeaderMenu menuItems={menuItems} />
-          <Box sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-          }}>
+          <Box sx={logoContainerStyles}>
             <Box
               component="img"
               src={Logo}
@@ -85,8 +80,7 @@ const Header = () => {
           <Box sx={{
             width: "100%",
             display: "flex",
-            justifyContent: "end",
-            gap: 2
+            justifyContent: "end"
           }}>
             <Link href="https://github.com/lenx0">
               <img

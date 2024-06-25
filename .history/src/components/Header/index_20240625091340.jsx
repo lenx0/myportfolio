@@ -55,50 +55,31 @@ const Header = () => {
       {isMobile ? (
         <Box sx={{
           display: "flex",
+          justifyContent: "space-between",
           alignItems: "center",
-          gap: 2
+          width: "100%",
+          height: "100%",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          zIndex: 1000,
+          backgroundColor: "#ffffff",
+          boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.25)",
+          padding: "0.5rem 1rem",
+          borderBottom: "1px solid rgba(0, 0, 0, 0.25)",
         }}>
           <HeaderMenu menuItems={menuItems} />
-          <Box sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-          }}>
-            <Box
-              component="img"
-              src={Logo}
-              alt="Logo"
-              sx={{ width: { xs: "40px", md: "auto" } }}
+          <Link href="https://github.com/lenx0">
+            <img
+              src={GithubIcon}
+              alt="Github Icon"
+              style={{ marginTop: "0.3rem" }}
             />
-            <Typography
-              sx={{
-                fontSize: { xs: 24, md: 36 },
-                color: "#445964",
-                fontWeight: 700,
-                ml: 2,
-              }}
-            >
-              Thiago Beraldo
-            </Typography>
-          </Box>
-          <Box sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "end",
-            gap: 2
-          }}>
-            <Link href="https://github.com/lenx0">
-              <img
-                src={GithubIcon}
-                alt="Github Icon"
-                style={{ marginTop: "0.3rem" }}
-              />
-            </Link>
-            <Link href="https://www.linkedin.com/in/thiagoberaldo06">
-              <img src={LinkedinIcon} alt="LinkedIn Icon" />
-            </Link>
-          </Box>
+          </Link>
+          <Link href="https://www.linkedin.com/in/thiagoberaldo06">
+            <img src={LinkedinIcon} alt="LinkedIn Icon" />
+          </Link>
+
         </Box>
       ) : (
         <Box component="header" sx={headerStyles}>

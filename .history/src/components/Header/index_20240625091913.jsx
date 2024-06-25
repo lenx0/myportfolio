@@ -60,10 +60,8 @@ const Header = () => {
         }}>
           <HeaderMenu menuItems={menuItems} />
           <Box sx={{
-            width: "100%",
             display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
+            justifyContent: "center"
           }}>
             <Box
               component="img"
@@ -85,8 +83,7 @@ const Header = () => {
           <Box sx={{
             width: "100%",
             display: "flex",
-            justifyContent: "end",
-            gap: 2
+            justifyContent: "end"
           }}>
             <Link href="https://github.com/lenx0">
               <img

@@ -59,35 +59,7 @@ const Header = () => {
           gap: 2
         }}>
           <HeaderMenu menuItems={menuItems} />
-          <Box sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-          }}>
-            <Box
-              component="img"
-              src={Logo}
-              alt="Logo"
-              sx={{ width: { xs: "40px", md: "auto" } }}
-            />
-            <Typography
-              sx={{
-                fontSize: { xs: 24, md: 36 },
-                color: "#445964",
-                fontWeight: 700,
-                ml: 2,
-              }}
-            >
-              Thiago Beraldo
-            </Typography>
-          </Box>
-          <Box sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "end",
-            gap: 2
-          }}>
+          <Box>
             <Link href="https://github.com/lenx0">
               <img
                 src={GithubIcon}

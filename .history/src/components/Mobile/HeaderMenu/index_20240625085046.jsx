@@ -14,8 +14,8 @@ const HeaderMenu = ({ menuItems }) => {
 
   return (
     <>
-      <IconButton onClick={toggleDrawer} sx={{ mt: 2 }}>
-        <MenuIcon sx={{ fontSize: "50px" }}/>
+      <IconButton onClick={toggleDrawer} sx={{ ml: 2 }}>
+        <MenuIcon />
       </IconButton>
       <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer}>
         <Box sx={{ width: 250 }}>
@@ -23,9 +23,9 @@ const HeaderMenu = ({ menuItems }) => {
             <img src={Logo} alt="Logo" width={100} />
           </Box>
           <List>
-            {menuItems.map((item, index) => (
-              <ListItem button key={index} onClick={toggleDrawer}>
-                <ListItemText primary={item.label} />
+            {menuItems.map((item) => (
+              <ListItem button key={item} onClick={toggleDrawer}>
+                <ListItemText primary={item} />
               </ListItem>
             ))}
           </List>

@@ -9,9 +9,9 @@ const Home = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
 
   return (
-    <Grid mt={5} container direction={isMobile ? "column" : "row"} marginTop={isMobile ? 10 : 0} textAlign="center" alignItems="center" wrap="nowrap">
+    <Grid mt={5} container direction={isMobile ? "column" : "row"} alignItems="center" wrap="nowrap">
       <Grid item xs={12} md={6}>
-        <Typography variant="h3" sx={{ fontWeight: 700, color: "#445964", mb: 5 }}>
+        <Typography variant="h3" sx={{ textAlign:"center", fontWeight: 700, color: "#445964", mb: 5 }}>
           Desenvolvedor Front-End
         </Typography>
         <Typography variant="h6" sx={{ fontWeight: 700, color: "#445964", mb: 5 }}>

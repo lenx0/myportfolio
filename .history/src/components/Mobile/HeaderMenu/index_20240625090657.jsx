@@ -14,8 +14,10 @@ const HeaderMenu = ({ menuItems }) => {
 
   return (
     <>
-      <IconButton onClick={toggleDrawer} sx={{ mt: 2 }}>
-        <MenuIcon sx={{ fontSize: "50px" }}/>
+      <IconButton onClick={toggleDrawer}>
+        <MenuIcon sx={{
+          width: 200
+        }}/>
       </IconButton>
       <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer}>
         <Box sx={{ width: 250 }}>

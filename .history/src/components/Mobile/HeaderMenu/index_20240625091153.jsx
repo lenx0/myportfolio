@@ -14,9 +14,20 @@ const HeaderMenu = ({ menuItems }) => {
 
   return (
     <>
-      <IconButton onClick={toggleDrawer} sx={{ mt: 2 }}>
-        <MenuIcon sx={{ fontSize: "50px" }}/>
-      </IconButton>
+      <Box>
+
+        <IconButton onClick={toggleDrawer} sx={{ mt: 2 }}>
+          <MenuIcon sx={{ fontSize: "50px" }} />
+        </IconButton>
+        <Box display="flex" justifyContent="center" mt={3}>
+          <Box mr={2}>
+            <img src={Github} alt="Github" width={30} />
+          </Box>
+          <Box>
+            <img src={Linkedin} alt="Linkedin" width={30} />
+          </Box>
+        </Box>
+      </Box>
       <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer}>
         <Box sx={{ width: 250 }}>
           <Box display="flex" alignItems="center" justifyContent="center" mt={2}>
