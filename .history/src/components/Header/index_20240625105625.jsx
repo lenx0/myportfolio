@@ -58,6 +58,7 @@ const Header = () => {
           justifyContent: "center",
           alignItems: "center",
           gap: 2,
+          backgroundColor: "red"
         }}>
           <HeaderMenu menuItems={menuItems} />
           <Box sx={{

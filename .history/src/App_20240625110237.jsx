@@ -15,7 +15,7 @@ function App() {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   const mainContainerStyle = isMobile ? {
-    margin: "20px 30px 20px 20px",
+    margin: "20px 20px 20px 30px",
   } : {
     margin: "20px auto",
     padding: "0 10%",

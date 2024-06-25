@@ -45,7 +45,6 @@ const Header = () => {
   const iconContainerStyles = {
     display: "flex",
     gap: 2,
-    pl: 3,
     flex: 1,
     justifyContent: "flex-end",
   };
@@ -58,6 +57,7 @@ const Header = () => {
           justifyContent: "center",
           alignItems: "center",
           gap: 2,
+          backgroundColor: "red"
         }}>
           <HeaderMenu menuItems={menuItems} />
           <Box sx={{

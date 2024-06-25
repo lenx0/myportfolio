@@ -14,16 +14,10 @@ function App() {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
-  const mainContainerStyle = isMobile ? {
-    margin: "20px 30px 20px 20px",
-  } : {
-    margin: "20px auto",
-    padding: "0 10%",
-    maxWidth: "1600px",
-  };
-
   // const mainContainerStyle = {
-  // margin: "20px 30px 20px 30px",
+  //   margin: "20px auto",
+  //   padding: "0 10%",
+  //   maxWidth: "1600px",
   // };
 
   const hardSkillsContainerStyle = {
@@ -45,10 +39,8 @@ function App() {
 
   return (
     <React.Fragment>
-      <Box sx={mainContainerStyle}>
         <Header />
         <Home />
-      </Box>
       <Box display="flex" justifyContent="center">
         <Box sx={aboutContainerStyle}>
           <About />

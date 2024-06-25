@@ -56,8 +56,10 @@ const Header = () => {
         <Box sx={{
           display: "flex",
           justifyContent: "center",
+          alignContent: "center",
           alignItems: "center",
           gap: 2,
+          backgroundColor: "red"
         }}>
           <HeaderMenu menuItems={menuItems} />
           <Box sx={{
@@ -87,7 +89,6 @@ const Header = () => {
             width: "100%",
             display: "flex",
             justifyContent: "end",
-            gap: 2
           }}>
             <Link href="https://github.com/lenx0">
               <img

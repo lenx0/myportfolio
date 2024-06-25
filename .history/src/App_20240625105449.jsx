@@ -14,17 +14,11 @@ function App() {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
-  const mainContainerStyle = isMobile ? {
-    margin: "20px 30px 20px 20px",
-  } : {
-    margin: "20px auto",
-    padding: "0 10%",
+  const mainContainerStyle = {
+    margin: "20px 20px 20px 20px",
+    // padding: "0 10%",
     maxWidth: "1600px",
   };
-
-  // const mainContainerStyle = {
-  // margin: "20px 30px 20px 30px",
-  // };
 
   const hardSkillsContainerStyle = {
     display: "flex",

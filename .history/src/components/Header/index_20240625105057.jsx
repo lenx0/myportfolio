@@ -56,8 +56,11 @@ const Header = () => {
         <Box sx={{
           display: "flex",
           justifyContent: "center",
+          alignContent: "center",
           alignItems: "center",
           gap: 2,
+          mt: 5,
+          backgroundColor:"red"
         }}>
           <HeaderMenu menuItems={menuItems} />
           <Box sx={{
