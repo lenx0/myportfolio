@@ -3,30 +3,15 @@ import SkillRating from "./rating";
 import { useTheme } from "@emotion/react";
 
 const HardSkills = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.up('sm'))
 
   return (
-    <Stack
-      id="hardskills-section"
-      direction="row"
-      mt={isMobile ? 10 : 20}
-      mb={isMobile ? 10 : 20}
-      gap={isMobile ? 3 : 6}
-      textAlign="center"
-      flexWrap="wrap"
-      justifyContent="center"
-    >
-      <Typography fontSize={isMobile ? 24 : 40} fontWeight={700} color="#445964" mb={isMobile ? 2 : 4}>
+    <Stack id="hardskills-section" direction="row" mt={20} mb={20} gap={6} textAlign="center" flexWrap="wrap" justifyContent="center">
+      <Typography fontSize={isMobile ? 20 : 40} fontWeight={700} color="#445964">
         Hard Skills
       </Typography>
-      <Stack
-        direction="row"
-        spacing={isMobile ? 2 : 4}
-        flexWrap="wrap"
-        p={isMobile ? "0 20px" : "0 50px"}
-        justifyContent="center"
-      >
+      <Stack direction="row" spacing={4}  p="0 50px 0 50px" justifyContent="center">
         <SkillRating skill="React" rating={5} />
         <SkillRating skill="Javascript" rating={5} />
         <SkillRating skill="HTML" rating={5} />
@@ -45,16 +30,10 @@ const HardSkills = () => {
         <SkillRating skill="Oracle Database" rating={2} />
         <SkillRating skill="SQLite" rating={2} />
       </Stack>
-      <Typography fontSize={isMobile ? 24 : 40} fontWeight={700} color="#445964" mt={isMobile ? 2 : 4}>
+      <Typography fontSize={isMobile ? 20 : 40} fontWeight={700} color="#445964">
         Ferramentas - Serviços
       </Typography>
-      <Stack
-        direction="row"
-        spacing={isMobile ? 2 : 4}
-        flexWrap="wrap"
-        p={isMobile ? "0 20px" : "0 50px"}
-        justifyContent="center"
-      >
+      <Stack direction="row" spacing={4} flexWrap="wrap" p="0 50px 0 50px" justifyContent="center">
         <SkillRating skill="Git" rating={5} />
         <SkillRating skill="Github" rating={5} />
         <SkillRating skill="Asana" rating={5} />
@@ -64,16 +43,10 @@ const HardSkills = () => {
         <SkillRating skill="AWS S3" rating={4} />
         <SkillRating skill="MongoDB Atlas" rating={4} />
       </Stack>
-      <Typography width={isMobile ? "100%" : null} fontSize={isMobile ? 24 : 42} fontWeight={700} color="#445964" mt={isMobile ? 2 : 4}>
+      <Typography fontSize={isMobile ? 20 : 42} fontWeight={700} color="#445964">
         Soft Skills
       </Typography>
-      <Stack
-        direction={isMobile ? "column" : "row"}
-        spacing={isMobile ? 2 : 4}
-        flexWrap="wrap"
-        p={isMobile ? "0 20px" : "0 50px"}
-        justifyContent="center"
-      >
+      <Stack direction="row" spacing={4} flexWrap="wrap" p="0 50px 0 50px" justifyContent="center">
         <SkillRating skill="Comunicação" rating={5} />
         <SkillRating skill="Trabalho em equipe" rating={5} />
         <SkillRating skill="Resolução de problemas" rating={5} />
@@ -81,7 +54,8 @@ const HardSkills = () => {
         <SkillRating skill="Criatividade" rating={5} />
       </Stack>
     </Stack>
-  );
+  )
+
 };
 
 export default HardSkills;

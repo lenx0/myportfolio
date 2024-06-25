@@ -14,7 +14,6 @@ const HardSkills = () => {
       mb={isMobile ? 10 : 20}
       gap={isMobile ? 3 : 6}
       textAlign="center"
-      flexWrap="wrap"
       justifyContent="center"
     >
       <Typography fontSize={isMobile ? 24 : 40} fontWeight={700} color="#445964" mb={isMobile ? 2 : 4}>

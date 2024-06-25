@@ -11,6 +11,8 @@ const About = () => {
     setIsPortuguese(!isPortuguese);
   };
 
+  console.log("is mobile: ", isMobile)
+
   return (
     <Stack id="about-section" alignItems="center" spacing={5} mt={20}>
       <Box>

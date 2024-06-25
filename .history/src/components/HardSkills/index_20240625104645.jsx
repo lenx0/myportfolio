@@ -64,11 +64,11 @@ const HardSkills = () => {
         <SkillRating skill="AWS S3" rating={4} />
         <SkillRating skill="MongoDB Atlas" rating={4} />
       </Stack>
-      <Typography width={isMobile ? "100%" : null} fontSize={isMobile ? 24 : 42} fontWeight={700} color="#445964" mt={isMobile ? 2 : 4}>
+      <Typography fontSize={isMobile ? 35 : 42} fontWeight={700} color="#445964" mt={isMobile ? 2 : 4}>
         Soft Skills
       </Typography>
       <Stack
-        direction={isMobile ? "column" : "row"}
+        direction="column"
         spacing={isMobile ? 2 : 4}
         flexWrap="wrap"
         p={isMobile ? "0 20px" : "0 50px"}

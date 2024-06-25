@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, useMediaQuery } from "@mui/material";
+import { Box } from "@mui/material";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -8,11 +8,8 @@ import "./global.css";
 import Experience from "./components/Experiences";
 import Footer from "./components/Footer";
 import HardSkills from "./components/HardSkills";
-import { useTheme } from "@emotion/react";
 
 function App() {
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   const mainContainerStyle = {
     margin: "0 auto",
@@ -21,12 +18,7 @@ function App() {
   };
 
   const hardSkillsContainerStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: isMobile? "0" : "0 10%",
-    maxWidth: "1200px",
-    margin: "0 auto",
+
   };
 
   const aboutContainerStyle = {
