@@ -11,8 +11,6 @@ const About = () => {
     setIsPortuguese(!isPortuguese);
   };
 
-  console.log("is mobile: ", isMobile)
-
   return (
     <Stack id="about-section" alignItems="center" spacing={5} mt={20}>
       <Box>
@@ -22,7 +20,7 @@ const About = () => {
       </Box>
       <Stack>
         <Typography
-          fontSize={isMobile ? 33 : 48}
+          fontSize={isMobile ? 28 : 48}
           fontWeight={700}
           color="#445964"
         >

@@ -22,7 +22,7 @@ const About = () => {
       </Box>
       <Stack>
         <Typography
-          fontSize={isMobile ? 33 : 48}
+          fontSize={isMobile ? 28 : 48}
           fontWeight={700}
           color="#445964"
         >
