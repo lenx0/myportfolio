@@ -55,11 +55,9 @@ const Header = () => {
       {isMobile ? (
         <Box sx={{
           display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
           alignItems: "center",
           gap: 2,
-          mt: 5,
+          mt: 5
         }}>
           <HeaderMenu menuItems={menuItems} />
           <Box sx={{

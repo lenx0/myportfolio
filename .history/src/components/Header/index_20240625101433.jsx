@@ -55,11 +55,9 @@ const Header = () => {
       {isMobile ? (
         <Box sx={{
           display: "flex",
-          justifyContent: "center",
-          alignContent: "center",
           alignItems: "center",
           gap: 2,
-          mt: 5,
+          mt: 10
         }}>
           <HeaderMenu menuItems={menuItems} />
           <Box sx={{
@@ -76,7 +74,7 @@ const Header = () => {
             />
             <Typography
               sx={{
-                fontSize: { xs: 24, md: 32 },
+                fontSize: { xs: 24, md: 36 },
                 color: "#445964",
                 fontWeight: 700,
                 ml: 2,

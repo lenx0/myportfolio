@@ -60,6 +60,7 @@ const Header = () => {
           alignItems: "center",
           gap: 2,
           mt: 5,
+          backgroundColor: 'red'
         }}>
           <HeaderMenu menuItems={menuItems} />
           <Box sx={{

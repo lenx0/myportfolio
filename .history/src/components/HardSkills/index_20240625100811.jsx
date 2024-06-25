@@ -4,11 +4,11 @@ import { useTheme } from "@emotion/react";
 
 const HardSkills = () => {
   const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.up('sm'))
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <Stack id="hardskills-section" direction="row" mt={20} mb={20} gap={6} textAlign="center" flexWrap="wrap" justifyContent="center">
-      <Typography fontSize={isMobile ? 20 : 40} fontWeight={700} color="#445964">
+    <Stack id="hardskills-section" direction="row" gap={6} textAlign="center" flexWrap="wrap" justifyContent="center">
+      <Typography variant="h3" fontWeight={700} color="#445964">
         Hard Skills
       </Typography>
       <Stack direction="row" spacing={4} flexWrap="wrap" p="0 50px 0 50px" justifyContent="center">
@@ -30,7 +30,7 @@ const HardSkills = () => {
         <SkillRating skill="Oracle Database" rating={2} />
         <SkillRating skill="SQLite" rating={2} />
       </Stack>
-      <Typography fontSize={isMobile ? 20 : 40} fontWeight={700} color="#445964">
+      <Typography variant={isMobile ? "h7" : "h3"} fontWeight={700} color="#445964">
         Ferramentas - Serviços
       </Typography>
       <Stack direction="row" spacing={4} flexWrap="wrap" p="0 50px 0 50px" justifyContent="center">
@@ -43,7 +43,7 @@ const HardSkills = () => {
         <SkillRating skill="AWS S3" rating={4} />
         <SkillRating skill="MongoDB Atlas" rating={4} />
       </Stack>
-      <Typography fontSize={isMobile ? 20 : 42} fontWeight={700} color="#445964">
+      <Typography variant="h3" fontWeight={700} color="#445964">
         Soft Skills
       </Typography>
       <Stack direction="row" spacing={4} flexWrap="wrap" p="0 50px 0 50px" justifyContent="center">
