@@ -12,7 +12,7 @@ import { useTheme } from "@emotion/react";
 
 function App() {
   const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
 
   const mainContainerStyle = {
     margin: "0 auto",
@@ -31,11 +31,19 @@ function App() {
 
   const aboutContainerStyle = {
     display: "flex",
-    alignItems: "center",
-    flexDirection: "column",
-    maxWidth: "1200px",
-    margin: "0 20px 0 20px"
+    alignItems: "center"
   }
+
+  // <Box
+  //     sx={{
+  //       mt: 10,
+  //       mb: 20,
+  //       display: "flex",
+  //       width: 900,
+  //       flexDirection: "column",
+  //       alignItems: "center",
+  //     }}
+  //   >
 
   return (
     <React.Fragment>
@@ -43,10 +51,8 @@ function App() {
         <Header />
         <Home />
       </Box>
-      <Box display="flex" justifyContent="center">
-        <Box sx={aboutContainerStyle}>
-          <About />
-        </Box>
+      <Box sx={aboutContainerStyle}>
+        <About />
       </Box>
       <Box sx={hardSkillsContainerStyle}>
         <HardSkills />

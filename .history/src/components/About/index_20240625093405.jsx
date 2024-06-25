@@ -10,7 +10,16 @@ const About = () => {
   };
 
   return (
-    
+    <Box
+      sx={{
+        mt: 10,
+        mb: 20,
+        display: "flex",
+        width: 900,
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <Stack id="about-section" alignItems="center" spacing={5} mt={20}>
         <Box>
           <HexagonContainer>
@@ -91,6 +100,7 @@ const About = () => {
           {isPortuguese ? "Inglês" : "Português"}
         </Button>
       </Stack>
+    </Box>
   );
 };
 

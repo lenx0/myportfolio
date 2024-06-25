@@ -29,13 +29,29 @@ function App() {
     margin: "0 auto",
   };
 
+  // const aboutContainerStyle = {
+  //   display: "flex",
+  //   alignItems: "center",
+  //   m: "0 20px 0 20px" 
+  // }
+
   const aboutContainerStyle = {
     display: "flex",
     alignItems: "center",
     flexDirection: "column",
-    maxWidth: "1200px",
-    margin: "0 20px 0 20px"
+  
   }
+
+  // <Box
+  //     sx={{
+  //       mt: 10,
+  //       mb: 20,
+  //       display: "flex",
+  //       width: 900,
+  //       flexDirection: "column",
+  //       alignItems: "center",
+  //     }}
+  //   >
 
   return (
     <React.Fragment>
@@ -43,10 +59,8 @@ function App() {
         <Header />
         <Home />
       </Box>
-      <Box display="flex" justifyContent="center">
-        <Box sx={aboutContainerStyle}>
-          <About />
-        </Box>
+      <Box sx={aboutContainerStyle}>
+        <About />
       </Box>
       <Box sx={hardSkillsContainerStyle}>
         <HardSkills />

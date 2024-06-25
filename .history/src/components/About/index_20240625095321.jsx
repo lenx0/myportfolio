@@ -29,7 +29,7 @@ const About = () => {
         <Stack>
           <Typography
             variant="h6"
-            textAlign="center"
+            
 
             color="#445964"
           >

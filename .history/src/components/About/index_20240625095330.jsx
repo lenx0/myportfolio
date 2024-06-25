@@ -82,7 +82,7 @@ const About = () => {
           variant="contained"
           color="primary"
           sx={{
-            width: "20%",
+            
             backgroundColor: "#263138",
             borderRadius: 10,
             fontWeight: 700

@@ -11,7 +11,7 @@ const About = () => {
 
   return (
     
-      <Stack id="about-section" alignItems="center" spacing={5} mt={20}>
+      <Stack id="about-section" mt={20}>
         <Box>
           <HexagonContainer>
             <img src="/assets/images/profile.jpg" alt="Hexagon content" />
