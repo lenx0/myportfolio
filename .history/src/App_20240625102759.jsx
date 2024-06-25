@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -8,6 +8,7 @@ import "./global.css";
 import Experience from "./components/Experiences";
 import Footer from "./components/Footer";
 import HardSkills from "./components/HardSkills";
+import { useTheme } from "@emotion/react";
 
 function App() {
 
