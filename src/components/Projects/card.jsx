@@ -13,12 +13,20 @@ import ImageDialog from "./imageDialog";
 const CustomCard = ({ title, access, images, description, technologies }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [dialogOpen, setDialogOpen] = useState(false);
-
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex + 1 < images.length ? prevIndex + 1 : prevIndex
     );
   };
+
+  const truncateDescription = (description, maxLength) => {
+    if (description.length > maxLength) {
+      return description.substring(0, maxLength) + '...';
+    }
+    return description;
+  };
+
+  const truncatedDescription = truncateDescription(description, 120);
 
   const handlePrevImage = () => {
     setCurrentImageIndex((prevIndex) =>
@@ -73,7 +81,7 @@ const CustomCard = ({ title, access, images, description, technologies }) => {
             >
               {title}
             </Typography>
-            <Typography color="text.secondary">{description}</Typography>
+            <Typography color="text.secondary">{truncatedDescription}</Typography>
             <Typography mt={2} color="text.secondary">
               {technologies}
             </Typography>

@@ -4,6 +4,17 @@ import CustomCard from "./card";
 
 const projectsData = [
   {
+    title: "Client Manager",
+    images: generateImageArray("cmanager", 3),
+    access: "https://front-client-manager.vercel.app",
+    description:
+      `Este é um sistema para gerenciar cadastro de clientes, nele desenvolvi uma tabela onde são listados todos os clientes cadastrados, também temos um
+      formulário de cadastro com validação, funções para deletar ou editar clientes, notificação para visualização de atividades recentes como: novos clientes
+      cadastrados, deletados ou atualizados, também podemos buscar os clientes pelo nome e visualizar gráficos na página inicial de acordo com os dados atuais disponíveis no nosso banco de dados!`,
+    technologies:
+      "Tecnologias: React, Javascript, React-hook-form, HTML, CSS, Redux, Chart.js, Material-UI, Node, MongoDB",
+  },
+  {
     title: "Lenx Delivery",
     images: generateImageArray("delivery", 3),
     access: "https://front-lenxdelivery.vercel.app",
