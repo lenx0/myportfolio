@@ -86,7 +86,7 @@ const CustomCard = ({ title, access, images, description, technologies }) => {
               {technologies}
             </Typography>
           </Box>
-          <Link href={access} sx={{ textDecoration: "none" }}>
+          <Link href={access} target="_blank" sx={{ textDecoration: "none" }}>
             <Box>
               <Button
                 variant="contained"
