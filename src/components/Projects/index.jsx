@@ -4,6 +4,24 @@ import CustomCard from "./card";
 
 const projectsData = [
   {
+    title: "Barba Brutal",
+    images: generateImageArray("barba", 4),
+    access: "https://barba-brutal-frontend-phi.vercel.app",
+    description:
+      `Sistema de barbearia com imagens geradas por inteligência artificial, possibilidade de agendar o corte escolhendo o barbeiro com hora marcada.`,
+    technologies:
+      "Tecnologias: Turbo, Next, React, React Native, Javascript, Typescript, Tailwind, Prisma, Nest, Node, PostgreSQL",
+  },
+  {
+    title: "Prometheus IA",
+    images: generateImageArray("pro", 7),
+    access: "https://prometheus-jet-one.vercel.app",
+    description:
+      `Página com design moderno para oferecer serviços de inteligência artificial`,
+    technologies:
+      "Tecnologias: React, Javascript, Tailwind, HTML, CSS",
+  },
+  {
     title: "Client Manager",
     images: generateImageArray("cmanager", 3),
     access: "https://front-client-manager.vercel.app",
