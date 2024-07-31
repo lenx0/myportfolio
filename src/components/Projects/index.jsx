@@ -8,7 +8,7 @@ const projectsData = [
     images: generateImageArray("barba", 4),
     access: "https://barba-brutal-frontend-phi.vercel.app",
     description:
-      `Sistema de barbearia com imagens geradas por inteligência artificial, possibilidade de agendar o corte escolhendo o barbeiro com hora marcada.`,
+      `Sistema que ainda estou construindo de barbearia com imagens geradas por inteligência artificial, possibilidade de agendar o corte escolhendo o barbeiro com hora marcada.`,
     technologies:
       "Tecnologias: Turbo, Next, React, React Native, Javascript, Typescript, Tailwind, Prisma, Nest, Node, PostgreSQL",
   },
@@ -57,24 +57,24 @@ const projectsData = [
     technologies:
       "Tecnologias: React, Javascript, HTML, CSS",
   },
-  {
-    title: "Pokemon Knowledge",
-    images: generateImageArray("poke", 5),
-    access: "https://poke-wiki-front.vercel.app",
-    description:
-      "Neste site podemos visualizar todos os detalhes dos pokémon existentes consumindo a PokeAPI.",
-    technologies:
-      "Tecnologias: Next, React, Javascript, HTML, CSS, Material-UI",
-  },
-  {
-    title: "Business Manager",
-    images: generateImageArray("manager", 5),
-    access: "https://business-manager-liard.vercel.app",
-    description:
-      "Página desenvolvida para oferecer serviços de gerenciamento de negócios.",
-    technologies:
-      "Tecnologias: React, Vite, Javascript, HTML, CSS, Material-UI",
-  },
+  // {
+  //   title: "Pokemon Knowledge",
+  //   images: generateImageArray("poke", 5),
+  //   access: "https://poke-wiki-front.vercel.app",
+  //   description:
+  //     "Neste site podemos visualizar todos os detalhes dos pokémon existentes consumindo a PokeAPI.",
+  //   technologies:
+  //     "Tecnologias: Next, React, Javascript, HTML, CSS, Material-UI",
+  // },
+  // {
+  //   title: "Business Manager",
+  //   images: generateImageArray("manager", 5),
+  //   access: "https://business-manager-liard.vercel.app",
+  //   description:
+  //     "Página desenvolvida para oferecer serviços de gerenciamento de negócios.",
+  //   technologies:
+  //     "Tecnologias: React, Vite, Javascript, HTML, CSS, Material-UI",
+  // },
   {
     title: "Pokedex",
     images: generateImageArray("pokedex", 1),
