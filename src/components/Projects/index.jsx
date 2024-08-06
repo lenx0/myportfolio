@@ -47,16 +47,17 @@ const projectsData = [
     access: "https://curious-places.vercel.app",
     description: "Site sobre alguns dos locais mais curiosos do mundo.",
     technologies: "Tecnologias: React, Javascript, HTML, CSS",
-  },
-  {
-    title: "QRCode generator",
-    images: generateImageArray("qrcode", 1),
-    access: "https://qr-code-generator-phi-six.vercel.app",
-    description:
-      "Este é um gerador de QRCode simples e prático, adicionei também um histórico que salva automaticamente conforme você vai gerando seus códigos.",
-    technologies:
-      "Tecnologias: React, Javascript, HTML, CSS",
-  },
+  }
+
+  // {
+  //   title: "QRCode generator",
+  //   images: generateImageArray("qrcode", 1),
+  //   access: "https://qr-code-generator-phi-six.vercel.app",
+  //   description:
+  //     "Este é um gerador de QRCode simples e prático, adicionei também um histórico que salva automaticamente conforme você vai gerando seus códigos.",
+  //   technologies:
+  //     "Tecnologias: React, Javascript, HTML, CSS",
+  // },
   // {
   //   title: "Pokemon Knowledge",
   //   images: generateImageArray("poke", 5),
@@ -75,13 +76,13 @@ const projectsData = [
   //   technologies:
   //     "Tecnologias: React, Vite, Javascript, HTML, CSS, Material-UI",
   // },
-  {
-    title: "Pokedex",
-    images: generateImageArray("pokedex", 1),
-    access: "https://pokedex-mu-ten.vercel.app",
-    description: "Pokedex com sprites animadas",
-    technologies: "Tecnologias: Javascript, HTML, CSS",
-  },
+  // {
+  //   title: "Pokedex",
+  //   images: generateImageArray("pokedex", 1),
+  //   access: "https://pokedex-mu-ten.vercel.app",
+  //   description: "Pokedex com sprites animadas",
+  //   technologies: "Tecnologias: Javascript, HTML, CSS",
+  // },
 ];
 
 function generateImageArray(prefix, count) {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, IconButton, Drawer, List, ListItem, ListItemText } from "@mui/material";
+import { Box, IconButton, Drawer, List, ListItem, ListItemText, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "/assets/logos/logo.svg";
 import Github from "/assets/icons/Github.svg";
@@ -25,10 +25,20 @@ const HeaderMenu = ({ menuItems, scrollToSection }) => {
           <List>
             {menuItems.map((item, index) => (
               <ListItem button key={index} onClick={toggleDrawer}>
-                <ListItemText
+                {/* <ListItemText
                   primary={item.label}
                   onClick={() => scrollToSection(item.id)}
-                />
+                /> */}
+                <Typography onClick={() => scrollToSection(item.id)} sx={{
+                  cursor: "pointer",
+                  lineHeight: 1.6,
+                  letterSpacing: 1,
+                  px: 2,
+                  textDecoration: "none",
+                  color: "#445964"
+                }}>
+                  {item.label}
+                </Typography>
               </ListItem>
             ))}
           </List>

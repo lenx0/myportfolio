@@ -12,10 +12,10 @@ const About = () => {
   };
 
   return (
-    <Stack id="about-section" alignItems="center" spacing={5} mt={20}>
+    <Stack id="about-section" alignItems="center" spacing={5} mt={20} sx={{ border: '1px solid #e9e9e9', padding: 2 }}>
       <Box>
         <HexagonContainer>
-          <img src="/assets/images/profile.jpg" alt="Hexagon content" />
+          <img src="/assets/images/profile2.jpg" alt="Hexagon content" />
         </HexagonContainer>
       </Box>
       <Stack>
@@ -28,16 +28,21 @@ const About = () => {
         </Typography>
       </Stack>
       <Stack>
-        <Typography
-          variant="h6"
-          textAlign="center"
-          color="#445964"
-        >
+      <Typography
+      variant="body1"
+      fontSize={18}
+      lineHeight={1.6}
+      color="#445964"
+      letterSpacing="0.5px"
+      sx={{
+        textAlign: 'justify',
+        margin: '0 auto', // Center the text block
+        maxWidth: '800px', // Limit the maximum width for readability
+        padding: '20px' // Add padding for better spacing
+      }}
+    >
           {isPortuguese ? (
             <>
-              Olá, como vai?
-              <br />
-              <br />
               Sou um desenvolvedor de software capaz de desenvolver aplicações do início ao fim incluindo o
               deploy na nuvem. Sou um profissional dedicado, analítico e
               cuidadoso, gosto de pensar fora da caixa, criar coisas diferentes, explorar novos universos e participar de boas equipes para
@@ -54,12 +59,8 @@ const About = () => {
             </>
           ) : (
             <>
-              Hello, how are you?
-              <br />
-              <br />
               Hello, I'm a Front-end Developer focused on the most used
               framework in the world, React!
-              <br />
               <br />
               I'm capable of developing applications from start to finish
               including cloud deployment. I'm a persistent, analytical, and
@@ -84,7 +85,7 @@ const About = () => {
         sx={{
           width: "20%",
           backgroundColor: "#263138",
-          borderRadius: 10,
+          borderRadius: 2,
           fontWeight: 700
         }}
       >

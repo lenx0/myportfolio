@@ -11,10 +11,10 @@ const Home = () => {
   return (
     <Grid mt={5} container direction={isMobile ? "column" : "row"} marginTop={isMobile ? 10 : 0} textAlign="center" alignItems="center" wrap="nowrap">
       <Grid item xs={12} md={6}>
-        <Typography variant="h3" sx={{ fontWeight: 700, color: "#445964", mb: 5 }}>
+        <Typography variant="h2" sx={{ fontWeight: 700, lineHeight: 1.6, letterSpacing: 0.5, color: "#445964", mb: 5 }}>
           Desenvolvedor Front-End
         </Typography>
-        <Typography variant="h6" sx={{ fontWeight: 700, color: "#445964", mb: 5 }}>
+        <Typography variant="h6" sx={{ fontWeight: 700, lineHeight: 1.6, letterSpacing: 0.5, color: "#445964", mb: 5 }}>
           Seja bem-vindo(a) ao meu portfólio
         </Typography>
         <Button
@@ -22,10 +22,11 @@ const Home = () => {
           onClick={() => scrollToSection('about-section')}
           sx={{
             fontSize: 18,
+            fontWeight: 'bold',
             backgroundColor: "#263138",
             width: 310,
             height: 65,
-            borderRadius: 20,
+            borderRadius: 2,
             mb: 5,
           }}
         >
