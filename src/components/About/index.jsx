@@ -30,49 +30,38 @@ const About = () => {
       <Stack>
         <Typography
           variant="h6"
-          textAlign="center"
+          textAlign="justify"
+
           color="#445964"
         >
           {isPortuguese ? (
             <>
-              Olá, como vai?
+              Desenvolvedor Full Stack com experiência em desenvolvimento de sistemas web e mobile, utilizando tecnologias como
+              React, React Native, Node, MongoDB, postgreSQL, material-ui e alguns frameworks como NextJs, NestJs e Express.
               <br />
               <br />
-              Sou um desenvolvedor de software capaz de desenvolver aplicações do início ao fim incluindo o
-              deploy na nuvem. Sou um profissional dedicado, analítico e
-              cuidadoso, gosto de pensar fora da caixa, criar coisas diferentes, explorar novos universos e participar de boas equipes para
-              poder contribuir com novas ideias e é claro aprender.
+              Atualmente estou buscando novas oportunidades no mercado de desenvolvimento, tenho bastante experiência para desenvolver na stack que me proponho,
+              mas também posso adiquirir conhecimento rapidamente em tecnologias necessárias para resolver os problemas propostos pelo projeto.
               <br />
               <br />
-              Estou constantemente estudando diferentes tecnologias para não
-              ficar para trás nessa esteira infinita que percorremos quando
-              estamos no meio do desenvolvimento de software. Sou apaixonado
-              por tecnologia e gosto de compartilhar minhas experiências e
-              conhecimentos.
+              Possuo também experiência para realizar deploy de aplicações front-end e back-end tanto na AWS utilizando o EC2 ou Amplify, bem como também utilizando servidores como
+              Render.com, Railway, Vercel e Heroku.
               <br />
-              Possuo capacidade de atuar tanto no front-end como no back-end.
+              <br />
+              Devo citar que também tenho habilidades para desenvolver diagramas e design da UI para o front-end utilizando o figma.
             </>
           ) : (
             <>
-              Hello, how are you?
+              Full Stack Developer with experience in developing web and mobile systems using technologies such as React, React Native, Node, MongoDB, PostgreSQL, Material-UI, and frameworks like Next.js, NestJS, and Express.
               <br />
               <br />
-              Hello, I'm a Front-end Developer focused on the most used
-              framework in the world, React!
+              Currently, I am seeking new opportunities in the development market. I have substantial experience working with the stack I specialize in, but I can also quickly acquire knowledge in necessary technologies to address the challenges posed by the project.
               <br />
               <br />
-              I'm capable of developing applications from start to finish
-              including cloud deployment. I'm a persistent, analytical, and
-              careful professional; I like to think outside the box, work in
-              teams, and contribute with new ideas.
+              I also have experience deploying front-end and back-end applications on AWS using EC2 or Amplify, as well as on servers like Render.com, Railway, Vercel, and Heroku.
               <br />
               <br />
-              I'm constantly studying different technologies so as not to fall
-              behind on this infinite treadmill we're on when we're in the
-              midst of software development. I'm passionate about technology
-              and enjoy sharing my experiences and knowledge.
-              <br />I have the ability to work on both the front-end and
-              back-end.
+              In addition, I have skills in developing diagrams and UI designs using Figma.
             </>
           )}
         </Typography>
@@ -84,11 +73,11 @@ const About = () => {
         sx={{
           width: "20%",
           backgroundColor: "#263138",
-          borderRadius: 10,
+          borderRadius: 2,
           fontWeight: 700
         }}
       >
-        {isPortuguese ? "Inglês" : "Português"}
+        {isPortuguese ? "English" : "Portuguese"}
       </Button>
     </Stack>
   );

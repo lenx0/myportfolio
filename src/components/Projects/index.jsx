@@ -7,38 +7,38 @@ const projectsData = [
     images: generateImageArray("wr", 10),
     access: "https://wr-cafe-bar.vercel.app/",
     description:
-    `Site que reformulei para um barzinho da cidade de Maringá tanto a versão mobile como desktop, nas fotos você poderá como foi o resultado final, e como era o site antes!`,
+      `Site que reformulei para um barzinho da cidade de Maringá tanto a versão mobile como desktop, nas fotos você poderá como foi o resultado final, e como era o site antes!`,
     technologies:
-    "Tecnologias: React, Javascript, Material-UI, HTML, CSS",
+      "Tecnologias: React, Javascript, Material-UI, HTML, CSS",
   },
   {
     title: "Prometheus IA",
     images: generateImageArray("pro", 7),
     access: "https://prometheus-jet-one.vercel.app",
     description:
-    `Página com design moderno para oferecer serviços de inteligência artificial`,
+      `Página com design moderno para oferecer serviços de inteligência artificial`,
     technologies:
-    "Tecnologias: React, Javascript, Tailwind, HTML, CSS",
+      "Tecnologias: React, Javascript, Tailwind, HTML, CSS",
   },
   {
     title: "Client Manager",
     images: generateImageArray("cmanager", 3),
     access: "https://front-client-manager.vercel.app",
     description:
-    `Este é um sistema para gerenciar cadastro de clientes, nele desenvolvi uma tabela onde são listados todos os clientes cadastrados, também temos um
+      `Este é um sistema para gerenciar cadastro de clientes, nele desenvolvi uma tabela onde são listados todos os clientes cadastrados, também temos um
     formulário de cadastro com validação, funções para deletar ou editar clientes, notificação para visualização de atividades recentes como: novos clientes
     cadastrados, deletados ou atualizados, também podemos buscar os clientes pelo nome e visualizar gráficos na página inicial de acordo com os dados atuais disponíveis no nosso banco de dados!`,
     technologies:
-    "Tecnologias: React, Javascript, React-hook-form, HTML, CSS, Redux, Chart.js, Material-UI, Node, MongoDB",
+      "Tecnologias: React, Javascript, React-hook-form, HTML, CSS, Redux, Chart.js, Material-UI, Node, MongoDB",
   },
   {
     title: "Lenx Delivery",
     images: generateImageArray("delivery", 3),
     access: "https://front-lenxdelivery.vercel.app",
     description:
-    "Site de restaurante, com cardápio, pedidos e localização ao vivo.",
+      "Site de restaurante, com cardápio, pedidos e localização ao vivo.",
     technologies:
-    "Tecnologias: React, Javascript, HTML, CSS, Material-UI, Node, MongoDB, MapBox",
+      "Tecnologias: React, Javascript, HTML, CSS, Material-UI, Node, MongoDB, MapBox",
   },
   {
     title: "Curious Places",
@@ -47,7 +47,7 @@ const projectsData = [
     description: "Site sobre alguns dos locais mais curiosos do mundo.",
     technologies: "Tecnologias: React, Javascript, HTML, CSS",
   }
-  
+
   // {
   //   title: "Barba Brutal",
   //   images: generateImageArray("barba", 4),
@@ -58,19 +58,19 @@ const projectsData = [
   //     "Tecnologias: Turbo, Next, React, React Native, Javascript, Typescript, Tailwind, Prisma, Nest, Node, PostgreSQL",
   // },
   // {
-    //   title: "QRCode generator",
-    //   images: generateImageArray("qrcode", 1),
-    //   access: "https://qr-code-generator-phi-six.vercel.app",
-    //   description:
-    //     "Este é um gerador de QRCode simples e prático, adicionei também um histórico que salva automaticamente conforme você vai gerando seus códigos.",
-    //   technologies:
-    //     "Tecnologias: React, Javascript, HTML, CSS",
-    // },
-    // {
-      //   title: "Pokemon Knowledge",
-      //   images: generateImageArray("poke", 5),
-      //   access: "https://poke-wiki-front.vercel.app",
-      //   description:
+  //   title: "QRCode generator",
+  //   images: generateImageArray("qrcode", 1),
+  //   access: "https://qr-code-generator-phi-six.vercel.app",
+  //   description:
+  //     "Este é um gerador de QRCode simples e prático, adicionei também um histórico que salva automaticamente conforme você vai gerando seus códigos.",
+  //   technologies:
+  //     "Tecnologias: React, Javascript, HTML, CSS",
+  // },
+  // {
+  //   title: "Pokemon Knowledge",
+  //   images: generateImageArray("poke", 5),
+  //   access: "https://poke-wiki-front.vercel.app",
+  //   description:
   //     "Neste site podemos visualizar todos os detalhes dos pokémon existentes consumindo a PokeAPI.",
   //   technologies:
   //     "Tecnologias: Next, React, Javascript, HTML, CSS, Material-UI",

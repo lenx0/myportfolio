@@ -1,4 +1,3 @@
-import React from "react";
 import { Typography, Box, Link, useMediaQuery } from "@mui/material";
 import Logo from "/assets/logos/logo.svg";
 import GithubIcon from "/assets/icons/Github.svg";
@@ -89,14 +88,14 @@ const Header = () => {
             justifyContent: "end",
             gap: 2
           }}>
-            <Link href="https://github.com/lenx0">
+            <Link href="https://github.com/lenx0" target="_blank">
               <img
                 src={GithubIcon}
                 alt="Github Icon"
                 style={{ marginTop: "0.3rem" }}
               />
             </Link>
-            <Link href="https://www.linkedin.com/in/thiagoberaldo06">
+            <Link href="https://www.linkedin.com/in/thiagoberaldo06" target="_blank">
               <img src={LinkedinIcon} alt="LinkedIn Icon" />
             </Link>
           </Box>
@@ -133,14 +132,14 @@ const Header = () => {
             ))}
           </Box>
           <Box sx={iconContainerStyles}>
-            <Link href="https://github.com/lenx0">
+            <Link href="https://github.com/lenx0" target="_blank">
               <img
                 src={GithubIcon}
                 alt="Github Icon"
                 style={{ marginTop: "0.3rem" }}
               />
             </Link>
-            <Link href="https://www.linkedin.com/in/thiagoberaldo06">
+            <Link href="https://www.linkedin.com/in/thiagoberaldo06" target="_blank">
               <img src={LinkedinIcon} alt="LinkedIn Icon" />
             </Link>
           </Box>
