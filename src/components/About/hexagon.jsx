@@ -3,8 +3,8 @@ import { Box, styled } from "@mui/material";
 const HexagonContainer = styled(Box)(({ theme }) => ({
     // width: "100px",
     // height: "115.47px",
-    width: "200px",
-    height: "230.94px",
+    width: "400px",
+    height: "430.94px",
     // width: "300px",
     // height: "346.41px",
     position: "relative",

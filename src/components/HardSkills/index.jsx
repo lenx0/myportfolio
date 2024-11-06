@@ -10,8 +10,8 @@ const HardSkills = () => {
     <Stack
       id="hardskills-section"
       direction="row"
-      mt={isMobile ? 10 : 20}
-      mb={isMobile ? 10 : 20}
+      // mt={isMobile ? 10 : 20}
+      // mb={isMobile ? 10 : 20}
       gap={isMobile ? 3 : 6}
       textAlign="center"
       flexWrap="wrap"

@@ -12,7 +12,7 @@ const About = () => {
   };
 
   return (
-    <Stack id="about-section" alignItems="center" spacing={5} mt={20}>
+    <Stack id="about-section" alignItems="center" spacing={5} mt={5}>
       <Box>
         <HexagonContainer>
           <img src="/assets/images/profile.jpg" alt="Hexagon content" />
@@ -36,32 +36,24 @@ const About = () => {
         >
           {isPortuguese ? (
             <>
-              Desenvolvedor Full Stack com experiência em desenvolvimento de sistemas web e mobile, utilizando tecnologias como
-              React, React Native, Node, MongoDB, postgreSQL, material-ui e alguns frameworks como NextJs, NestJs e Express.
+              Olá, atuo na área de TI há pelo menos 10 anos, comecei a desenvolver software há 4 anos, trabalhando com HTML, CSS, JavaScript, React, Next.js, Node, MongoDB, PostgreSQL, e Material-UI.
               <br />
               <br />
-              Atualmente estou buscando novas oportunidades no mercado de desenvolvimento, tenho bastante experiência para desenvolver na stack que me proponho,
-              mas também posso adiquirir conhecimento rapidamente em tecnologias necessárias para resolver os problemas propostos pelo projeto.
+              Atualmente estou buscando novas oportunidades no mercado de desenvolvimento de software. Posso atuar em projetos web e mobile.
+              Possuo também habilidades para administrar infraestrutura de desenvolvimento, como utilização de containers e servidores como AWS, Vercel, Heroku, Render e Railway.
               <br />
               <br />
-              Possuo também experiência para realizar deploy de aplicações front-end e back-end tanto na AWS utilizando o EC2 ou Amplify, bem como também utilizando servidores como
-              Render.com, Railway, Vercel e Heroku.
-              <br />
-              <br />
-              Devo citar que também tenho habilidades para desenvolver diagramas e design da UI para o front-end utilizando o figma.
+              Se você conseguiu saber um pouco sobre minhas habilidades, projetos, e experiências, entre em contato comigo caso haja interesse.
             </>
           ) : (
             <>
-              Full Stack Developer with experience in developing web and mobile systems using technologies such as React, React Native, Node, MongoDB, PostgreSQL, Material-UI, and frameworks like Next.js, NestJS, and Express.
+              Hello, I've been working in the IT field for at least 10 years, and I started developing software 4 years ago, working with HTML, CSS, JavaScript, React, Next.js, Node, MongoDB, PostgreSQL, and Material-UI.
               <br />
               <br />
-              Currently, I am seeking new opportunities in the development market. I have substantial experience working with the stack I specialize in, but I can also quickly acquire knowledge in necessary technologies to address the challenges posed by the project.
+              Currently, I am looking for new opportunities in the software development market. I can work on both web and mobile projects. I also have skills in managing development infrastructure, such as using containers and servers like AWS, Vercel, Heroku, Render, and Railway.
               <br />
               <br />
-              I also have experience deploying front-end and back-end applications on AWS using EC2 or Amplify, as well as on servers like Render.com, Railway, Vercel, and Heroku.
-              <br />
-              <br />
-              In addition, I have skills in developing diagrams and UI designs using Figma.
+              If you've learned a bit about my skills, projects, and experiences, feel free to contact me if interested.
             </>
           )}
         </Typography>
