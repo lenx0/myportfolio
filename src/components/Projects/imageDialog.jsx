@@ -38,7 +38,7 @@ const ImageDialog = ({
           alt={title}
           sx={{ objectFit: "contain", mb: 2 }}
         />
-        <Typography variant="h5" component="div" sx={{ minHeight: 64 }}>
+        <Typography variant="h5" component="div" sx={{ fontWeight: "bold", minHeight: 64 }}>
           {title}
         </Typography>
         <Typography

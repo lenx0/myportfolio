@@ -25,81 +25,19 @@ const projectsData = [
     images: generateImageArray("slider-time", 1),
     access: "https://slider-timeline-pure-js.vercel.app",
     description:
-      `Slider com linha do tempo com dados fictícios, foi desenvolvido para ser utilizado em um site com wordpress`,
+      `Slider com linha do tempo com dados fictícios, foi desenvolvido para ser utilizado em um site wordpress`,
     technologies:
       "Javascript | HTML | CSS",
   },
-  // {
-  //   title: "Client Manager",
-  //   images: generateImageArray("cmanager", 3),
-  //   access: "https://front-client-manager.vercel.app",
-  //   description:
-  //     `Este é um sistema para gerenciar cadastro de clientes, nele desenvolvi uma tabela onde são listados todos os clientes cadastrados, também temos um
-  //   formulário de cadastro com validação, funções para deletar ou editar clientes, notificação para visualização de atividades recentes como: novos clientes
-  //   cadastrados, deletados ou atualizados, também podemos buscar os clientes pelo nome e visualizar gráficos na página inicial de acordo com os dados atuais disponíveis no nosso banco de dados!`,
-  //   technologies:
-  //     "Tecnologias: React, Javascript, React-hook-form, HTML, CSS, Redux, Chart.js, Material-UI, Node, MongoDB",
-  // },
-  // {
-  //   title: "Lenx Delivery",
-  //   images: generateImageArray("delivery", 3),
-  //   access: "https://front-lenxdelivery.vercel.app",
-  //   description:
-  //     "Site de restaurante, com cardápio, pedidos e localização ao vivo.",
-  //   technologies:
-  //     "Tecnologias: React, Javascript, HTML, CSS, Material-UI, Node, MongoDB, MapBox",
-  // },
-  // {
-  //   title: "Curious Places",
-  //   images: generateImageArray("curious", 1),
-  //   access: "https://curious-places.vercel.app",
-  //   description: "Site sobre alguns dos locais mais curiosos do mundo.",
-  //   technologies: "Tecnologias: React, Javascript, HTML, CSS",
-  // }
-
-  // {
-  //   title: "Barba Brutal",
-  //   images: generateImageArray("barba", 4),
-  //   access: "https://barba-brutal-frontend-phi.vercel.app",
-  //   description:
-  //     `Sistema que ainda estou construindo de barbearia com imagens geradas por inteligência artificial, possibilidade de agendar o corte escolhendo o barbeiro com hora marcada.`,
-  //   technologies:
-  //     "Tecnologias: Turbo, Next, React, React Native, Javascript, Typescript, Tailwind, Prisma, Nest, Node, PostgreSQL",
-  // },
-  // {
-  //   title: "QRCode generator",
-  //   images: generateImageArray("qrcode", 1),
-  //   access: "https://qr-code-generator-phi-six.vercel.app",
-  //   description:
-  //     "Este é um gerador de QRCode simples e prático, adicionei também um histórico que salva automaticamente conforme você vai gerando seus códigos.",
-  //   technologies:
-  //     "Tecnologias: React, Javascript, HTML, CSS",
-  // },
-  // {
-  //   title: "Pokemon Knowledge",
-  //   images: generateImageArray("poke", 5),
-  //   access: "https://poke-wiki-front.vercel.app",
-  //   description:
-  //     "Neste site podemos visualizar todos os detalhes dos pokémon existentes consumindo a PokeAPI.",
-  //   technologies:
-  //     "Tecnologias: Next, React, Javascript, HTML, CSS, Material-UI",
-  // },
-  // {
-  //   title: "Business Manager",
-  //   images: generateImageArray("manager", 5),
-  //   access: "https://business-manager-liard.vercel.app",
-  //   description:
-  //     "Página desenvolvida para oferecer serviços de gerenciamento de negócios.",
-  //   technologies:
-  //     "Tecnologias: React, Vite, Javascript, HTML, CSS, Material-UI",
-  // },
-  // {
-  //   title: "Pokedex",
-  //   images: generateImageArray("pokedex", 1),
-  //   access: "https://pokedex-mu-ten.vercel.app",
-  //   description: "Pokedex com sprites animadas",
-  //   technologies: "Tecnologias: Javascript, HTML, CSS",
-  // },
+  {
+    title: "Carrossel moderno com efeito de animação",
+    images: generateImageArray("carrossel", 1),
+    access: "https://carousel-pure-js.vercel.app",
+    description:
+      `Carrossel moderno com efeito de animação, foi desenvolvido para ser utilizado em um site wordpress`,
+    technologies:
+      "Javascript | HTML | CSS",
+  },
 ];
 
 function generateImageArray(prefix, count) {
