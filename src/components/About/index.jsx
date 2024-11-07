@@ -67,7 +67,7 @@ const About = () => {
           height: "50px",
           backgroundColor: "#263138",
           borderRadius: 2,
-          fontWeight: 700,
+          fontWeight: "bold",
           transition: "transform 0.5s ease, color 0.3s ease",
             '&:hover': {
               backgroundColor: "#5d176b",

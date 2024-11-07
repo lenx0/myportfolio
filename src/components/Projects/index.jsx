@@ -5,48 +5,57 @@ const projectsData = [
   {
     title: "WR Café Bar",
     images: generateImageArray("wr", 10),
-    access: "https://wr-cafe-bar.vercel.app/",
+    access: "https://wr-cafe-bar.vercel.app",
     description:
-      `Site que reformulei para um barzinho da cidade de Maringá tanto a versão mobile como desktop, nas fotos você poderá como foi o resultado final, e como era o site antes!`,
+      `Trabalho realizado para um estabelecimento da cidade de Maringá - PR`,
     technologies:
-      "Tecnologias: React, Javascript, Material-UI, HTML, CSS",
+      "React | Javascript | Material-UI",
   },
   {
     title: "Prometheus IA",
     images: generateImageArray("pro", 7),
     access: "https://prometheus-jet-one.vercel.app",
     description:
-      `Página com design moderno para oferecer serviços de inteligência artificial`,
+      `Website desenvolvido para uma empresa de Inteligência Artificial`,
     technologies:
-      "Tecnologias: React, Javascript, Tailwind, HTML, CSS",
+      "React | Javascript | Tailwind",
   },
   {
-    title: "Client Manager",
-    images: generateImageArray("cmanager", 3),
-    access: "https://front-client-manager.vercel.app",
+    title: "Slider com linha do tempo",
+    images: generateImageArray("slider-time", 1),
+    access: "https://slider-timeline-pure-js.vercel.app",
     description:
-      `Este é um sistema para gerenciar cadastro de clientes, nele desenvolvi uma tabela onde são listados todos os clientes cadastrados, também temos um
-    formulário de cadastro com validação, funções para deletar ou editar clientes, notificação para visualização de atividades recentes como: novos clientes
-    cadastrados, deletados ou atualizados, também podemos buscar os clientes pelo nome e visualizar gráficos na página inicial de acordo com os dados atuais disponíveis no nosso banco de dados!`,
+      `Slider com linha do tempo com dados fictícios, foi desenvolvido para ser utilizado em um site com wordpress`,
     technologies:
-      "Tecnologias: React, Javascript, React-hook-form, HTML, CSS, Redux, Chart.js, Material-UI, Node, MongoDB",
+      "Javascript | HTML | CSS",
   },
-  {
-    title: "Lenx Delivery",
-    images: generateImageArray("delivery", 3),
-    access: "https://front-lenxdelivery.vercel.app",
-    description:
-      "Site de restaurante, com cardápio, pedidos e localização ao vivo.",
-    technologies:
-      "Tecnologias: React, Javascript, HTML, CSS, Material-UI, Node, MongoDB, MapBox",
-  },
-  {
-    title: "Curious Places",
-    images: generateImageArray("curious", 1),
-    access: "https://curious-places.vercel.app",
-    description: "Site sobre alguns dos locais mais curiosos do mundo.",
-    technologies: "Tecnologias: React, Javascript, HTML, CSS",
-  }
+  // {
+  //   title: "Client Manager",
+  //   images: generateImageArray("cmanager", 3),
+  //   access: "https://front-client-manager.vercel.app",
+  //   description:
+  //     `Este é um sistema para gerenciar cadastro de clientes, nele desenvolvi uma tabela onde são listados todos os clientes cadastrados, também temos um
+  //   formulário de cadastro com validação, funções para deletar ou editar clientes, notificação para visualização de atividades recentes como: novos clientes
+  //   cadastrados, deletados ou atualizados, também podemos buscar os clientes pelo nome e visualizar gráficos na página inicial de acordo com os dados atuais disponíveis no nosso banco de dados!`,
+  //   technologies:
+  //     "Tecnologias: React, Javascript, React-hook-form, HTML, CSS, Redux, Chart.js, Material-UI, Node, MongoDB",
+  // },
+  // {
+  //   title: "Lenx Delivery",
+  //   images: generateImageArray("delivery", 3),
+  //   access: "https://front-lenxdelivery.vercel.app",
+  //   description:
+  //     "Site de restaurante, com cardápio, pedidos e localização ao vivo.",
+  //   technologies:
+  //     "Tecnologias: React, Javascript, HTML, CSS, Material-UI, Node, MongoDB, MapBox",
+  // },
+  // {
+  //   title: "Curious Places",
+  //   images: generateImageArray("curious", 1),
+  //   access: "https://curious-places.vercel.app",
+  //   description: "Site sobre alguns dos locais mais curiosos do mundo.",
+  //   technologies: "Tecnologias: React, Javascript, HTML, CSS",
+  // }
 
   // {
   //   title: "Barba Brutal",
@@ -104,7 +113,7 @@ function generateImageArray(prefix, count) {
 const Projects = () => {
   return (
     <Grid id="projects-section" container gap={2} m="160px 5px 20px 5px" justifyContent="center">
-      <Grid container justifyContent="center">
+      <Grid textAlign="center" container justifyContent="center" direction="column">
         <Grid item>
           <Typography
             variant="h3"
@@ -114,6 +123,13 @@ const Projects = () => {
           >
             Projetos
           </Typography>
+        </Grid>
+        <Grid item>
+          <Typography
+            variant="h7"
+            fontWeight={700}
+            color="#445964e6"
+          >Todos os projetos estão hospedados em servidores na nuvem</Typography>
         </Grid>
       </Grid>
       {projectsData.map((project, index) => (

@@ -9,6 +9,7 @@ import {
   Button,
 } from "@mui/material";
 import ImageDialog from "./imageDialog";
+import GradientTypography from "../common/GradientTypography";
 
 const CustomCard = ({ title, access, images, description, technologies }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -48,11 +49,12 @@ const CustomCard = ({ title, access, images, description, technologies }) => {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-        transition: "0.30s",
-        "&:hover": {
-          boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
-        },
+        borderRadius: '10px',
+        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.25)',
+        transition: "transform 0.5s ease",
+            '&:hover': {
+              transform: "scale(1.04)",
+            },
       }}
     >
       <Box sx={{ p: 2 }}>
@@ -68,7 +70,7 @@ const CustomCard = ({ title, access, images, description, technologies }) => {
             objectFit: "contain",
             transition: "0.30s",
             "&:hover": {
-              border: "1px solid #263138",
+              border: "1px solid #5d176b",
             },
           }}
         />
@@ -82,15 +84,21 @@ const CustomCard = ({ title, access, images, description, technologies }) => {
               {title}
             </Typography>
             <Typography color="text.secondary">{truncatedDescription}</Typography>
-            <Typography mt={2} color="text.secondary">
+            <GradientTypography mt={2} >
               {technologies}
-            </Typography>
+            </GradientTypography>
           </Box>
           <Link href={access} target="_blank" sx={{ textDecoration: "none" }}>
             <Box>
               <Button
                 variant="contained"
-                sx={{ width: "100%", backgroundColor: "#263138" }}
+                
+                sx={{ width: "100%", fontWeight: "bold", backgroundColor: "#263138",transition: "transform 0.5s ease, color 0.3s ease",
+                  '&:hover': {
+                    backgroundColor: "#5d176b",
+                    color: "#ffffff",
+                    transform: "scale(1.1)",
+                  }, }}
               >
                 Acessar
               </Button>
