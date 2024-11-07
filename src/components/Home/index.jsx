@@ -14,62 +14,34 @@ const Home = () => {
           variant="h3"
           sx={{
             fontWeight: 700,
-            color: "transparent",
             mb: 5,
-            backgroundImage: "linear-gradient(90deg, #445964, #5d176b)",
+            color: "#445964"
+          }}
+        >
+          DESENVOLVEDOR FULLSTACK
+        </Typography>
+
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: 700,
+            color: "#445964",
+            mb: 5,
+            backgroundImage: "linear-gradient(90deg, #263138, #5d176b, #b4e014, #1484e0, #e08e14)",
             backgroundSize: "200%",
             backgroundClip: "text",
             textFillColor: "transparent",
             animation: "gradientFlow 10s infinite linear",
             '@keyframes gradientFlow': {
-              "0%": { backgroundPosition: "0%" },
-              "30%": { backgroundPosition: "200%" },
+              "0%": { backgroundPosition: "0% 50%" },
+              "50%": { backgroundPosition: "100% 50%" },
+              "100%": { backgroundPosition: "0% 50%" }
             },
           }}
         >
-          DESENVOLVEDOR FULLSTACK
-        </Typography>
-
-        {/* <Typography
-          variant="h3"
-          sx={{
-            fontWeight: 700,
-            mb: 5,
-            position: "relative",
-            color: "#445964",
-            overflow: "hidden",
-            '&::before': {
-              content: '""',
-              position: "absolute",
-              top: 0,
-              left: "-100%",
-              width: "100%",
-              height: "100%",
-              background: "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent)",
-              animation: "shine 3s infinite",
-            },
-            '@keyframes shine': {
-              "0%": { left: "-100%" },
-              "100%": { left: "100%" },
-            },
-          }}
-        >
-          DESENVOLVEDOR FULLSTACK
-        </Typography> */}
-
-        <Typography variant="h6" sx={{
-          fontWeight: 700, color: "#445964", mb: 5, backgroundImage: "linear-gradient(90deg, #445964, #5d176b)",
-          backgroundSize: "200%",
-          backgroundClip: "text",
-          textFillColor: "transparent",
-          animation: "gradientFlow 10s infinite linear",
-          '@keyframes gradientFlow': {
-            "0%": { backgroundPosition: "0%" },
-            "30%": { backgroundPosition: "200%" },
-          },
-        }}>
           Next | React | React Native | Nest | Node | DevOps
         </Typography>
+
         <Button
           variant="contained"
           onClick={() => scrollToSection('about-section')}

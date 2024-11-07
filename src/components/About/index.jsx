@@ -64,9 +64,16 @@ const About = () => {
         color="primary"
         sx={{
           width: "20%",
+          height: "50px",
           backgroundColor: "#263138",
           borderRadius: 2,
-          fontWeight: 700
+          fontWeight: 700,
+          transition: "transform 0.5s ease, color 0.3s ease",
+            '&:hover': {
+              backgroundColor: "#5d176b",
+              color: "#ffffff",
+              transform: "scale(1.1)",
+            },
         }}
       >
         {isPortuguese ? "English" : "Portuguese"}

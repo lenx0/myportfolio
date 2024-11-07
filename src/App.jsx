@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Divider, useMediaQuery } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -45,7 +45,7 @@ function App() {
         <Home />
       </Box>
       <Box display="flex" justifyContent="center" my={25} width="100%">
-        <Box width="90%" height="2px" backgroundColor="#d8cccc84" />
+        <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
       </Box>
 
       <Box display="flex" justifyContent="center">

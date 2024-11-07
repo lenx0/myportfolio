@@ -25,15 +25,6 @@ const Header = () => {
     justifyContent: "space-between",
     mt: "20px",
     px: 2,
-    backgroundImage: "linear-gradient(90deg, #445964, #5d176b)",
-    backgroundSize: "200%",
-    backgroundClip: "text",
-    textFillColor: "transparent",
-    animation: "gradientFlow 10s infinite linear",
-    '@keyframes gradientFlow': {
-      "0%": { backgroundPosition: "0%" },
-      "30%": { backgroundPosition: "200%" },
-    },
   };
 
   const logoContainerStyles = {
@@ -140,10 +131,9 @@ const Header = () => {
                   px: 2,
                   transition: "transform 0.5s ease, color 0.3s ease",
                   '&:hover': {
-                    color: "#5d176b",
                     transform: "scale(1.5)",
                   },
-                  backgroundImage: "linear-gradient(90deg, #445964, #5d176b)",
+                  backgroundImage: "linear-gradient(90deg, #445964, #445964)",
                   backgroundSize: "200%",
                   backgroundClip: "text",
                   textFillColor: "transparent",
