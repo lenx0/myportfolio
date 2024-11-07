@@ -133,15 +133,6 @@ const Header = () => {
                   '&:hover': {
                     transform: "scale(1.5)",
                   },
-                  backgroundImage: "linear-gradient(90deg, #445964, #445964)",
-                  backgroundSize: "200%",
-                  backgroundClip: "text",
-                  textFillColor: "transparent",
-                  animation: "gradientFlow 10s infinite linear",
-                  '@keyframes gradientFlow': {
-                    "0%": { backgroundPosition: "0%" },
-                    "30%": { backgroundPosition: "200%" },
-                  },
                 }}
                 onClick={() => scrollToSection(item.id)}
               >
