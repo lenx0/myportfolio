@@ -12,7 +12,7 @@ const skillsData = {
 const HardSkills = () => {
 
   return (
-    <Box sx={{ maxWidth: "90%", margin: "0 auto", mt: 4, mb: 4 }}>
+    <Box id="hardskills-section" sx={{ maxWidth: "90%", margin: "0 auto", mt: 4, mb: 4 }}>
       <Typography variant="h4" align="center" gutterBottom color="#445964" sx={{ fontWeight: "bold", mb: 3 }}>
         Habilidades
       </Typography>

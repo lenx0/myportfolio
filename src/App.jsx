@@ -55,7 +55,7 @@ function App() {
       </Box>
 
       <Box display="flex" justifyContent="center" my={25} width="100%">
-        <Box width="90%" height="2px" backgroundColor="#d8cccc84" />
+        <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
       </Box>
 
       <Box sx={hardSkillsContainerStyle}>
@@ -63,7 +63,7 @@ function App() {
       </Box>
 
       <Box display="flex" justifyContent="center" my={25} width="100%">
-        <Box width="90%" height="2px" backgroundColor="#d8cccc84" />
+        <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
       </Box>
 
       <Box sx={mainContainerStyle}>
@@ -71,7 +71,7 @@ function App() {
       </Box>
 
       <Box display="flex" justifyContent="center" my={25} width="100%">
-        <Box width="90%" height="2px" backgroundColor="#d8cccc84" />
+        <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
       </Box>
 
       <Box sx={mainContainerStyle}>

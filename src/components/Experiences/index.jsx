@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Typography, Paper, Grid } from "@mui/material";
 
 const Experience = () => {
@@ -15,10 +14,10 @@ const Experience = () => {
       title: "Desenvolvedor Front-end júnior",
       company: "AG.labs",
       date: "07.2022 - 04-2024",
-      resume: `Atuei em um projeto desenvolvendo o front-end para um ERP da TOTSV da fase inicial ao lançamento, sistema este que hoje é utilizado pelos 
-        representantes e clientes da empresa Alto Giro. 
-        O projeto foi desenvolvimento pensando na praticidade, e velocidade para realizar vendas. 
-        Na Black Friday de 2023 a empresa conseguiu transacionar mais de 15 mil pedidos, 
+      resume: `Atuei em um projeto desenvolvendo o front-end para um ERP da TOTSV da fase inicial ao lançamento, sistema este que hoje é utilizado pelos
+        representantes e clientes da empresa Alto Giro.
+        O projeto foi desenvolvimento pensando na praticidade, e velocidade para realizar vendas.
+        Na Black Friday de 2023 a empresa conseguiu transacionar mais de 15 mil pedidos,
         alcançando um valor surpreendente de mais de 13 milhões.`,
     },
   ];
