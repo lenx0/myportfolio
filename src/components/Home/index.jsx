@@ -5,14 +5,16 @@ import { useTheme } from "@emotion/react";
 
 const Home = () => {
   const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  const isTablet = useMediaQuery(theme.breakpoints.down('lg'))
 
   return (
-    <Grid mt={5} container direction={isMobile ? "column" : "row"} marginTop={isMobile ? 10 : 0} textAlign="center" alignItems="center" wrap="nowrap">
+    <Grid mt={5} container direction={isTablet ? "column" : "row"} marginTop={isTablet ? 10 : 0} textAlign="center" alignItems="center" wrap="nowrap">
       <Grid item xs={12} md={6}>
         <Typography
-          variant="h3"
+          // variant={!isMobile ? "h3" : "h4"}
           sx={{
+            fontSize:!isMobile? 50 : 40,
             fontWeight: 700,
             mb: 5,
             color: "#445964"
@@ -22,8 +24,8 @@ const Home = () => {
         </Typography>
 
         <Typography
-          variant="h6"
           sx={{
+            fontSize: !isMobile ? 20 : 13,
             fontWeight: 700,
             color: "#445964",
             mb: 5,
@@ -46,11 +48,11 @@ const Home = () => {
           variant="contained"
           onClick={() => scrollToSection('about-section')}
           sx={{
-            fontSize: 18,
+            fontSize: !isMobile ? 18 : 13,
             backgroundColor: "#263138",
             fontWeight: 'bold',
-            width: 310,
-            height: 65,
+            width: !isMobile ? 310 : 210,
+            height: !isMobile ? 65 : 35,
             borderRadius: 2,
             mb: 5,
             transition: "transform 0.5s ease, color 0.3s ease",
