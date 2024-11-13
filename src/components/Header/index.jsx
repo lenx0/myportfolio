@@ -59,14 +59,14 @@ const Header = () => {
   return (
     <>
       {isMobile ? (
-        <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 2 }}>
+        <Box sx={{ display: "flex", margin: "5px 20px 0 5px", justifyContent: "center", alignItems: "center", gap: 2 }}>
           <HeaderMenu menuItems={menuItems} scrollToSection={scrollToSection} />
-          <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+          {/* <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Box component="img" src={Logo} alt="Logo" sx={{ width: { xs: "40px", md: "auto" } }} />
             <Typography sx={{ fontSize: { xs: 24, md: 32 }, color: "#445964", fontWeight: 700, ml: 2 }}>
               Thiago Beraldo
             </Typography>
-          </Box>
+          </Box> */}
           <Box sx={{ width: "100%", display: "flex", justifyContent: "end", gap: 2 }}>
             <Link href="https://github.com/lenx0" target="_blank">
               <img src={GithubIcon} alt="Github Icon" style={{ marginTop: "0.3rem" }} />
