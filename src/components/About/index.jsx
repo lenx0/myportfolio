@@ -43,7 +43,7 @@ const About = () => {
               Olá, atuo na área de TI há pelo menos 10 anos, comecei a desenvolver software há 4 anos, trabalhando com HTML, CSS, JavaScript, React, Next.js, Node, MongoDB, PostgreSQL, e Material-UI.
               <br />
               <br />
-              Atualmente estou buscando novas oportunidades no mercado de desenvolvimento de software. Posso atuar em projetos web ou mobile (front e back) ou mobile.
+              Atualmente estou buscando novas oportunidades no mercado de desenvolvimento de software. Posso atuar em projetos web ou mobile.
               Possuo também habilidades para administrar infraestrutura de desenvolvimento, como utilização de containers e servidores como AWS, Vercel, Heroku, Render e Railway.
               <br />
               <br />
