@@ -40,10 +40,8 @@ function App() {
 
   return (
     <React.Fragment>
-      <Box sx={mainContainerStyle}>
         <Header />
         <Home />
-      </Box>
       <Box display="flex" justifyContent="center" my={25} width="100%">
         <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
       </Box>
@@ -58,25 +56,19 @@ function App() {
         <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
       </Box>
 
-      <Box sx={hardSkillsContainerStyle}>
         <HardSkills />
-      </Box>
 
       <Box display="flex" justifyContent="center" my={25} width="100%">
         <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
       </Box>
 
-      <Box sx={mainContainerStyle}>
         <Projects />
-      </Box>
 
       <Box display="flex" justifyContent="center" my={25} width="100%">
         <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
       </Box>
 
-      <Box sx={mainContainerStyle}>
         <Experience />
-      </Box>
 
       <Footer />
     </React.Fragment>
