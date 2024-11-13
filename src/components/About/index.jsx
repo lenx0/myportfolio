@@ -1,41 +1,90 @@
 import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material";
 import Square from "./Square";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTheme } from "@emotion/react";
 
 const About = () => {
   const [isPortuguese, setIsPortuguese] = useState(true);
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  
+  // Referências e estado para controlar a visibilidade das seções
+  const sectionsRefs = useRef([]);
+  const [visibleSections, setVisibleSections] = useState(new Set());
+
+  useEffect(() => {
+    const observerOptions = { threshold: 0.1 };
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setVisibleSections((prev) => new Set([...prev, entry.target]));
+        } else {
+          setVisibleSections((prev) => {
+            const newSet = new Set(prev);
+            newSet.delete(entry.target);
+            return newSet;
+          });
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    sectionsRefs.current.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
+  const addToRefs = (el) => {
+    if (el && !sectionsRefs.current.includes(el)) {
+      sectionsRefs.current.push(el);
+    }
+  };
+
   const handleClick = () => {
     setIsPortuguese(!isPortuguese);
   };
 
   return (
     <Stack id="about-section" alignItems="center" spacing={5} mt={5}>
-      <Box backgroundColor="blue">
+      <Box
+        ref={addToRefs}
+        backgroundColor="blue"
+        sx={{
+          opacity: visibleSections.has(sectionsRefs.current[0]) ? 1 : 0,
+          transform: visibleSections.has(sectionsRefs.current[0]) ? "translateY(0)" : "translateY(20px)",
+          transition: "opacity 0.8s ease, transform 0.8s ease",
+        }}
+      >
         <Square>
           <img src="/assets/images/profile.jpg" alt="Hexagon content" />
         </Square>
       </Box>
-      <Stack>
+      <Stack ref={addToRefs}>
         <Typography
           fontSize={isMobile ? 25 : 48}
           fontWeight={700}
           color="#445964"
+          sx={{
+            opacity: visibleSections.has(sectionsRefs.current[1]) ? 1 : 0,
+            transform: visibleSections.has(sectionsRefs.current[1]) ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.8s ease, transform 0.8s ease",
+          }}
         >
           Thiago de Freitas Beraldo
         </Typography>
       </Stack>
-      <Stack maxWidth="90%">
+      <Stack ref={addToRefs} maxWidth="90%">
         <Typography
           variant="h6"
           color="#445964"
           textAlign="justify"
           sx={{
-            letterSpacing: '0.05em', // Ajuste sutil entre letras
-            wordSpacing: '0.1em', // Ajuste para evitar grandes espaços entre palavras
-            lineHeight: 1.6, // Aumenta a altura da linha para melhorar a legibilidade
+            letterSpacing: '0.05em',
+            wordSpacing: '0.1em',
+            lineHeight: 1.6,
+            opacity: visibleSections.has(sectionsRefs.current[2]) ? 1 : 0,
+            transform: visibleSections.has(sectionsRefs.current[2]) ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.8s ease, transform 0.8s ease",
           }}
         >
           {isPortuguese ? (
@@ -66,6 +115,7 @@ const About = () => {
         onClick={handleClick}
         variant="contained"
         color="primary"
+        ref={addToRefs}
         sx={{
           width: !isMobile ? "20%" : "80%",
           height: !isMobile ? "50px" : "45px",
@@ -73,6 +123,8 @@ const About = () => {
           borderRadius: 2,
           fontWeight: "bold",
           transition: "transform 0.5s ease, color 0.3s ease",
+          opacity: visibleSections.has(sectionsRefs.current[3]) ? 1 : 0,
+          transform: visibleSections.has(sectionsRefs.current[3]) ? "translateY(0)" : "translateY(20px)",
           '&:hover': {
             backgroundColor: "#5d176b",
             color: "#ffffff",
