@@ -25,9 +25,10 @@ const Home = () => {
 
         <Typography
           sx={{
-            fontSize: !isMobile ? 20 : 13,
+            fontSize: !isMobile ? 20 : 17,
             fontWeight: 700,
             color: "#445964",
+            margin: !isMobile? 0 : 5,
             mb: 5,
             backgroundImage: "linear-gradient(90deg, #263138, #5d176b, #b4e014, #1484e0, #e08e14)",
             backgroundSize: "200%",
@@ -51,8 +52,8 @@ const Home = () => {
             fontSize: !isMobile ? 18 : 13,
             backgroundColor: "#263138",
             fontWeight: 'bold',
-            width: !isMobile ? 310 : 210,
-            height: !isMobile ? 65 : 35,
+            width: !isMobile ? 310 : 230,
+            height: !isMobile ? 65 : 55,
             borderRadius: 2,
             mb: 5,
             transition: "transform 0.5s ease, color 0.3s ease",
