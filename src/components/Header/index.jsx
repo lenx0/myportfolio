@@ -24,7 +24,7 @@ const Header = () => {
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/assets/archives/c_thiago.pdf';
+    link.href = '/assets/archives/thiago-frontend.pdf';
     link.download = 'curriculo-thiago.pdf';
     document.body.appendChild(link);
     link.click();
@@ -34,10 +34,10 @@ const Header = () => {
 
   const handleView = () => {
     if (isMobile) {
-      window.open('/assets/archives/c_thiago.pdf', '_blank');
+      window.open('/assets/archives/thiago-frontend.pdf', '_blank');
     } else {
       const link = document.createElement('a');
-      link.href = '/assets/archives/c_thiago.pdf';
+      link.href = '/assets/archives/thiago-frontend.pdf';
       link.target = '_blank';
       document.body.appendChild(link);
       link.click();

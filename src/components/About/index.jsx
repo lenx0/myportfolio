@@ -33,9 +33,9 @@ const About = () => {
           color="#445964"
           textAlign="justify"
           sx={{
-            letterSpacing: '0.05em', // Ajuste sutil entre letras
-            wordSpacing: '0.1em', // Ajuste para evitar grandes espaços entre palavras
-            lineHeight: 1.6, // Aumenta a altura da linha para melhorar a legibilidade
+            letterSpacing: '0.05em',
+            wordSpacing: '0.1em',
+            lineHeight: 1.6,
           }}
         >
           {isPortuguese ? (
