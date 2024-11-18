@@ -20,7 +20,7 @@ const Home = () => {
             color: "#445964"
           }}
         >
-          DESENVOLVEDOR FULLSTACK
+          DESENVOLVEDOR FRONT-END
         </Typography>
 
         <Typography
