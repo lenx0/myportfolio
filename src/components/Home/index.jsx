@@ -20,7 +20,7 @@ const Home = () => {
             color: "#445964"
           }}
         >
-          DESENVOLVEDOR FRONT-END
+          ENGENHEIRO DE SOFTWARE
         </Typography>
 
         <Typography
@@ -42,7 +42,7 @@ const Home = () => {
             },
           }}
         >
-          Next | React | React Native | Nest | Node | DevOps
+          Javascript | React | NodeJs | Amazon Web Services | Docker
         </Typography>
 
         <Button

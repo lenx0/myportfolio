@@ -40,24 +40,23 @@ const About = () => {
         >
           {isPortuguese ? (
             <p>
-              Olá, atuo na área de TI há pelo menos 10 anos, comecei a desenvolver software há 4 anos, trabalhando com HTML, CSS, JavaScript, React, Next.js, Node, MongoDB, PostgreSQL, e Material-UI.
+              Engenheiro de Software com experiência no desenvolvimento de aplicações escaláveis e de alta performance.
               <br />
               <br />
-              Atualmente estou buscando novas oportunidades no mercado de desenvolvimento de software. Posso atuar em projetos web ou mobile.
-              Possuo também habilidades para administrar infraestrutura de desenvolvimento, como utilização de containers e servidores como AWS, Vercel, Heroku, Render e Railway.
+              Experiência prática com serviços da AWS, incluindo deploy, monitoramento e escalabilidade de aplicações em nuvem, além de atuação com containers utilizando Docker para padronização e otimização de ambientes. Conhecimento em bancos de dados relacionais e não relacionais.
               <br />
               <br />
-              Se você quer saber um pouco mais sobre minhas habilidades, projetos, ou experiências, fique à vontade para entrar em contato.
+              Atuo na construção de sistemas robustos, desde a concepção da arquitetura até a entrega em produção, garantindo qualidade, segurança e eficiência. Possuo experiência em análise de desempenho, identificação de gargalos e implementação de melhorias contínuas para garantir sistemas rápidos e estáveis, mesmo sob alta carga.
             </p>
           ) : (
             <p>
-              Hello, I've been working in the IT field for at least 10 years, and I started developing software 4 years ago, working with HTML, CSS, JavaScript, React, Next.js, Node, MongoDB, PostgreSQL, and Material-UI.
+              Software Engineer with experience in developing scalable and high-performance applications.
               <br />
               <br />
-              Currently, I am looking for new opportunities in the software development market. I can work on both web and mobile projects. I also have skills in managing development infrastructure, such as using containers and servers like AWS, Vercel, Heroku, Render, and Railway.
+              Hands-on experience with AWS services, including deployment, monitoring, and cloud application scalability, as well as working with Docker containers for environment standardization and optimization. Proficient in both relational and non-relational databases.
               <br />
               <br />
-              If you've learned a bit about my skills, projects, and experiences, feel free to contact me if interested.
+              I work on building robust systems, from architecture design to production delivery, ensuring quality, security, and efficiency. I have experience in performance analysis, bottleneck identification, and implementing continuous improvements to keep systems fast and stable even under high load.
             </p>
           )}
         </Typography>

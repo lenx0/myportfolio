@@ -4,9 +4,10 @@ import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 const skillsData = {
   Linguagens: ["JavaScript", "Java", "Python", "SQL"],
   Frameworks: ["React", "Next.js", "Nest.js", "Express"],
-  BancoDeDados: ["MySQL", "MongoDB", "PostgreSQL", "SQLite"],
+  BancoDeDados: ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "SQL Server"],
   Estilização: ["CSS", "Material-UI", "Styled-Components", "Tailwind"],
-  Profissionalismo: ["Comunicação", "Trabalho em equipe", "Resolução de problemas", "Entrega no prazo"]
+  DevOPs: ["AWS", "Docker", "Git", "CI/CD"],
+  Profissionalismo: ["Comunicação", "Trabalho em equipe", "Resolução de problemas", "Gerenciamento de tempo"]
 };
 
 const HardSkills = () => {
