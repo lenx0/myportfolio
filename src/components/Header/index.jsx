@@ -24,7 +24,7 @@ const Header = () => {
 
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/assets/archives/thiago-frontend.pdf';
+    link.href = '/assets/archives/curriculo-thiago.pdf';
     link.download = 'curriculo-thiago.pdf';
     document.body.appendChild(link);
     link.click();
@@ -34,10 +34,10 @@ const Header = () => {
 
   const handleView = () => {
     if (isMobile) {
-      window.open('/assets/archives/thiago-frontend.pdf', '_blank');
+      window.open('/assets/archives/curriculo-thiago.pdf', '_blank');
     } else {
       const link = document.createElement('a');
-      link.href = '/assets/archives/thiago-frontend.pdf';
+      link.href = '/assets/archives/curriculo-thiago.pdf';
       link.target = '_blank';
       document.body.appendChild(link);
       link.click();
@@ -53,44 +53,73 @@ const Header = () => {
     { label: "Experiências", id: "experience-section" },
     { label: "Habilidades", id: "hardskills-section" },
     { label: "Contato", id: "contact-section" },
-    { label: "Curriculo", id: "curriculum-section" },
+    { label: "Currículo", id: "curriculum-section" },
   ];
+
+  const navLinkStyles = {
+    cursor: "pointer",
+    fontWeight: 600,
+    px: 1.5,
+    py: 0.75,
+    borderRadius: 1.5,
+    fontSize: 14,
+    color: "#445964",
+    userSelect: "none",
+    transition: "all 0.2s ease",
+    '&:hover': {
+      color: "#5d176b",
+      backgroundColor: "rgba(93, 23, 107, 0.07)",
+    },
+  };
 
   return (
     <>
       {isMobile ? (
-        <Box sx={{ display: "flex", margin: "5px 20px 0 5px", justifyContent: "center", alignItems: "center", gap: 2 }}>
+        <Box sx={{ display: "flex", px: 2, py: 1.5, justifyContent: "space-between", alignItems: "center" }}>
           <HeaderMenu menuItems={menuItems} scrollToSection={scrollToSection} />
-          {/* <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
-            <Box component="img" src={Logo} alt="Logo" sx={{ width: { xs: "40px", md: "auto" } }} />
-            <Typography sx={{ fontSize: { xs: 24, md: 32 }, color: "#445964", fontWeight: 700, ml: 2 }}>
-              Thiago Beraldo
-            </Typography>
-          </Box> */}
-          <Box sx={{ width: "100%", display: "flex", justifyContent: "end", gap: 2 }}>
-            <Link href="https://github.com/lenx0" target="_blank">
-              <img src={GithubIcon} alt="Github Icon" style={{ marginTop: "0.3rem" }} />
+          <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+            <Link href="https://github.com/lenx0" target="_blank" sx={{ display: "flex" }}>
+              <img src={GithubIcon} alt="Github Icon" style={{ width: 26, height: 26 }} />
             </Link>
-            <Link href="https://www.linkedin.com/in/thiagoberaldo06" target="_blank">
-              <img src={LinkedinIcon} alt="LinkedIn Icon" />
+            <Link href="https://www.linkedin.com/in/thiagoberaldo06" target="_blank" sx={{ display: "flex" }}>
+              <img src={LinkedinIcon} alt="LinkedIn Icon" style={{ width: 26, height: 26 }} />
             </Link>
           </Box>
         </Box>
       ) : (
-        <Box component="header" sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mt: "20px", px: 2, margin: "20px 20px 0 20px" }}>
-          <Box sx={{ display: "flex", alignItems: "center", flex: 1 }}>
-            <Box component="img" src={Logo} alt="Logo" sx={{ width: { xs: "40px", md: "auto" } }} />
-            <Typography sx={{ fontSize: { xs: 24, md: 36 }, color: "#445964", fontWeight: 700, ml: 2 }}>
+        <Box
+          component="nav"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            px: { md: 4, lg: 6 },
+            py: 1.5,
+            maxWidth: "1400px",
+            margin: "0 auto",
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1.5, flex: 1 }}>
+            <Box component="img" src={Logo} alt="Logo" sx={{ width: 36, height: 36 }} />
+            <Typography sx={{ fontSize: 20, color: "#263138", fontWeight: 700, letterSpacing: "-0.01em" }}>
               Thiago Beraldo
             </Typography>
           </Box>
 
-          <Box sx={{ display: { xs: "none", md: "flex" }, gap: "24px", color: "#445964", flex: 2, justifyContent: "center" }}>
+          <Box sx={{ display: "flex", gap: 0.5, flex: 2, justifyContent: "center", alignItems: "center" }}>
             {menuItems.map((item) => (
-              item.label === "Curriculo" ? (
+              item.label === "Currículo" ? (
                 <Typography
                   key={item.label}
-                  sx={{ cursor: "pointer", fontWeight: 700, px: 2, transition: "transform 0.5s ease, color 0.3s ease", '&:hover': { transform: "scale(1.5)" } }}
+                  sx={{
+                    ...navLinkStyles,
+                    border: "1.5px solid #263138",
+                    color: "#263138",
+                    '&:hover': {
+                      backgroundColor: "#263138",
+                      color: "#ffffff",
+                    },
+                  }}
                   onClick={handleClick}
                 >
                   {item.label}
@@ -98,7 +127,7 @@ const Header = () => {
               ) : (
                 <Typography
                   key={item.label}
-                  sx={{ cursor: "pointer", fontWeight: 700, px: 2, transition: "transform 0.5s ease, color 0.3s ease", '&:hover': { transform: "scale(1.5)" } }}
+                  sx={navLinkStyles}
                   onClick={() => scrollToSection(item.id)}
                 >
                   {item.label}
@@ -106,24 +135,30 @@ const Header = () => {
               )
             ))}
 
-            <Menu anchorEl={anchorEl} open={open} onClose={handleClose} anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}>
-              <MenuItem onClick={handleView} style={{ cursor: "pointer", fontWeight: 700, color: "#445964" }}>
-                <VisibilityIcon sx={{ mr: 1 }} />
+            <Menu
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+              transformOrigin={{ vertical: 'top', horizontal: 'center' }}
+            >
+              <MenuItem onClick={handleView} style={{ cursor: "pointer", fontWeight: 600, color: "#445964" }}>
+                <VisibilityIcon sx={{ mr: 1, fontSize: 18 }} />
                 Visualizar Currículo
               </MenuItem>
-              <MenuItem onClick={handleDownload} style={{ cursor: "pointer", fontWeight: 700, color: "#445964" }}>
-                <DownloadIcon sx={{ mr: 1 }} />
+              <MenuItem onClick={handleDownload} style={{ cursor: "pointer", fontWeight: 600, color: "#445964" }}>
+                <DownloadIcon sx={{ mr: 1, fontSize: 18 }} />
                 Baixar Currículo
               </MenuItem>
             </Menu>
           </Box>
 
-          <Box sx={{ display: "flex", gap: 2, pl: 3, flex: 1, justifyContent: "flex-end" }}>
-            <Link href="https://github.com/lenx0" target="_blank" sx={{ transition: "transform 0.5s ease, color 0.3s ease", '&:hover': { color: "#5d176b", transform: "scale(1.5)" } }}>
-              <img src={GithubIcon} alt="Github Icon" style={{ marginTop: "0.3rem" }} />
+          <Box sx={{ display: "flex", gap: 2, flex: 1, justifyContent: "flex-end", alignItems: "center" }}>
+            <Link href="https://github.com/lenx0" target="_blank" sx={{ display: "flex", transition: "transform 0.2s ease", '&:hover': { transform: "scale(1.2)" } }}>
+              <img src={GithubIcon} alt="Github Icon" style={{ width: 26, height: 26 }} />
             </Link>
-            <Link href="https://www.linkedin.com/in/thiagoberaldo06" target="_blank" sx={{ transition: "transform 0.5s ease, color 0.3s ease", '&:hover': { color: "#5d176b", transform: "scale(1.5)" } }}>
-              <img src={LinkedinIcon} alt="LinkedIn Icon" />
+            <Link href="https://www.linkedin.com/in/thiagoberaldo06" target="_blank" sx={{ display: "flex", transition: "transform 0.2s ease", '&:hover': { transform: "scale(1.2)" } }}>
+              <img src={LinkedinIcon} alt="LinkedIn Icon" style={{ width: 26, height: 26 }} />
             </Link>
           </Box>
         </Box>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, useMediaQuery } from "@mui/material";
+import { Box } from "@mui/material";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -8,67 +8,47 @@ import "./global.css";
 import Experience from "./components/Experiences";
 import Footer from "./components/Footer";
 import HardSkills from "./components/HardSkills";
-import { useTheme } from "@emotion/react";
+
+const SectionDivider = () => (
+  <Box display="flex" justifyContent="center" my={8} width="100%">
+    <Box
+      width="80%"
+      height="1px"
+      borderRadius={10}
+      sx={{ background: "linear-gradient(90deg, transparent, rgba(68,89,100,0.25), transparent)" }}
+    />
+  </Box>
+);
 
 function App() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const mainContainerStyle = isMobile ? {
-    margin: "20px 30px 20px 20px",
-  } : {
-    margin: "20px auto",
-    padding: "0 10%",
-    maxWidth: "1600px",
-  };
-
-  const hardSkillsContainerStyle = {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: isMobile ? "0" : "0 10%",
-    maxWidth: "1200px",
-    margin: "0 auto",
-  };
-
-  const aboutContainerStyle = {
-    display: "flex",
-    alignItems: "center",
-    flexDirection: "column",
-    maxWidth: "1200px",
-  };
-
   return (
     <React.Fragment>
+      <Box
+        component="div"
+        sx={{
+          position: "sticky",
+          top: 0,
+          zIndex: 1100,
+          backgroundColor: "rgba(250, 250, 250, 0.92)",
+          backdropFilter: "blur(10px)",
+          borderBottom: "1px solid rgba(68, 89, 100, 0.12)",
+          boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
+        }}
+      >
         <Header />
+      </Box>
+
+      <Box sx={{ maxWidth: "1400px", margin: "0 auto", px: { xs: 3, sm: 5, md: 8 } }}>
         <Home />
-      <Box display="flex" justifyContent="center" my={25} width="100%">
-        <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
-      </Box>
-
-      <Box display="flex" justifyContent="center">
-        <Box sx={aboutContainerStyle}>
-          <About />
-        </Box>
-      </Box>
-
-      <Box display="flex" justifyContent="center" my={25} width="100%">
-        <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
-      </Box>
-
+        <SectionDivider />
+        <About />
+        <SectionDivider />
         <HardSkills />
-
-      <Box display="flex" justifyContent="center" my={25} width="100%">
-        <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
-      </Box>
-
+        <SectionDivider />
         <Projects />
-
-      <Box display="flex" justifyContent="center" my={25} width="100%">
-        <Box width="90%" height="10px" borderRadius={10} backgroundColor="#d8cccc84" />
-      </Box>
-
+        <SectionDivider />
         <Experience />
+      </Box>
 
       <Footer />
     </React.Fragment>

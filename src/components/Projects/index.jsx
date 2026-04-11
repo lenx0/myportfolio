@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import CustomCard from "./card";
 
 const projectsData = [
@@ -50,38 +50,30 @@ function generateImageArray(prefix, count) {
 
 const Projects = () => {
   return (
-    <Grid id="projects-section" container gap={2} m="160px 5px 20px 5px" justifyContent="center">
-      <Grid textAlign="center" container justifyContent="center" direction="column">
-        <Grid item>
-          <Typography
-            variant="h3"
-            mb={5}
-            fontWeight={700}
-            color="#445964"
-          >
-            Projetos
-          </Typography>
+    <Box id="projects-section" sx={{ py: { xs: 4, md: 6 } }}>
+      <Box textAlign="center" mb={5}>
+        <Typography variant="h4" fontWeight={800} color="#263138" gutterBottom>
+          Projetos
+        </Typography>
+        <Box width={60} height={4} sx={{ background: "linear-gradient(90deg, #5d176b, #1484e0)", mx: "auto" }} borderRadius={2} mb={2} />
+        <Typography fontWeight={600} color="#445964" fontSize={15}>
+          Todos os projetos estão hospedados em servidores na nuvem
+        </Typography>
+      </Box>
+      <Grid container spacing={3} justifyContent="center">
+        {projectsData.map((project, index) => (
+          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+            <CustomCard
+              title={project.title}
+              access={project.access}
+              images={project.images}
+              description={project.description}
+              technologies={project.technologies}
+            />
         </Grid>
-        <Grid item>
-          <Typography
-            variant="h7"
-            fontWeight={700}
-            color="#445964e6"
-          >Todos os projetos estão hospedados em servidores na nuvem</Typography>
-        </Grid>
+        ))}
       </Grid>
-      {projectsData.map((project, index) => (
-        <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-          <CustomCard
-            title={project.title}
-            access={project.access}
-            images={project.images}
-            description={project.description}
-            technologies={project.technologies}
-          />
-        </Grid>
-      ))}
-    </Grid>
+    </Box>
   );
 };
 

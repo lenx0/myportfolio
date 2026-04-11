@@ -2,29 +2,38 @@ import { useTheme } from "@emotion/react";
 import { Box, useMediaQuery } from "@mui/material";
 
 const Square = () => {
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-  return (
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const size = isMobile ? 200 : 260;
 
+  return (
     <Box
       sx={{
-        width: !isMobile ? "400px" : "250px",
-        height: !isMobile ? "400px" : "250px",
-        position: "relative",
-        border: "5px solid #263138",
-        overflow: "hidden",
-        borderRadius: "8px",
-
-        "& img": {
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-        },
+        width: size + 6,
+        height: size + 6,
+        borderRadius: "50%",
+        background: "linear-gradient(135deg, #5d176b, #1484e0, #263138)",
+        padding: "3px",
+        flexShrink: 0,
       }}
     >
-      <img src="/assets/images/profile.jpg" alt="Hexagon content" />
+      <Box
+        sx={{
+          width: "100%",
+          height: "100%",
+          borderRadius: "50%",
+          overflow: "hidden",
+          "& img": {
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          },
+        }}
+      >
+        <img src="/assets/images/profile.jpg" alt="Thiago Beraldo" />
+      </Box>
     </Box>
-  )
-}
+  );
+};
 
 export default Square;
