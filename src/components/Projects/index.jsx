@@ -3,6 +3,15 @@ import CustomCard from "./card";
 
 const projectsData = [
   {
+    title: "PokeWorld",
+    images: generateImageArray("poke", 5),
+    access: "https://pokeworld-ochre.vercel.app/",
+    description:
+      `A enciclopédia definitiva do mundo Pokémon, com informações completas sobre pokémons, habilidades e muito mais`,
+    technologies:
+      "React 18 | TypeScript | Tailwind | Framer Motion",
+  },
+  {
     title: "WR Café Bar",
     images: generateImageArray("wr", 10),
     access: "https://wr-cafe-bar.vercel.app",
