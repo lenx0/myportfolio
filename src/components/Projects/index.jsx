@@ -3,6 +3,15 @@ import CustomCard from "./card";
 
 const projectsData = [
   {
+    title: "Eixo Zero Ferragens e Ferramentas",
+    images: generateImageArray("eixo", 1),
+    access: "https://eixozero.vercel.app/",
+    description:
+      `Site institucional para loja de ferragens e ferramentas, com localização via Google Maps e contato direto pelo WhatsApp`,
+    technologies:
+      "React 18 | Javascript | Google Maps | WhatsApp API | CSS",
+  },
+  {
     title: "PokeWorld",
     images: generateImageArray("poke", 5),
     access: "https://pokeworld-ochre.vercel.app/",
