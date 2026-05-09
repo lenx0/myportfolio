@@ -1,9 +1,21 @@
 import { Box, Button, Chip, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 import HomeArt from "/assets/images/Art1.svg";
 import scrollToSection from "../Utility/scroll";
 import { useTheme } from "@emotion/react";
 
 const techStack = ["JavaScript", "React", "Node.js", "AWS", "Docker", "PostgreSQL"];
+
+const highlights = [
+  "⚡ APIs escaláveis e de alta performance",
+  "🎨 Interfaces modernas com React e TypeScript",
+  "☁️ Infraestrutura em nuvem com AWS e Docker",
+  "🗄️ Domínio em bancos relacionais e NoSQL",
+  "🐳 Pipelines de CI/CD e boas práticas DevOps",
+  "🤝 Foco em entrega de valor real ao negócio",
+];
 
 const Home = () => {
   const theme = useTheme();
@@ -67,7 +79,7 @@ const Home = () => {
           flexWrap="wrap"
           gap={1}
           justifyContent={isTablet ? "center" : "flex-start"}
-          mb={4}
+          mb={3}
         >
           {techStack.map((tech) => (
             <Chip
@@ -89,6 +101,68 @@ const Home = () => {
             />
           ))}
         </Stack>
+
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1.5,
+            px: 2,
+            py: 1,
+            mb: 3,
+            borderRadius: 99,
+            background: "linear-gradient(135deg, rgba(93,23,107,0.08), rgba(20,132,224,0.08))",
+            border: "1px solid rgba(93,23,107,0.25)",
+            maxWidth: { xs: "100%", md: 460 },
+            mx: isTablet ? "auto" : 0,
+            overflow: "hidden",
+          }}
+        >
+          <Box
+            sx={{
+              width: 8,
+              height: 8,
+              flexShrink: 0,
+              borderRadius: "50%",
+              background: "linear-gradient(135deg, #5d176b, #1484e0)",
+              "@keyframes pulse": {
+                "0%, 100%": { transform: "scale(1)", opacity: 1 },
+                "50%": { transform: "scale(1.5)", opacity: 0.5 },
+              },
+              animation: "pulse 1.5s ease-in-out infinite",
+            }}
+          />
+          <Box sx={{ flex: 1, overflow: "hidden", height: "28px" }}>
+            <Swiper
+              direction="vertical"
+              modules={[Autoplay]}
+              autoplay={{ delay: 2200, disableOnInteraction: false }}
+              loop
+              speed={500}
+              style={{ height: "28px" }}
+            >
+              {highlights.map((text, i) => (
+                <SwiperSlide key={i} style={{ display: "flex", alignItems: "center" }}>
+                  <Typography
+                    sx={{
+                      fontWeight: 700,
+                      fontSize: 13,
+                      background: "linear-gradient(135deg, #5d176b, #1484e0)",
+                      backgroundClip: "text",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {text}
+                  </Typography>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </Box>
+        </Box>
 
         <Button
           variant="contained"

@@ -58,7 +58,7 @@ const CustomCard = ({ title, access, images, description, technologies }) => {
         },
       }}
     >
-      <Box sx={{ p: 2 }}>
+      <Box sx={{ p: 2, display: "flex", flexDirection: "column", flexGrow: 1 }}>
         <CardMedia
           component="img"
           width="100%"
@@ -71,14 +71,14 @@ const CustomCard = ({ title, access, images, description, technologies }) => {
             objectFit: "contain",
           }}
         />
-        <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
+        <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", px: 0 }}>
           <Typography
             variant="h5"
             component="div"
             sx={{  
               fontWeight: 700, 
               color: "#445964", 
-              minHeight: "4rem",
+              height: "4.5rem",
               display: "flex", 
               alignItems: "center", 
               textAlign: "center",
@@ -91,27 +91,29 @@ const CustomCard = ({ title, access, images, description, technologies }) => {
           <Typography
             color="text.secondary"
             sx={{
-              minHeight: "6rem",
+              height: "6rem",
               marginBottom: 2,
               display: "flex",
               alignItems: "center",
-              textAlign: "center"
+              textAlign: "center",
+              overflow: "hidden",
             }}
           >
             {truncatedDescription}
           </Typography>
           
-          <GradientTypography sx={{ minHeight: "2rem", textAlign: "center" }}>
+          <GradientTypography sx={{ height: "3rem", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center" }}>
             {technologies}
           </GradientTypography>
           
-          <Box sx={{ mt: "auto" }}>
+          <Box sx={{ mt: "auto", pt: 2 }}>
             <Link href={access} target="_blank" sx={{ textDecoration: "none" }}>
               <Button
                 variant="contained"
                 sx={{ 
                   width: "100%", 
                   fontWeight: "bold", 
+                  height: "40px",
                   backgroundColor: "#263138",
                   transition: "transform 0.5s ease, color 0.3s ease",
                   '&:hover': {

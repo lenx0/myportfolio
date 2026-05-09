@@ -1,4 +1,8 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { useRef } from "react";
+import { Box, Typography } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Autoplay } from "swiper/modules";
+import "swiper/css";
 import CustomCard from "./card";
 
 const projectsData = [
@@ -67,6 +71,8 @@ function generateImageArray(prefix, count) {
 }
 
 const Projects = () => {
+  const swiperRef = useRef(null);
+
   return (
     <Box id="projects-section" sx={{ py: { xs: 4, md: 6 } }}>
       <Box textAlign="center" mb={5}>
@@ -78,19 +84,40 @@ const Projects = () => {
           Todos os projetos estão hospedados em servidores na nuvem
         </Typography>
       </Box>
-      <Grid container spacing={3} justifyContent="center">
-        {projectsData.map((project, index) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-            <CustomCard
-              title={project.title}
-              access={project.access}
-              images={project.images}
-              description={project.description}
-              technologies={project.technologies}
-            />
-        </Grid>
-        ))}
-      </Grid>
+      <Box
+        sx={{
+          overflow: "hidden",
+          "& .swiper-wrapper": { alignItems: "stretch" },
+          "& .swiper-slide": { height: "auto" },
+        }}
+        onMouseEnter={() => swiperRef.current?.autoplay?.stop()}
+        onMouseLeave={() => swiperRef.current?.autoplay?.start()}
+      >
+        <Swiper
+          modules={[FreeMode, Autoplay]}
+          freeMode={{ enabled: true, momentum: false }}
+          autoplay={{ delay: 0, disableOnInteraction: false }}
+          speed={4000}
+          loop
+          slidesPerView="auto"
+          spaceBetween={24}
+          onSwiper={(swiper) => { swiperRef.current = swiper; }}
+        >
+          {projectsData.map((project, index) => (
+            <SwiperSlide key={index} style={{ width: "300px", height: "auto", display: "flex" }}>
+              <Box sx={{ width: "100%", display: "flex" }}>
+                <CustomCard
+                  title={project.title}
+                  access={project.access}
+                  images={project.images}
+                  description={project.description}
+                  technologies={project.technologies}
+                />
+              </Box>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Box>
     </Box>
   );
 };
