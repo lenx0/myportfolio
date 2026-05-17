@@ -102,7 +102,7 @@ const CustomCard = ({ title, access, images, description, technologies }) => {
             {truncatedDescription}
           </Typography>
           
-          <GradientTypography sx={{ height: "3rem", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <GradientTypography sx={{ height: "4.5rem", textAlign: "center", display: "flex", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
             {technologies}
           </GradientTypography>
           
