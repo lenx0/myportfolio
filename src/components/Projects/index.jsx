@@ -11,6 +11,15 @@ import CustomCard from "./card";
 
 const projectsData = [
   {
+    title: "Nebula Finance",
+    images: generateImageArray("nebula", 1),
+    access: "https://nebula-finance.vercel.app/",
+    description:
+      `Dashboard financeiro moderno com visualização de dados em tempo real, gráficos interativos e gestão de investimentos`,
+    technologies:
+      "React 18 | Tailwind | Framer Motion | Recharts | Zustand | React Query | Intl API",
+  },
+  {
     title: "PrimeHaus Imobiliária",
     images: generateImageArray("primehaus", 1),
     access: "https://primehaus-imobiliaria.vercel.app/",
