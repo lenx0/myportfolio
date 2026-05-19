@@ -1,203 +1,383 @@
-import { Box, Button, Chip, Grid, Stack, Typography, useMediaQuery } from "@mui/material";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
-import "swiper/css";
-import HomeArt from "/assets/images/Art1.svg";
+import { Box, Typography, Button, Container } from "@mui/material";
+import { motion } from "framer-motion";
+import { ArrowDownward, GitHub, LinkedIn, Mail } from "@mui/icons-material";
+import { useEffect, useState } from "react";
 import scrollToSection from "../Utility/scroll";
-import { useTheme } from "@emotion/react";
 
-const techStack = ["JavaScript", "React", "Node.js", "AWS", "Docker", "PostgreSQL"];
+const roles = [
+  "Engenheiro de Software",
+  "Desenvolvedor Fullstack",
+  "Apaixonado por Desenvolvimento",
+];
 
-const highlights = [
-  "⚡ APIs escaláveis e de alta performance",
-  "🎨 Interfaces modernas com React e TypeScript",
-  "☁️ Infraestrutura em nuvem com AWS e Docker",
-  "🗄️ Domínio em bancos relacionais e NoSQL",
-  "🐳 Pipelines de CI/CD e boas práticas DevOps",
-  "🤝 Foco em entrega de valor real ao negócio",
+const techBadges = [
+  "React", "TypeScript", "Node.js", "AWS", "Docker", "PostgreSQL", "Next.js",
 ];
 
 const Home = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.down('lg'));
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayed, setDisplayed] = useState("");
+  const [deleting, setDeleting] = useState(false);
+
+  // Typewriter effect
+  useEffect(() => {
+    const full = roles[roleIndex];
+    const speed = deleting ? 45 : 85;
+    const t = setTimeout(() => {
+      if (!deleting) {
+        const next = full.slice(0, displayed.length + 1);
+        setDisplayed(next);
+        if (next === full) setTimeout(() => setDeleting(true), 1600);
+      } else {
+        const next = full.slice(0, displayed.length - 1);
+        setDisplayed(next);
+        if (next === "") {
+          setDeleting(false);
+          setRoleIndex((i) => (i + 1) % roles.length);
+        }
+      }
+    }, speed);
+    return () => clearTimeout(t);
+  }, [displayed, deleting, roleIndex]);
 
   return (
-    <Grid
+    <Box
       id="home-section"
-      container
-      direction={isTablet ? "column" : "row"}
-      alignItems="center"
-      justifyContent="center"
-      textAlign={isTablet ? "center" : "left"}
+      component="section"
       sx={{
-        minHeight: "calc(100vh - 70px)",
-        py: { xs: 6, md: 4 },
-        gap: { xs: 4, lg: 0 },
+        position: "relative",
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        px: { xs: 3, sm: 5, md: 8 },
+        pt: { xs: 14, md: 10 },
+        pb: { xs: 8, md: 6 },
+        overflow: "hidden",
       }}
     >
-      <Grid item xs={12} lg={6}>
-        <Typography
-          sx={{
-            fontSize: { xs: 36, sm: 46, md: 56, lg: 62 },
-            fontWeight: 800,
-            color: "#263138",
-            lineHeight: 1.1,
-            mb: 2,
-            letterSpacing: "-0.02em",
-          }}
+      <Container maxWidth={false} sx={{ maxWidth: "1100px", px: "0 !important", textAlign: "center" }}>
+        {/* Availability badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
         >
-          ENGENHEIRO DE{" "}
           <Box
-            component="span"
             sx={{
-              background: "linear-gradient(135deg, #5d176b, #1484e0)",
-              backgroundClip: "text",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 1.2,
+              px: 2,
+              py: 0.85,
+              borderRadius: "999px",
+              background: "rgba(34, 197, 94, 0.08)",
+              border: "1px solid rgba(34, 197, 94, 0.25)",
+              color: "#86efac",
+              fontSize: 13,
+              fontWeight: 500,
+              mb: 4,
+            }}
+          >
+            <Box
+              sx={{
+                width: 8,
+                height: 8,
+                borderRadius: "50%",
+                background: "#22c55e",
+                boxShadow: "0 0 0 0 rgba(34,197,94,0.7)",
+                animation: "pulse 2s infinite",
+                "@keyframes pulse": {
+                  "0%": { boxShadow: "0 0 0 0 rgba(34,197,94,0.7)" },
+                  "70%": { boxShadow: "0 0 0 10px rgba(34,197,94,0)" },
+                  "100%": { boxShadow: "0 0 0 0 rgba(34,197,94,0)" },
+                },
+              }}
+            />
+            Disponível para novas oportunidades
+          </Box>
+        </motion.div>
+
+        {/* Greeting */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+        >
+          <Typography
+            sx={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: { xs: 14, md: 16 },
+              color: "#a8a8b3",
+              mb: 2,
+            }}
+          >
+            <Box component="span" sx={{ color: "#c084fc" }}>const</Box>{" "}
+            <Box component="span" sx={{ color: "#60a5fa" }}>developer</Box>{" "}
+            <Box component="span" sx={{ color: "#f5f5f7" }}>=</Box>{" "}
+            <Box component="span" sx={{ color: "#86efac" }}>&quot;Olá, eu sou&quot;</Box>
+          </Typography>
+        </motion.div>
+
+        {/* Name */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <Typography
+            component="h1"
+            sx={{
+              fontSize: { xs: "2.75rem", sm: "4rem", md: "5.5rem", lg: "6.5rem" },
+              fontWeight: 800,
+              lineHeight: 1.05,
+              letterSpacing: "-0.04em",
+              mb: 1,
+              background: "linear-gradient(135deg, #f5f5f7 0%, #a8a8b3 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
           >
-            SOFTWARE
-          </Box>
-        </Typography>
+            Thiago
+          </Typography>
+          <Typography
+            component="h1"
+            sx={{
+              fontSize: { xs: "2.75rem", sm: "4rem", md: "5.5rem", lg: "6.5rem" },
+              fontWeight: 800,
+              lineHeight: 1.05,
+              letterSpacing: "-0.04em",
+              background: "linear-gradient(135deg, #ec4899 0%, #a855f7 50%, #3b82f6 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Beraldo.
+          </Typography>
+        </motion.div>
 
-        <Typography
-          sx={{
-            fontSize: { xs: 15, md: 17 },
-            color: "#445964",
-            mb: 4,
-            maxWidth: 480,
-            mx: isTablet ? "auto" : 0,
-            lineHeight: 1.7,
-          }}
-        >
-          Construindo sistemas escaláveis, de alta performance e entregando valor do código à produção.
-        </Typography>
-
-        <Stack
-          direction="row"
-          flexWrap="wrap"
-          gap={1}
-          justifyContent={isTablet ? "center" : "flex-start"}
-          mb={3}
-        >
-          {techStack.map((tech) => (
-            <Chip
-              key={tech}
-              label={tech}
-              size="small"
-              sx={{
-                fontWeight: 600,
-                backgroundColor: "rgba(38, 49, 56, 0.07)",
-                color: "#263138",
-                border: "1px solid rgba(38, 49, 56, 0.18)",
-                transition: "all 0.2s ease",
-                '&:hover': {
-                  backgroundColor: "rgba(93, 23, 107, 0.1)",
-                  borderColor: "#5d176b",
-                  color: "#5d176b",
-                },
-              }}
-            />
-          ))}
-        </Stack>
-
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: 1.5,
-            px: 2,
-            py: 1,
-            mb: 3,
-            borderRadius: 99,
-            background: "linear-gradient(135deg, rgba(93,23,107,0.08), rgba(20,132,224,0.08))",
-            border: "1px solid rgba(93,23,107,0.25)",
-            maxWidth: { xs: "100%", md: 460 },
-            mx: isTablet ? "auto" : 0,
-            overflow: "hidden",
-          }}
+        {/* Typewriter role */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
         >
           <Box
             sx={{
-              width: 8,
-              height: 8,
-              flexShrink: 0,
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, #5d176b, #1484e0)",
-              "@keyframes pulse": {
-                "0%, 100%": { transform: "scale(1)", opacity: 1 },
-                "50%": { transform: "scale(1.5)", opacity: 0.5 },
-              },
-              animation: "pulse 1.5s ease-in-out infinite",
+              mt: 4,
+              minHeight: { xs: 36, md: 48 },
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: { xs: "1.2rem", md: "1.75rem" },
+              fontWeight: 600,
+              color: "#d4d4dc",
             }}
-          />
-          <Box sx={{ flex: 1, overflow: "hidden", height: "28px" }}>
-            <Swiper
-              direction="vertical"
-              modules={[Autoplay]}
-              autoplay={{ delay: 2200, disableOnInteraction: false }}
-              loop
-              speed={500}
-              style={{ height: "28px" }}
-            >
-              {highlights.map((text, i) => (
-                <SwiperSlide key={i} style={{ display: "flex", alignItems: "center" }}>
-                  <Typography
-                    sx={{
-                      fontWeight: 700,
-                      fontSize: 13,
-                      background: "linear-gradient(135deg, #5d176b, #1484e0)",
-                      backgroundClip: "text",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      whiteSpace: "nowrap",
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                    }}
-                  >
-                    {text}
-                  </Typography>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+          >
+            <Box component="span">{displayed}</Box>
+            <Box component="span" className="cursor-blink" sx={{ height: { xs: 22, md: 30 } }} />
           </Box>
-        </Box>
+        </motion.div>
 
-        <Button
-          variant="contained"
-          onClick={() => scrollToSection('about-section')}
-          size="large"
+        {/* Description */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.55 }}
+        >
+          <Typography
+            sx={{
+              maxWidth: 640,
+              mx: "auto",
+              mt: 3,
+              fontSize: { xs: "1rem", md: "1.1rem" },
+              lineHeight: 1.7,
+              color: "#a8a8b3",
+            }}
+          >
+            Construo experiências digitais escaláveis com foco em performance,
+            código limpo e atenção aos detalhes. Transformo ideias complexas em
+            interfaces elegantes e produtos que entregam resultado.
+          </Typography>
+        </motion.div>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.7 }}
+        >
+          <Box sx={{ mt: 5, display: "flex", gap: 2, justifyContent: "center", flexWrap: "wrap" }}>
+            <Button
+              onClick={() => scrollToSection("projects-section")}
+              sx={{
+                px: 4,
+                py: 1.5,
+                fontSize: 15,
+                fontWeight: 600,
+                color: "#fff",
+                background: "linear-gradient(135deg, #a855f7, #3b82f6)",
+                borderRadius: "999px",
+                boxShadow: "0 10px 30px rgba(168,85,247,0.4)",
+                transition: "all 0.3s",
+                "&:hover": {
+                  background: "linear-gradient(135deg, #c084fc, #60a5fa)",
+                  boxShadow: "0 14px 40px rgba(168,85,247,0.55)",
+                  transform: "translateY(-2px)",
+                },
+              }}
+            >
+              Ver Projetos
+            </Button>
+            <Button
+              onClick={() => scrollToSection("contact-section")}
+              sx={{
+                px: 4,
+                py: 1.5,
+                fontSize: 15,
+                fontWeight: 600,
+                color: "#f5f5f7",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.12)",
+                borderRadius: "999px",
+                transition: "all 0.3s",
+                "&:hover": {
+                  background: "rgba(255,255,255,0.08)",
+                  borderColor: "rgba(168,85,247,0.5)",
+                  transform: "translateY(-2px)",
+                },
+              }}
+            >
+              Entrar em Contato
+            </Button>
+          </Box>
+        </motion.div>
+
+        {/* Tech badges */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.85 }}
+        >
+          <Box sx={{ mt: 6, display: "flex", gap: 1, justifyContent: "center", flexWrap: "wrap" }}>
+            {techBadges.map((tech, i) => (
+              <motion.div
+                key={tech}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.9 + i * 0.06, duration: 0.4 }}
+                whileHover={{ y: -3, scale: 1.05 }}
+              >
+                <Box
+                  sx={{
+                    px: 2,
+                    py: 0.75,
+                    borderRadius: "999px",
+                    fontSize: 12,
+                    fontWeight: 500,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    color: "#d4d4dc",
+                    background: "rgba(255,255,255,0.03)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    backdropFilter: "blur(10px)",
+                    transition: "all 0.2s",
+                    "&:hover": {
+                      background: "rgba(168,85,247,0.1)",
+                      borderColor: "rgba(168,85,247,0.35)",
+                      color: "#fff",
+                    },
+                  }}
+                >
+                  {tech}
+                </Box>
+              </motion.div>
+            ))}
+          </Box>
+        </motion.div>
+
+        {/* Social row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+        >
+          <Box sx={{ mt: 5, display: "flex", gap: 1.5, justifyContent: "center" }}>
+            {[
+              { icon: <GitHub />, href: "https://github.com/lenx0", label: "GitHub" },
+              { icon: <LinkedIn />, href: "https://www.linkedin.com/in/thiagoberaldo06/", label: "LinkedIn" },
+              { icon: <Mail />, href: "mailto:thiagoberaldo@example.com", label: "Email", onClick: (e) => { e.preventDefault(); scrollToSection("contact-section"); } },
+            ].map((s) => (
+              <Box
+                key={s.label}
+                component="a"
+                href={s.href}
+                target={s.href.startsWith("http") ? "_blank" : undefined}
+                rel="noopener"
+                onClick={s.onClick}
+                aria-label={s.label}
+                sx={{
+                  width: 44,
+                  height: 44,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: "50%",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  color: "#a8a8b3",
+                  transition: "all 0.25s",
+                  "&:hover": {
+                    color: "#fff",
+                    background: "linear-gradient(135deg, rgba(168,85,247,0.2), rgba(59,130,246,0.2))",
+                    borderColor: "rgba(168,85,247,0.5)",
+                    transform: "translateY(-3px)",
+                  },
+                }}
+              >
+                {s.icon}
+              </Box>
+            ))}
+          </Box>
+        </motion.div>
+      </Container>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6, duration: 0.5 }}
+        style={{
+          position: "absolute",
+          bottom: 30,
+          left: "50%",
+          transform: "translateX(-50%)",
+        }}
+      >
+        <Box
+          onClick={() => scrollToSection("about-section")}
           sx={{
-            fontSize: { xs: 14, md: 15 },
-            backgroundColor: "#263138",
-            fontWeight: 700,
-            px: 4,
-            py: 1.5,
-            borderRadius: 2,
-            textTransform: "none",
-            transition: "all 0.3s ease",
-            '&:hover': {
-              backgroundColor: "#5d176b",
-              transform: "translateY(-2px)",
-              boxShadow: "0 8px 24px rgba(93, 23, 107, 0.3)",
-            },
+            cursor: "pointer",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 0.5,
+            color: "#6b6b7a",
+            transition: "color 0.2s",
+            "&:hover": { color: "#fff" },
           }}
         >
-          Saiba mais sobre mim
-        </Button>
-      </Grid>
-
-      <Grid item xs={12} lg={6}>
-        <Box display="flex" justifyContent="center" alignItems="center">
-          <img
-            src={HomeArt}
-            alt="Home Art"
-            style={{ maxWidth: isTablet ? "min(420px, 90vw)" : "100%", width: "100%" }}
-          />
+          <Typography sx={{ fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", fontWeight: 600 }}>
+            Scroll
+          </Typography>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity }}
+          >
+            <ArrowDownward sx={{ fontSize: 20 }} />
+          </motion.div>
         </Box>
-      </Grid>
-    </Grid>
+      </motion.div>
+    </Box>
   );
 };
 

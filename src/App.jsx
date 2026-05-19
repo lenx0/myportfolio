@@ -8,51 +8,32 @@ import "./global.css";
 import Experience from "./components/Experiences";
 import Footer from "./components/Footer";
 import HardSkills from "./components/HardSkills";
-
-const SectionDivider = () => (
-  <Box display="flex" justifyContent="center" my={8} width="100%">
-    <Box
-      width="80%"
-      height="1px"
-      borderRadius={10}
-      sx={{ background: "linear-gradient(90deg, transparent, rgba(68,89,100,0.25), transparent)" }}
-    />
-  </Box>
-);
+import Stats from "./components/Stats";
 
 function App() {
   return (
-    <React.Fragment>
-      <Box
-        component="div"
-        sx={{
-          position: "sticky",
-          top: 0,
-          zIndex: 1100,
-          backgroundColor: "rgba(250, 250, 250, 0.92)",
-          backdropFilter: "blur(10px)",
-          borderBottom: "1px solid rgba(68, 89, 100, 0.12)",
-          boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
-        }}
-      >
+    <Box sx={{ position: "relative", minHeight: "100vh", background: "var(--bg-primary)", color: "var(--text-primary)" }}>
+      {/* Animated background */}
+      <Box className="bg-grid" />
+      <Box className="bg-orb bg-orb-1" />
+      <Box className="bg-orb bg-orb-2" />
+      <Box className="bg-orb bg-orb-3" />
+
+      <Box sx={{ position: "relative", zIndex: 1 }}>
         <Header />
+        <Box component="main">
+          <Home />
+          <Stats />
+          <About />
+          <HardSkills />
+          <Projects />
+          <Experience />
+        </Box>
+        <Footer />
       </Box>
-
-      <Box sx={{ maxWidth: "1400px", margin: "0 auto", px: { xs: 3, sm: 5, md: 8 } }}>
-        <Home />
-        <SectionDivider />
-        <About />
-        <SectionDivider />
-        <HardSkills />
-        <SectionDivider />
-        <Projects />
-        <SectionDivider />
-        <Experience />
-      </Box>
-
-      <Footer />
-    </React.Fragment>
+    </Box>
   );
 }
 
 export default App;
+

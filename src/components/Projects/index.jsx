@@ -1,236 +1,373 @@
-import { useRef, useState } from "react";
-import { Box, IconButton, Typography } from "@mui/material";
-import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
-import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import CustomCard from "./card";
+import { useState } from "react";
+import { Box, Typography, IconButton, Chip } from "@mui/material";
+import { motion, AnimatePresence } from "framer-motion";
+import { OpenInNew, ArrowForward } from "@mui/icons-material";
+import SectionWrapper from "../common/SectionWrapper";
+import ImageDialog from "./imageDialog";
+
+function generateImageArray(prefix, count) {
+  return Array.from({ length: count }, (_, i) => `/assets/images/${prefix}${i + 1}.png`);
+}
 
 const projectsData = [
   {
     title: "Nebula Finance",
     images: generateImageArray("nebula", 1),
     access: "https://nebula-finance-rouge.vercel.app/",
-    description:
-      `Dashboard financeiro moderno com visualização de dados em tempo real, gráficos interativos e gestão de investimentos`,
-    technologies:
-      "React 18 | Tailwind | Framer Motion | Recharts | Zustand | React Query | Intl API",
+    description: "Dashboard financeiro moderno com visualização de dados em tempo real, gráficos interativos e gestão de investimentos.",
+    technologies: ["React 18", "Tailwind", "Framer Motion", "Recharts", "Zustand", "React Query"],
+    category: "Web App",
+    featured: true,
   },
   {
     title: "PrimeHaus Imobiliária",
     images: generateImageArray("primehaus", 1),
     access: "https://primehaus-imobiliaria.vercel.app/",
-    description:
-      `Plataforma imobiliária moderna com listagem de imóveis, filtros avançados e experiência fluida para compra e locação`,
-    technologies:
-      "React 18 | TypeScript | Tailwind | Framer Motion | Zustand | React Query",
+    description: "Plataforma imobiliária moderna com listagem de imóveis, filtros avançados e experiência fluida para compra e locação.",
+    technologies: ["React 18", "TypeScript", "Tailwind", "Framer Motion", "Zustand", "React Query"],
+    category: "Web App",
+    featured: true,
   },
   {
     title: "Velaris Motors",
     images: generateImageArray("velaris", 1),
     access: "https://velaris-motors.vercel.app/",
-    description:
-      `Site institucional para concessionária de veículos com catálogo interativo e navegação animada`,
-    technologies:
-      "React 18 | TypeScript | Tailwind | Framer Motion | Swiper.js | Lucide React",
+    description: "Site institucional para concessionária de veículos com catálogo interativo e navegação animada.",
+    technologies: ["React 18", "TypeScript", "Tailwind", "Framer Motion", "Swiper.js"],
+    category: "Institucional",
+    featured: true,
   },
   {
-    title: "Eixo Zero Ferragens e Ferramentas",
+    title: "Eixo Zero",
     images: generateImageArray("eixo", 1),
     access: "https://eixozero.vercel.app/",
-    description:
-      `Site institucional para loja de ferragens e ferramentas, com localização via Google Maps e contato direto pelo WhatsApp`,
-    technologies:
-      "React 18 | Javascript | Google Maps | WhatsApp API | CSS",
+    description: "Site para loja de ferragens e ferramentas com localização via Google Maps e contato direto pelo WhatsApp.",
+    technologies: ["React 18", "JavaScript", "Google Maps", "WhatsApp API", "CSS"],
+    category: "Institucional",
   },
   {
     title: "PokeWorld",
     images: generateImageArray("poke", 5),
     access: "https://pokeworld-ochre.vercel.app/",
-    description:
-      `A enciclopédia definitiva do mundo Pokémon, com informações completas sobre pokémons, habilidades e muito mais`,
-    technologies:
-      "React 18 | TypeScript | Tailwind | Framer Motion",
+    description: "A enciclopédia definitiva do mundo Pokémon, com informações completas sobre pokémons, habilidades e muito mais.",
+    technologies: ["React 18", "TypeScript", "Tailwind", "Framer Motion"],
+    category: "Web App",
   },
   {
     title: "WR Café Bar",
     images: generateImageArray("wr", 10),
     access: "https://wr-cafe-bar.vercel.app",
-    description:
-      `Trabalho realizado para um estabelecimento da cidade de Maringá - PR`,
-    technologies:
-      "React | Javascript | Material-UI",
+    description: "Site desenvolvido para um estabelecimento da cidade de Maringá - PR.",
+    technologies: ["React", "JavaScript", "Material-UI"],
+    category: "Institucional",
   },
   {
     title: "Prometheus IA",
     images: generateImageArray("pro", 7),
     access: "https://prometheus-jet-one.vercel.app",
-    description:
-      `Website desenvolvido para uma empresa de Inteligência Artificial`,
-    technologies:
-      "React | Javascript | Tailwind",
+    description: "Website desenvolvido para uma empresa de Inteligência Artificial.",
+    technologies: ["React", "JavaScript", "Tailwind"],
+    category: "Institucional",
   },
   {
-    title: "Slider com linha do tempo",
+    title: "Timeline Slider",
     images: generateImageArray("slider-time", 1),
     access: "https://slider-timeline-pure-js.vercel.app",
-    description:
-      `Slider com linha do tempo com dados fictícios, foi desenvolvido para ser utilizado em um site wordpress`,
-    technologies:
-      "Javascript | HTML | CSS",
+    description: "Slider com linha do tempo desenvolvido em JS puro para integração em WordPress.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    category: "UI Component",
   },
   {
-    title: "Carrossel moderno com efeito de animação",
+    title: "Carrossel Moderno",
     images: generateImageArray("carrossel", 1),
     access: "https://carousel-pure-js.vercel.app",
-    description:
-      `Carrossel moderno com efeito de animação, foi desenvolvido para ser utilizado em um site wordpress`,
-    technologies:
-      "Javascript | HTML | CSS",
+    description: "Carrossel moderno com efeito de animação desenvolvido para integração em WordPress.",
+    technologies: ["JavaScript", "HTML", "CSS"],
+    category: "UI Component",
   },
 ];
 
-function generateImageArray(prefix, count) {
-  const images = [];
-  for (let i = 1; i <= count; i++) {
-    images.push(`/assets/images/${prefix}${i}.png`);
-  }
-  return images;
-}
+const categories = ["Todos", "Web App", "Institucional", "UI Component"];
 
-const Projects = () => {
-  const swiperRef = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
+const ProjectCard = ({ project, onOpenImage, index }) => {
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <Box id="projects-section" sx={{ py: { xs: 4, md: 6 } }}>
-      <Box textAlign="center" mb={5}>
-        <Typography variant="h4" fontWeight={800} color="#263138" gutterBottom>
-          Projetos
-        </Typography>
-        <Box width={60} height={4} sx={{ background: "linear-gradient(90deg, #5d176b, #1484e0)", mx: "auto" }} borderRadius={2} mb={2} />
-        <Typography fontWeight={600} color="#445964" fontSize={15}>
-          Todos os projetos estão hospedados em servidores na nuvem
-        </Typography>
-      </Box>
-
+    <motion.div
+      layout
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.55, delay: index * 0.06 }}
+      style={{ height: "100%" }}
+    >
       <Box
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         sx={{
           position: "relative",
-          px: { xs: 1, sm: 4, md: 8 },
-        }}
-        onMouseEnter={() => {
-          setIsHovered(true);
-          swiperRef.current?.autoplay?.stop();
-        }}
-        onMouseLeave={() => {
-          setIsHovered(false);
-          swiperRef.current?.autoplay?.start();
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          borderRadius: 4,
+          overflow: "hidden",
+          background: "rgba(255,255,255,0.025)",
+          border: "1px solid rgba(255,255,255,0.06)",
+          backdropFilter: "blur(10px)",
+          transition: "all 0.4s",
+          "&:hover": {
+            borderColor: "rgba(168,85,247,0.4)",
+            boxShadow: "0 30px 60px rgba(168,85,247,0.18)",
+            transform: "translateY(-6px)",
+          },
         }}
       >
+        {/* Image */}
         <Box
+          onClick={() => onOpenImage(project)}
           sx={{
-            py: 4,
-            "& .swiper": { overflow: "visible" },
-            "& .swiper-wrapper": { alignItems: "stretch" },
-            "& .swiper-slide": {
-              height: "auto",
-              transition: "opacity 0.6s ease, transform 0.6s ease",
-              opacity: 0.4,
-              transform: "scale(0.92)",
-            },
-            "& .swiper-slide-active, & .swiper-slide-next, & .swiper-slide-prev": {
-              opacity: 1,
-              transform: "scale(1)",
-            },
-            "& .swiper-pagination": {
-              position: "relative",
-              mt: 3,
-            },
-            "& .swiper-pagination-bullet": {
-              width: 10,
-              height: 10,
-              background: "#c5cdd2",
-              opacity: 1,
-              transition: "all 0.3s ease",
-            },
-            "& .swiper-pagination-bullet-active": {
-              width: 32,
-              borderRadius: 5,
-              background: "linear-gradient(90deg, #5d176b, #1484e0)",
+            position: "relative",
+            cursor: project.images.length > 1 ? "zoom-in" : "pointer",
+            height: { xs: 200, md: 230 },
+            overflow: "hidden",
+            "&::before": {
+              content: '""',
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(to top, rgba(10,10,15,0.9) 0%, transparent 50%)",
+              zIndex: 1,
             },
           }}
         >
-          <Swiper
-            modules={[Autoplay, Pagination, EffectCoverflow]}
-            autoplay={{ delay: 3500, disableOnInteraction: false }}
-            speed={800}
-            loop
-            centeredSlides
-            grabCursor
-            pagination={{ clickable: true }}
-            breakpoints={{
-              0:    { slidesPerView: 1,    spaceBetween: 16 },
-              600:  { slidesPerView: 2,    spaceBetween: 20 },
-              900:  { slidesPerView: 2.5,  spaceBetween: 24 },
-              1200: { slidesPerView: 3,    spaceBetween: 28 },
-              1536: { slidesPerView: 3.5,  spaceBetween: 32 },
+          <Box
+            component="img"
+            src={project.images[0]}
+            alt={project.title}
+            sx={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              transition: "transform 0.6s ease",
+              transform: hovered ? "scale(1.08)" : "scale(1)",
             }}
-            onSwiper={(swiper) => { swiperRef.current = swiper; }}
-          >
-            {projectsData.map((project, index) => (
-              <SwiperSlide key={index} style={{ height: "auto", display: "flex" }}>
-                <Box sx={{ width: "100%", display: "flex", p: 1 }}>
-                  <CustomCard
-                    title={project.title}
-                    access={project.access}
-                    images={project.images}
-                    description={project.description}
-                    technologies={project.technologies}
-                  />
-                </Box>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </Box>
-
-        {[
-          { dir: "prev", Icon: ArrowBackIosNewRoundedIcon, side: { left: { xs: -4, sm: 0 } } },
-          { dir: "next", Icon: ArrowForwardIosRoundedIcon, side: { right: { xs: -4, sm: 0 } } },
-        ].map(({ dir, Icon, side }) => (
-          <IconButton
-            key={dir}
-            onClick={() => dir === "prev" ? swiperRef.current?.slidePrev() : swiperRef.current?.slideNext()}
-            aria-label={dir === "prev" ? "Projeto anterior" : "Próximo projeto"}
+          />
+          {project.featured && (
+            <Box
+              sx={{
+                position: "absolute",
+                top: 12,
+                left: 12,
+                px: 1.5,
+                py: 0.5,
+                borderRadius: "999px",
+                background: "linear-gradient(135deg, rgba(236,72,153,0.95), rgba(168,85,247,0.95))",
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: "0.05em",
+                color: "#fff",
+                zIndex: 2,
+                backdropFilter: "blur(10px)",
+              }}
+            >
+              ★ DESTAQUE
+            </Box>
+          )}
+          <Box
             sx={{
               position: "absolute",
-              top: "50%",
-              transform: "translateY(-50%)",
-              zIndex: 10,
-              width: { xs: 40, md: 48 },
-              height: { xs: 40, md: 48 },
-              background: "#ffffff",
-              color: "#5d176b",
-              boxShadow: "0 4px 16px rgba(38, 49, 56, 0.18)",
-              opacity: { xs: 1, md: isHovered ? 1 : 0.7 },
-              transition: "all 0.3s ease",
-              "&:hover": {
-                background: "linear-gradient(135deg, #5d176b, #1484e0)",
-                color: "#ffffff",
-                transform: "translateY(-50%) scale(1.08)",
-                boxShadow: "0 6px 24px rgba(93, 23, 107, 0.35)",
-              },
-              ...side,
+              top: 12,
+              right: 12,
+              px: 1.25,
+              py: 0.4,
+              borderRadius: "999px",
+              background: "rgba(10,10,15,0.7)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              fontSize: 10.5,
+              fontWeight: 600,
+              color: "#d4d4dc",
+              zIndex: 2,
+              backdropFilter: "blur(10px)",
             }}
           >
-            <Icon fontSize="small" />
-          </IconButton>
+            {project.category}
+          </Box>
+        </Box>
+
+        {/* Content */}
+        <Box sx={{ p: 3, flex: 1, display: "flex", flexDirection: "column" }}>
+          <Typography sx={{ fontWeight: 700, fontSize: "1.15rem", color: "#f5f5f7", mb: 1 }}>
+            {project.title}
+          </Typography>
+          <Typography sx={{ fontSize: 13.5, color: "#a8a8b3", lineHeight: 1.55, mb: 2.5, flex: 1 }}>
+            {project.description}
+          </Typography>
+
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.75, mb: 2.5 }}>
+            {project.technologies.slice(0, 5).map((tech) => (
+              <Box
+                key={tech}
+                sx={{
+                  px: 1.25,
+                  py: 0.4,
+                  fontSize: 11,
+                  fontWeight: 500,
+                  fontFamily: "'JetBrains Mono', monospace",
+                  borderRadius: "999px",
+                  background: "rgba(168,85,247,0.08)",
+                  border: "1px solid rgba(168,85,247,0.2)",
+                  color: "#c084fc",
+                }}
+              >
+                {tech}
+              </Box>
+            ))}
+            {project.technologies.length > 5 && (
+              <Box
+                sx={{
+                  px: 1.25,
+                  py: 0.4,
+                  fontSize: 11,
+                  fontWeight: 500,
+                  borderRadius: "999px",
+                  color: "#6b6b7a",
+                }}
+              >
+                +{project.technologies.length - 5}
+              </Box>
+            )}
+          </Box>
+
+          <Box sx={{ display: "flex", gap: 1, mt: "auto" }}>
+            <Box
+              component="a"
+              href={project.access}
+              target="_blank"
+              rel="noopener"
+              sx={{
+                flex: 1,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 1,
+                px: 2.5,
+                py: 1.2,
+                borderRadius: "999px",
+                fontSize: 13,
+                fontWeight: 600,
+                textDecoration: "none",
+                color: "#fff",
+                background: "linear-gradient(135deg, #a855f7, #3b82f6)",
+                transition: "all 0.3s",
+                "&:hover": {
+                  background: "linear-gradient(135deg, #c084fc, #60a5fa)",
+                  boxShadow: "0 8px 20px rgba(168,85,247,0.4)",
+                },
+              }}
+            >
+              Acessar
+              <OpenInNew sx={{ fontSize: 14 }} />
+            </Box>
+            {project.images.length > 1 && (
+              <IconButton
+                onClick={() => onOpenImage(project)}
+                sx={{
+                  width: 40,
+                  height: 40,
+                  color: "#d4d4dc",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  "&:hover": { background: "rgba(168,85,247,0.15)", color: "#fff" },
+                }}
+                aria-label="Ver galeria"
+              >
+                <ArrowForward sx={{ fontSize: 16 }} />
+              </IconButton>
+            )}
+          </Box>
+        </Box>
+      </Box>
+    </motion.div>
+  );
+};
+
+const Projects = () => {
+  const [filter, setFilter] = useState("Todos");
+  const [dialogProject, setDialogProject] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const filtered = filter === "Todos" ? projectsData : projectsData.filter((p) => p.category === filter);
+
+  const handleOpen = (project) => {
+    setCurrentImageIndex(0);
+    setDialogProject(project);
+  };
+  const handleClose = () => setDialogProject(null);
+  const handleNext = () => setCurrentImageIndex((i) => Math.min(i + 1, (dialogProject?.images.length ?? 1) - 1));
+  const handlePrev = () => setCurrentImageIndex((i) => Math.max(i - 1, 0));
+
+  return (
+    <SectionWrapper
+      id="projects-section"
+      eyebrow="Portfolio"
+      title={<>Projetos <Box component="span" sx={{ background: "linear-gradient(135deg, #ec4899, #a855f7, #3b82f6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>selecionados</Box></>}
+      subtitle="Uma seleção de trabalhos recentes — todos os projetos estão hospedados na nuvem e acessíveis em tempo real."
+    >
+      {/* Filter chips */}
+      <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", justifyContent: "center", mb: 5 }}>
+        {categories.map((cat) => (
+          <Box
+            key={cat}
+            onClick={() => setFilter(cat)}
+            sx={{
+              position: "relative",
+              px: 2.5,
+              py: 0.9,
+              borderRadius: "999px",
+              cursor: "pointer",
+              fontSize: 13,
+              fontWeight: 600,
+              color: filter === cat ? "#fff" : "#a8a8b3",
+              border: "1px solid rgba(255,255,255,0.08)",
+              background: filter === cat ? "linear-gradient(135deg, #a855f7, #3b82f6)" : "rgba(255,255,255,0.03)",
+              transition: "all 0.25s",
+              "&:hover": { color: "#fff", borderColor: "rgba(168,85,247,0.4)" },
+            }}
+          >
+            {cat}
+          </Box>
         ))}
       </Box>
-    </Box>
+
+      {/* Grid */}
+      <Box
+        component={motion.div}
+        layout
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" },
+          gap: 3,
+        }}
+      >
+        <AnimatePresence mode="popLayout">
+          {filtered.map((project, idx) => (
+            <ProjectCard key={project.title} project={project} onOpenImage={handleOpen} index={idx} />
+          ))}
+        </AnimatePresence>
+      </Box>
+
+      {dialogProject && (
+        <ImageDialog
+          dialogOpen={Boolean(dialogProject)}
+          handleDialogClose={handleClose}
+          images={dialogProject.images}
+          currentImageIndex={currentImageIndex}
+          handleNextImage={handleNext}
+          handlePrevImage={handlePrev}
+          title={dialogProject.title}
+          description={dialogProject.description}
+        />
+      )}
+    </SectionWrapper>
   );
 };
 

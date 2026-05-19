@@ -1,95 +1,235 @@
-import { Box, Chip, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import { Work, Business, RocketLaunch, FormatQuote } from "@mui/icons-material";
+import SectionWrapper from "../common/SectionWrapper";
 
-const Experience = () => {
-  const experiences = [
-    {
-      title: "Desenvolvedor Júnior",
-      company: "Alto Giro",
-      date: "Jan 2022 – Jul 2022",
-      resume: `Na Alto Giro atuei desenvolvendo microsserviços para facilitar processos internos como RH e almoxarifado. Desenvolvi interfaces web com React e JavaScript, além de APIs com Node.js, Express e MongoDB.`,
-    },
-    {
-      title: "Desenvolvedor Front-end Júnior",
-      company: "AG.labs",
-      date: "Jul 2022 – Abr 2024",
-      resume: `Atuei em projeto que consumiu dados do ERP da TOTVS da fase inicial ao lançamento, sistema hoje utilizado pelos representantes e clientes da Alto Giro. Na Black Friday de 2023 o sistema transacionou mais de 15 mil pedidos, alcançando mais de R$13 milhões em volume.`,
-    },
-    {
-      title: "Desenvolvedor Fullstack Pleno",
-      company: "IOB",
-      date: "Jan 2025 – Atual",
-      resume: `Atualmente atuo nas melhorias e correções de um sistema de gestão de documentos fiscais, utilizando Javascript e Knockout no front-end, Node.js, MongoDB e PostgreSQL no back-end, e AWS para infraestrutura. O sistema é projetado para ser escalável e de alta performance, atendendo às necessidades de uma base gigantesca e crescente de contadores e empresas em todo o Brasil.`,
-    },
-  ];
+const experiences = [
+  {
+    icon: <RocketLaunch />,
+    period: "Jan 2025 — Atual",
+    role: "Desenvolvedor Fullstack Pleno",
+    company: "IOB",
+    color: "#a855f7",
+    description:
+      "Desenvolvimento de soluções robustas para o mercado contábil e fiscal. Foco em arquitetura escalável, análise de performance e qualidade de código em ambiente corporativo de larga escala.",
+    tags: ["React", "Node.js", "TypeScript", "AWS", "PostgreSQL"],
+  },
+  {
+    icon: <Business />,
+    period: "Jul 2022 — Abr 2024",
+    role: "Desenvolvedor Front-end Júnior",
+    company: "AG.labs",
+    color: "#3b82f6",
+    description:
+      "Desenvolvimento de interfaces para múltiplos clientes B2B. Atuação em melhorias contínuas, componentização e adoção de boas práticas de UI/UX em projetos com alto volume de uso.",
+    tags: ["React", "JavaScript", "Material-UI", "Redux", "REST APIs"],
+  },
+  {
+    icon: <Work />,
+    period: "Jan 2022 — Jul 2022",
+    role: "Desenvolvedor Júnior",
+    company: "Alto Giro",
+    color: "#ec4899",
+    description:
+      "Início da carreira como desenvolvedor com foco em aplicações web. Aprendizado intensivo em fundamentos, versionamento e trabalho em equipe ágil.",
+    tags: ["JavaScript", "HTML5", "CSS3", "Git"],
+  },
+];
 
+const Experiences = () => {
   return (
-    <Box id="experience-section" sx={{ py: { xs: 4, md: 6 } }}>
-      <Typography variant="h4" fontWeight={800} color="#263138" textAlign="center">
-        Experiência
-      </Typography>
-      <Typography fontWeight={700} fontSize={20} color="#5d176b" textAlign="center" mb={1}>
-        Profissional
-      </Typography>
-      <Box
-        width={60}
-        height={4}
-        sx={{ background: "linear-gradient(90deg, #5d176b, #1484e0)", mx: "auto" }}
-        borderRadius={2}
-        mb={2}
-      />
-      <Typography sx={{ textAlign: "center", color: "#445964", mb: 5 }}>
-        Minha jornada é curta, mas de muita dedicação e resiliência
-      </Typography>
+    <SectionWrapper
+      id="experience-section"
+      eyebrow="Trajetória"
+      title={<>Minha <Box component="span" sx={{ background: "linear-gradient(135deg, #ec4899, #a855f7, #3b82f6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>experiência</Box></>}
+      subtitle="Evolução profissional construída com curiosidade, dedicação e aprendizado constante."
+    >
+      <Box sx={{ position: "relative", maxWidth: 900, mx: "auto" }}>
+        {/* Vertical timeline line */}
+        <Box
+          sx={{
+            position: "absolute",
+            left: { xs: 20, md: "50%" },
+            top: 0,
+            bottom: 0,
+            width: "2px",
+            transform: { md: "translateX(-1px)" },
+            background: "linear-gradient(180deg, transparent, rgba(168,85,247,0.4) 10%, rgba(59,130,246,0.4) 90%, transparent)",
+          }}
+        />
 
-      <Grid container spacing={3} justifyContent="center" sx={{ maxWidth: 900, mx: "auto" }}>
-        {experiences.map((experience, index) => (
-          <Grid item xs={12} md={6} key={index}>
-            <Box
-              sx={{
-                backgroundColor: "#263138",
-                borderRadius: 3,
-                p: 3,
-                height: "100%",
-                color: "#ffffff",
-                borderLeft: "4px solid #5d176b",
-                boxShadow: "0 4px 20px rgba(38, 49, 56, 0.15)",
-                transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                '&:hover': {
-                  transform: "translateY(-4px)",
-                  boxShadow: "0 10px 32px rgba(38, 49, 56, 0.25)",
-                },
-              }}
+        {experiences.map((exp, idx) => {
+          const isLeft = idx % 2 === 0;
+          return (
+            <motion.div
+              key={exp.role + exp.company}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
             >
-              <Chip
-                label={experience.date}
-                size="small"
-                sx={{ mb: 1.5, backgroundColor: "rgba(255,255,255,0.1)", color: "#ffffff", fontWeight: 600, fontSize: 12 }}
-              />
-              <Typography variant="h6" fontWeight={700} mb={0.5}>
-                {experience.title}
-              </Typography>
-              <Typography variant="subtitle2" mb={2} sx={{ color: "rgba(255,255,255,0.55)", fontWeight: 500 }}>
-                {experience.company}
-              </Typography>
-              <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.85)", lineHeight: 1.8 }}>
-                {experience.resume}
-              </Typography>
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
+              <Box
+                sx={{
+                  position: "relative",
+                  display: "grid",
+                  gridTemplateColumns: { xs: "auto 1fr", md: "1fr auto 1fr" },
+                  gap: { xs: 2, md: 4 },
+                  mb: { xs: 4, md: 6 },
+                  alignItems: "flex-start",
+                }}
+              >
+                {/* Left card (desktop) */}
+                <Box sx={{ display: { xs: "none", md: "block" }, gridColumn: 1, textAlign: "right" }}>
+                  {isLeft && <CardContent exp={exp} alignRight />}
+                </Box>
 
-      <Box sx={{ mt: 7, textAlign: "center" }}>
-        <img src="/assets/icons/Quote.png" alt="aspas" />
-        <Typography sx={{ mt: 2, fontWeight: 700, fontSize: { xs: 16, md: 18 }, color: "#445964", maxWidth: 560, mx: "auto" }}>
-          "A mente que se abre a uma nova ideia jamais voltará ao seu tamanho original"
-        </Typography>
-        <Typography sx={{ mt: 1, fontSize: 16, fontWeight: 700, color: "#5d176b" }}>
-          ~ Albert Einstein
-        </Typography>
+                {/* Node icon */}
+                <Box
+                  sx={{
+                    gridColumn: { xs: 1, md: 2 },
+                    gridRow: { xs: "span 1" },
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.15, rotate: 8 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <Box
+                      sx={{
+                        width: 44,
+                        height: 44,
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: `linear-gradient(135deg, ${exp.color}, ${exp.color}88)`,
+                        color: "#fff",
+                        boxShadow: `0 0 0 4px rgba(10,10,15,1), 0 0 0 5px ${exp.color}55, 0 10px 30px ${exp.color}55`,
+                        zIndex: 1,
+                      }}
+                    >
+                      {exp.icon}
+                    </Box>
+                  </motion.div>
+                </Box>
+
+                {/* Right card (desktop) / always (mobile) */}
+                <Box sx={{ gridColumn: { xs: 2, md: 3 } }}>
+                  <Box sx={{ display: { xs: "block", md: isLeft ? "none" : "block" } }}>
+                    <CardContent exp={exp} />
+                  </Box>
+                </Box>
+              </Box>
+            </motion.div>
+          );
+        })}
       </Box>
-    </Box>
+
+      {/* Einstein quote */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+      >
+        <Box
+          sx={{
+            mt: 8,
+            mx: "auto",
+            maxWidth: 700,
+            p: { xs: 3, md: 4 },
+            borderRadius: 4,
+            background: "linear-gradient(135deg, rgba(168,85,247,0.08), rgba(59,130,246,0.08))",
+            border: "1px solid rgba(168,85,247,0.2)",
+            backdropFilter: "blur(10px)",
+            position: "relative",
+          }}
+        >
+          <FormatQuote
+            sx={{
+              position: "absolute",
+              top: -16,
+              left: 24,
+              fontSize: 48,
+              color: "#a855f7",
+              opacity: 0.4,
+              transform: "scaleX(-1)",
+            }}
+          />
+          <Typography
+            sx={{
+              fontSize: { xs: "1.05rem", md: "1.2rem" },
+              fontStyle: "italic",
+              color: "#d4d4dc",
+              lineHeight: 1.7,
+              textAlign: "center",
+            }}
+          >
+            &ldquo;A mente que se abre a uma nova ideia jamais voltará ao seu tamanho original.&rdquo;
+          </Typography>
+          <Typography sx={{ mt: 2, fontSize: 13, fontWeight: 600, color: "#c084fc", textAlign: "center", letterSpacing: "0.1em" }}>
+            — ALBERT EINSTEIN
+          </Typography>
+        </Box>
+      </motion.div>
+    </SectionWrapper>
   );
 };
 
-export default Experience;
+const CardContent = ({ exp, alignRight = false }) => (
+  <Box
+    sx={{
+      display: "inline-block",
+      width: "100%",
+      p: 3,
+      borderRadius: 3,
+      background: "rgba(255,255,255,0.025)",
+      border: "1px solid rgba(255,255,255,0.06)",
+      backdropFilter: "blur(10px)",
+      textAlign: alignRight ? "right" : "left",
+      transition: "all 0.3s",
+      "&:hover": {
+        background: "rgba(255,255,255,0.04)",
+        borderColor: `${exp.color}55`,
+        transform: alignRight ? "translateX(-4px)" : "translateX(4px)",
+      },
+    }}
+  >
+    <Typography sx={{ fontSize: 12, fontWeight: 600, color: exp.color, letterSpacing: "0.1em", textTransform: "uppercase", mb: 1 }}>
+      {exp.period}
+    </Typography>
+    <Typography sx={{ fontWeight: 700, fontSize: "1.05rem", color: "#f5f5f7", mb: 0.5 }}>
+      {exp.role}
+    </Typography>
+    <Typography sx={{ fontSize: 14, fontWeight: 500, color: "#a8a8b3", mb: 1.5 }}>
+      @ {exp.company}
+    </Typography>
+    <Typography sx={{ fontSize: 13.5, color: "#a8a8b3", lineHeight: 1.6, mb: 2 }}>
+      {exp.description}
+    </Typography>
+    <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.75, justifyContent: alignRight ? "flex-end" : "flex-start" }}>
+      {exp.tags.map((t) => (
+        <Box
+          key={t}
+          sx={{
+            px: 1.2,
+            py: 0.35,
+            fontSize: 11,
+            fontWeight: 500,
+            fontFamily: "'JetBrains Mono', monospace",
+            borderRadius: "999px",
+            color: "#d4d4dc",
+            background: "rgba(255,255,255,0.04)",
+            border: "1px solid rgba(255,255,255,0.08)",
+          }}
+        >
+          {t}
+        </Box>
+      ))}
+    </Box>
+  </Box>
+);
+
+export default Experiences;
