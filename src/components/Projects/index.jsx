@@ -13,7 +13,7 @@ const projectsData = [
   {
     title: "Nebula Finance",
     images: generateImageArray("nebula", 1),
-    access: "https://nebula-finance.vercel.app/",
+    access: "https://nebula-finance-rouge.vercel.app/",
     description:
       `Dashboard financeiro moderno com visualização de dados em tempo real, gráficos interativos e gestão de investimentos`,
     technologies:
