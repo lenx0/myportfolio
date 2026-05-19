@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Typography, IconButton, Chip } from "@mui/material";
+import { Box, Typography, IconButton, Tooltip } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { OpenInNew, ArrowForward } from "@mui/icons-material";
 import SectionWrapper from "../common/SectionWrapper";
@@ -10,6 +10,29 @@ function generateImageArray(prefix, count) {
 }
 
 const projectsData = [
+  {
+    title: "Eclipse 01",
+    images: generateImageArray("eclipse", 1),
+    access: "https://eclipse-01.vercel.app/",
+    description: "Experiência imersiva 3D com cena interativa em Three.js, scroll inercial e animações deslumbrantes.",
+    technologies: [
+      "React 18",
+      "TypeScript",
+      "Three.js",
+      "React Three Fiber",
+      "Drei",
+      "Framer Motion",
+      "GSAP",
+      "Lenis",
+      "Tailwind CSS",
+      "PostCSS",
+      "Autoprefixer",
+      "Lucide React",
+      "i18n",
+    ],
+    category: "Web App",
+    featured: true,
+  },
   {
     title: "Nebula Finance",
     images: generateImageArray("nebula", 1),
@@ -222,18 +245,68 @@ const ProjectCard = ({ project, onOpenImage, index }) => {
               </Box>
             ))}
             {project.technologies.length > 5 && (
-              <Box
-                sx={{
-                  px: 1.25,
-                  py: 0.4,
-                  fontSize: 11,
-                  fontWeight: 500,
-                  borderRadius: "999px",
-                  color: "#6b6b7a",
+              <Tooltip
+                arrow
+                placement="top"
+                title={
+                  <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, maxWidth: 240, p: 0.5 }}>
+                    {project.technologies.slice(5).map((tech) => (
+                      <Box
+                        key={tech}
+                        sx={{
+                          px: 1,
+                          py: 0.3,
+                          fontSize: 11,
+                          fontWeight: 500,
+                          fontFamily: "'JetBrains Mono', monospace",
+                          borderRadius: "999px",
+                          background: "rgba(168,85,247,0.18)",
+                          border: "1px solid rgba(168,85,247,0.35)",
+                          color: "#e9d5ff",
+                        }}
+                      >
+                        {tech}
+                      </Box>
+                    ))}
+                  </Box>
+                }
+                slotProps={{
+                  tooltip: {
+                    sx: {
+                      background: "rgba(20,20,28,0.96)",
+                      backdropFilter: "blur(16px)",
+                      border: "1px solid rgba(168,85,247,0.3)",
+                      borderRadius: 2,
+                      p: 1,
+                      maxWidth: 260,
+                    },
+                  },
+                  arrow: { sx: { color: "rgba(20,20,28,0.96)" } },
                 }}
               >
-                +{project.technologies.length - 5}
-              </Box>
+                <Box
+                  sx={{
+                    px: 1.25,
+                    py: 0.4,
+                    fontSize: 11,
+                    fontWeight: 600,
+                    fontFamily: "'JetBrains Mono', monospace",
+                    borderRadius: "999px",
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px dashed rgba(168,85,247,0.4)",
+                    color: "#c084fc",
+                    cursor: "help",
+                    transition: "all 0.2s",
+                    "&:hover": {
+                      background: "rgba(168,85,247,0.12)",
+                      borderStyle: "solid",
+                      color: "#fff",
+                    },
+                  }}
+                >
+                  +{project.technologies.length - 5}
+                </Box>
+              </Tooltip>
             )}
           </Box>
 
