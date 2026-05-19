@@ -81,7 +81,7 @@ const projectsData = [
     images: generateImageArray("wr", 10),
     access: "https://wr-cafe-bar.vercel.app",
     description: "Site desenvolvido para um estabelecimento da cidade de Maringá - PR.",
-    technologies: ["React", "JavaScript", "Material-UI"],
+    technologies: ["React 18", "MUI v5", "Framer Motion", "React Router DOM v6", "React Leaflet", "Leaflet", "react-material-ui-carousel"],
     category: "Institucional",
   },
   {
