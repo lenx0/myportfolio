@@ -43,6 +43,15 @@ const projectsData = [
     featured: true,
   },
   {
+    title: "Gestão Burger",
+    images: generateImageArray("gestao", 6),
+    access: "https://gestao-burger.vercel.app/",
+    description: "Sistema de gestão para restaurante, com controle de pedidos, estoque e relatórios.",
+    technologies: ["React 18", "Next.js", "Tailwind", "Supabase", "Cloudinary", "Prisma", "Radix UI", "Shadcn UI"],
+    category: "Web App",
+    featured: true,
+  },
+  {
     title: "PrimeHaus Imobiliária",
     images: generateImageArray("primehaus", 1),
     access: "https://primehaus-imobiliaria.vercel.app/",
