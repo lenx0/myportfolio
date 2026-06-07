@@ -57,7 +57,7 @@ const projectsData = [
     access: "https://gestao-burger.vercel.app/",
     description: "Sistema de gestão para restaurante, com controle de pedidos, estoque e relatórios.",
     technologies: ["React 18", "Next.js", "Tailwind", "Supabase", "Cloudinary", "Prisma", "Radix UI", "Shadcn UI"],
-    category: "Web App",
+    category: "SaaS",
     featured: true,
   },
   {
