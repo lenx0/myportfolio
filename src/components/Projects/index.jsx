@@ -120,7 +120,7 @@ const projectsData = [
   },
 ];
 
-const categories = ["Todos", "Web App", "Institucional", "UI Component"];
+const categories = ["Todos", "Web App", "SaaS", "Institucional", "UI Component"];
 
 const ProjectCard = ({ project, onOpenImage, index }) => {
   const [hovered, setHovered] = useState(false);
