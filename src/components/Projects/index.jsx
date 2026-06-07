@@ -43,6 +43,15 @@ const projectsData = [
     featured: true,
   },
   {
+    title: "Pokemon Viewer",
+    images: generateImageArray("pokeviewer", 1),
+    access: "https://pokemon-viewer-six.vercel.app/",
+    description: "Visualizador de informações sobre pokémons com detalhes completos, exibição do modelo 3D e busca avançada.",
+    technologies: ["Next.js 15", "React 18", "Three.js · @react-three/fiber · @react-three/drei", "TanStack Query", "Tailwind CSS v4 + custom design system", "Framer Motion"],
+    category: "Web App",
+    featured: true,
+  },
+  {
     title: "Gestão Burger",
     images: generateImageArray("gestao", 6),
     access: "https://gestao-burger.vercel.app/",
@@ -76,14 +85,6 @@ const projectsData = [
     description: "Site para loja de ferragens e ferramentas com localização via Google Maps e contato direto pelo WhatsApp.",
     technologies: ["React 18", "JavaScript", "Google Maps", "WhatsApp API", "CSS"],
     category: "Institucional",
-  },
-  {
-    title: "PokeWorld",
-    images: generateImageArray("poke", 5),
-    access: "https://pokeworld-ochre.vercel.app/",
-    description: "A enciclopédia definitiva do mundo Pokémon, com informações completas sobre pokémons, habilidades e muito mais.",
-    technologies: ["React 18", "TypeScript", "Tailwind", "Framer Motion"],
-    category: "Web App",
   },
   {
     title: "WR Café Bar",
