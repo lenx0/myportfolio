@@ -88,7 +88,7 @@ function Gallery({ project, onClose }) {
   return (
     <div className="lightbox" onClick={onClose}>
       <figure onClick={(e) => e.stopPropagation()}>
-        <img src={project.images[i]} alt={`${project.title} — imagem ${i + 1}`} />
+        <img src={project.images[i]} alt={`${project.title}, imagem ${i + 1}`} />
         <figcaption>
           <span>{project.title} <span className="muted">{i + 1}/{n}</span></span>
           <span className="lb-controls">
@@ -107,7 +107,7 @@ function Projects() {
   const featured = projects.filter((p) => p.featured);
   const others = projects.filter((p) => !p.featured);
   return (
-    <Section id="projetos" label="01 — Projetos" title="Trabalhos selecionados">
+    <Section id="projetos" label="01 / Projetos" title="Trabalhos selecionados">
       <div className="grid">
         {featured.map((p) => (
           <article key={p.title} className={p.wide ? "card wide" : "card"}>
@@ -161,7 +161,7 @@ function Projects() {
 
 function Experience() {
   return (
-    <Section id="experiencia" label="02 — Experiência" title="Onde trabalhei">
+    <Section id="experiencia" label="02 / Experiência" title="Onde trabalhei">
       <ol className="timeline">
         {experiences.map((e) => (
           <li key={e.role + e.company}>
@@ -180,7 +180,7 @@ function Experience() {
 
 function About() {
   return (
-    <Section id="sobre" label="03 — Sobre" title="Um pouco mais">
+    <Section id="sobre" label="03 / Sobre" title="Um pouco mais">
       <div className="about">
         <div>{profile.about.map((t) => <p key={t}>{t}</p>)}</div>
         <dl className="stack">
@@ -198,7 +198,7 @@ function About() {
 
 function Contact() {
   return (
-    <Section id="contato" label="04 — Contato" title="Vamos conversar?">
+    <Section id="contato" label="04 / Contato" title="Vamos conversar?">
       <p className="lead">Estou aberto a novas oportunidades e a projetos freelance. A forma mais rápida de falar comigo é por e-mail.</p>
       <a className="big-link" href={`mailto:${profile.links.email}`}>{profile.links.email}</a>
     </Section>

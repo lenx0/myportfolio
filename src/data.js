@@ -4,13 +4,13 @@ const imgs = (prefix, count) =>
 export const profile = {
   name: "Thiago de Freitas Beraldo",
   role: "Desenvolvedor Full Stack",
-  location: "Maringá, PR — Brasil",
+  location: "Maringá, PR, Brasil",
   photo: "/assets/images/profile.jpg",
   intro:
-    "Construo sistemas web do banco de dados à interface. Hoje trabalho com produtos fiscais e contábeis no Grupo IOB, e nas horas livres desenvolvo sites e aplicações para pequenos negócios.",
+    "Construo sistemas web do banco de dados à interface. Tenho experiência com produtos fiscais e contábeis e desenvolvo sites, aplicações e produtos próprios. Estou disponível para novas oportunidades.",
   about: [
-    "Comecei em 2022 escrevendo APIs em Node.js e C#, migrei para o front-end trabalhando com React e Next.js para clientes B2B, e hoje atuo nas duas pontas em um ambiente corporativo de larga escala, com serviços rodando na AWS.",
-    "Gosto de código legível, interfaces rápidas e de entender o problema de negócio antes de escrever a primeira linha. Fora do trabalho, uso projetos pessoais para experimentar coisas novas — 3D no navegador, dashboards, sistemas de gestão.",
+    "Comecei em 2022 escrevendo APIs em Node.js e C#, migrei para o front-end trabalhando com React e Next.js para clientes B2B e depois passei a atuar nas duas pontas, com Node.js, C#, bancos SQL e NoSQL e serviços na AWS.",
+    "Gosto de código legível, interfaces rápidas e de entender o problema de negócio antes de escrever a primeira linha. Uso projetos pessoais para experimentar coisas novas, como 3D no navegador, dashboards e sistemas de gestão.",
   ],
   links: {
     github: "https://github.com/lenx0",
@@ -65,10 +65,10 @@ export const projects = [
 ];
 
 export const experiences = [
-  { period: "2025 — atual", role: "Desenvolvedor Full Stack Pleno", company: "Grupo IOB",
-    description: "Sistemas para o mercado contábil e fiscal. Back-end em Node.js e C#, front-end em JavaScript, bancos SQL Server, MongoDB e Redis, e operação de serviços na AWS (ECS, EC2, S3, CloudWatch).",
+  { period: "2025", role: "Desenvolvedor Full Stack Pleno", company: "Grupo IOB",
+    description: "Desenvolvimento de sistemas para o mercado contábil e fiscal. Back-end em Node.js e C#, front-end em JavaScript, bancos SQL Server, MongoDB e Redis, e operação de serviços na AWS (ECS, EC2, S3, CloudWatch).",
     stack: ["Node.js", "C#", "SQL Server", "MongoDB", "AWS"] },
-  { period: "2022 — 2024", role: "Desenvolvedor Front-end", company: "AG.labs",
+  { period: "2022 a 2024", role: "Desenvolvedor Front-end", company: "AG.labs",
     description: "Interfaces web e mobile para clientes B2B com Next.js e React, componentização, validação de formulários e deploy em AWS Amplify e Vercel, junto ao time de design.",
     stack: ["React", "Next.js", "MUI", "Figma"] },
   { period: "2022", role: "Desenvolvedor Júnior", company: "Alto Giro",
