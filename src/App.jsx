@@ -73,8 +73,65 @@ function Section({ id, label, title, children }) {
   );
 }
 
-function Gallery({ project, onClose }) {
+const SLIDE_MS = 4500;
+
+function Slider({ project, onOpen }) {
+  const n = project.images.length;
   const [i, setI] = useState(0);
+  const [prev, setPrev] = useState(null);
+  const [paused, setPaused] = useState(false);
+  const reduced = typeof matchMedia !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const go = (next) => {
+    setPrev(i);
+    setI((next + n) % n);
+  };
+
+  useEffect(() => {
+    if (paused || reduced) return;
+    const t = setTimeout(() => go(i + 1), SLIDE_MS);
+    return () => clearTimeout(t);
+  }, [i, paused, reduced]);
+
+  return (
+    <div
+      className="thumb slider"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <button className="slider-hit" onClick={() => onOpen(i)} aria-label={`Ampliar imagens de ${project.title}`} />
+      {project.images.map((src, k) => (
+        <div
+          key={src}
+          className={`slide${k === i ? " on" : ""}${k === prev ? " off" : ""}`}
+          aria-hidden={k !== i}
+        >
+          <img className="slide-bg" src={src} alt="" loading="lazy" />
+          <img className="slide-fg" src={src} alt="" loading="lazy" />
+        </div>
+      ))}
+      <div className="slider-ui">
+        <span className="dots">
+          {project.images.map((src, k) => (
+            <button
+              key={src}
+              className={k === i ? "dot on" : "dot"}
+              onClick={(e) => { e.stopPropagation(); if (k !== i) go(k); }}
+              aria-label={`Imagem ${k + 1}`}
+            />
+          ))}
+        </span>
+        <span className="count mono">{i + 1}/{n}</span>
+      </div>
+      {!reduced && (
+        <span key={i} className={`progress${paused ? " paused" : ""}`} style={{ animationDuration: `${SLIDE_MS}ms` }} />
+      )}
+    </div>
+  );
+}
+
+function Gallery({ project, onClose }) {
+  const [i, setI] = useState(project.start || 0);
   const n = project.images.length;
   useEffect(() => {
     const onKey = (e) => {
@@ -111,10 +168,13 @@ function Projects() {
       <div className="grid">
         {featured.map((p) => (
           <article key={p.title} className={p.wide ? "card wide" : "card"}>
-            <button className="thumb" onClick={() => setOpen(p)} aria-label={`Ampliar imagens de ${p.title}`}>
-              <img src={p.images[0]} alt="" loading="lazy" />
-              {p.images.length > 1 && <span className="count mono">{p.images.length} imagens</span>}
-            </button>
+            {p.images.length > 1 ? (
+              <Slider project={p} onOpen={(i) => setOpen({ ...p, start: i })} />
+            ) : (
+              <button className="thumb" onClick={() => setOpen(p)} aria-label={`Ampliar imagem de ${p.title}`}>
+                <img src={p.images[0]} alt="" loading="lazy" />
+              </button>
+            )}
             <div className="card-body">
               <div className="row">
                 <h3>{p.title}</h3>
