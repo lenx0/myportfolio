@@ -21,7 +21,7 @@ export const profile = {
 };
 
 export const projects = [
-  { title: "Multi Idle Manager", year: "Produto", images: imgs("multidle", 1), url: "https://multidle.com.br",
+  { title: "Multi Idle Manager", year: "Produto", images: ["desktop1.webp", "desktop2.webp", "android1.jpg", "android2.jpg", "android3.jpg", "1.png"].map((f) => `/assets/images/multidle-${f}`.replace("multidle-1.png", "multidle1.png")), url: "https://multidle.com.br",
     description: "Produto próprio para rodar várias contas de jogos idle de navegador ao mesmo tempo, cada uma com login e dados isolados. Modelo freemium com licença Pro única para PC e celular.",
     parts: [
       { name: "Desktop (Windows)", text: "Contas em mosaico de telas, CPU e memória por conta em tempo real, descarte de contas inativas sem perder o login e execução na bandeja.", stack: "Electron · React · TypeScript · Tailwind" },

@@ -111,7 +111,7 @@ p { margin: 0; }
 .footer a:hover { color: var(--text); }
 
 /* Lightbox */
-.lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(10,10,10,0.95); display: flex; align-items: center; justify-content: center; padding: 24px; }
 .lightbox figure { margin: 0; max-width: 1100px; width: 100%; }
 .lightbox img { max-height: 80vh; margin: 0 auto; border-radius: 6px; }
 .lightbox figcaption { display: flex; justify-content: space-between; align-items: center; color: #e7e5e4; font-size: 14px; margin-top: 12px; }
@@ -141,7 +141,7 @@ p { margin: 0; }
 .card.wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.3fr 1fr; }
 .card.wide .thumb { border-bottom: 0; border-right: 1px solid var(--border); height: 100%; }
 .card.wide .thumb { background: #0f0d1a; display: flex; align-items: center; }
-.card.wide .thumb img { height: auto; object-fit: contain; }
+.card.wide .thumb img { height: 100%; object-fit: cover; object-position: left top; }
 .card.wide .card-body { padding: 28px; justify-content: center; }
 .card.wide p:first-of-type { flex: 0; }
 .card.wide h3 { font-size: 22px; }
