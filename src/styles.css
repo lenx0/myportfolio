@@ -136,3 +136,20 @@ p { margin: 0; }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* Destaque em largura total */
+.card.wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.3fr 1fr; }
+.card.wide .thumb { border-bottom: 0; border-right: 1px solid var(--border); height: 100%; }
+.card.wide .thumb { background: #0f0d1a; display: flex; align-items: center; }
+.card.wide .thumb img { height: auto; object-fit: contain; }
+.card.wide .card-body { padding: 28px; justify-content: center; }
+.card.wide p:first-of-type { flex: 0; }
+.card.wide h3 { font-size: 22px; }
+@media (max-width: 760px) {
+  .card.wide { grid-template-columns: 1fr; }
+  .card.wide .thumb { border-right: 0; border-bottom: 1px solid var(--border); }
+}
+.parts { margin: 6px 0 4px; display: grid; gap: 14px; }
+.parts > div { padding-left: 14px; border-left: 2px solid var(--border); }
+.parts dt { font-weight: 600; font-size: 15px; }
+.parts dd { margin: 2px 0 0; font-size: 14px; color: var(--muted); }

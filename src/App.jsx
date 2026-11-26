@@ -110,7 +110,7 @@ function Projects() {
     <Section id="projetos" label="01 — Projetos" title="Trabalhos selecionados">
       <div className="grid">
         {featured.map((p) => (
-          <article key={p.title} className="card">
+          <article key={p.title} className={p.wide ? "card wide" : "card"}>
             <button className="thumb" onClick={() => setOpen(p)} aria-label={`Ampliar imagens de ${p.title}`}>
               <img src={p.images[0]} alt="" loading="lazy" />
               {p.images.length > 1 && <span className="count mono">{p.images.length} imagens</span>}
@@ -121,8 +121,19 @@ function Projects() {
                 <span className="mono muted small">{p.year}</span>
               </div>
               <p>{p.description}</p>
-              <p className="mono muted small">{p.stack.join(" · ")}</p>
-              <a className="text-link" href={p.url} target="_blank" rel="noreferrer">Abrir projeto ↗</a>
+              {p.parts && (
+                <dl className="parts">
+                  {p.parts.map((x) => (
+                    <div key={x.name}>
+                      <dt>{x.name}</dt>
+                      <dd>{x.text}</dd>
+                      <dd className="mono muted small">{x.stack}</dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+              {p.stack.length > 0 && <p className="mono muted small">{p.stack.join(" · ")}</p>}
+              <a className="text-link" href={p.url} target="_blank" rel="noreferrer">{p.parts ? "Conhecer o produto ↗" : "Abrir projeto ↗"}</a>
             </div>
           </article>
         ))}
