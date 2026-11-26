@@ -65,7 +65,7 @@ export const projects = [
 ];
 
 export const experiences = [
-  { period: "2025", role: "Desenvolvedor Full Stack Pleno", company: "Grupo IOB",
+  { period: "jan. 2025 a jul. 2026", role: "Desenvolvedor Full Stack Pleno", company: "Grupo IOB",
     description: "Desenvolvimento de sistemas para o mercado contábil e fiscal. Back-end em Node.js e C#, front-end em JavaScript, bancos SQL Server, MongoDB e Redis, e operação de serviços na AWS (ECS, EC2, S3, CloudWatch).",
     stack: ["Node.js", "C#", "SQL Server", "MongoDB", "AWS"] },
   { period: "2022 a 2024", role: "Desenvolvedor Front-end", company: "AG.labs",
