@@ -68,10 +68,10 @@ export const experiences = [
   { period: "jan. 2025 a jul. 2026", role: "Desenvolvedor Full Stack Pleno", company: "Grupo IOB",
     description: "Desenvolvimento de sistemas para o mercado contábil e fiscal. Back-end em Node.js e C#, front-end em JavaScript, bancos SQL Server, MongoDB e Redis, e operação de serviços na AWS (ECS, EC2, S3, CloudWatch).",
     stack: ["Node.js", "C#", "SQL Server", "MongoDB", "AWS"] },
-  { period: "2022 a 2024", role: "Desenvolvedor Front-end", company: "AG.labs",
+  { period: "jul. 2022 a abr. 2024", role: "Desenvolvedor Front-end", company: "AG.labs",
     description: "Interfaces web e mobile para clientes B2B com Next.js e React, componentização, validação de formulários e deploy em AWS Amplify e Vercel, junto ao time de design.",
     stack: ["React", "Next.js", "MUI", "Figma"] },
-  { period: "2022", role: "Desenvolvedor Júnior", company: "Alto Giro",
+  { period: "fev. 2022 a jul. 2022", role: "Desenvolvedor Back-end Júnior", company: "AG.labs",
     description: "Primeiro emprego na área: APIs em Node.js e C#, MongoDB e páginas em React.",
     stack: ["Node.js", "C#", "MongoDB", "React"] },
 ];
